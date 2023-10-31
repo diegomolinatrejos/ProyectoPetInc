@@ -9,5 +9,9 @@ namespace DTO.Models
     public class BaseClass
     {
         public int Id { get; set; }
+
+        public string nombreEstado { get; set; }  
+
+        public bool numeroEstado { get; set; }
     }
 }
