@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App-Logic", "App-Logic\App-Logic.csproj", "{4AAD8476-5F58-4CFE-8E53-C859FC5CDC50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{3745A4E8-700F-4470-BF84-00D96B00CC1C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3499B4CA-ADA7-438D-BFC9-E22897DBA2E4} = {3499B4CA-ADA7-438D-BFC9-E22897DBA2E4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{3499B4CA-ADA7-438D-BFC9-E22897DBA2E4}"
 EndProject
