@@ -7,6 +7,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Configuracion de CORS
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: "MyCorsPolicy",
+             policy => {
+                 policy.AllowAnyOrigin();  //www.mypage.com, www.mypage.net, otros
+                 policy.AllowAnyHeader(); //application/json, application/xml, application/text, application/html
+                 policy.AllowAnyMethod(); // GET, POST, PUT, DELETE 
+             });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
