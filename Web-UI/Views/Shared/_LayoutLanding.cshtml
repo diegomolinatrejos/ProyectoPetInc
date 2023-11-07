@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pets Inc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" /> 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav id="barra" class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com/">Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dispositivo">Dispositivo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contactenos</a>
+                        </li>
+                    </ul>
+                    <div class="nav-bottoms">
+                        <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Iniciar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+       <div class="hero">
+        <div class="textos-hero">
+            <h1 style="text-align: center;">Bienvenidos a Pets Inc</h1>
+                <p>
+                    Confort, Hotel, Cuidado, Innovación y más.. <img src="~/media/img/mas2.png" style="height: 35px; width: 37px;">
+                </p>
+        </div>
+
+        <div class="svg-hero" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150"
+                 preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #fff;"></path>
+            </svg>
+        </div>
+       </div>
+
+    </header>
+
+    <section id="servicios" class="estilo-servicios" style="margin-top: -6%;">
+        <h2 style="text-align: center; font:bold; margin-bottom: 50px; margin-top: 7%;">Nuestros Servicios</h2>
+
+        <div id="ContenedorCards">
+
+            <div class="card text-white bg-secondary mb-3 " style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/grooming1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Grooming</h5>
+                    <p class="card-text">Servicio de aseo y cuidado personal para que tus mascotas se vean y e sientan geniales.</p>
+                </div>
+            </div>
+
+              <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/entrenamiento1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Entrenamiento</h5>
+                    <p class="card-text">Clases de entrenamiento profesional para mejorar el comportamiento y habilidades de tus mascotas.</p>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/vet1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Veterinaria</h5>
+                    <p class="card-text">Atención médica y cuidados veterinarios de alta calidad para mantener a tus mascotas sanas y felices.</p>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-secondary mb-3 last-card" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/paseo1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Paseos</h5>
+                    <p class="card-text">Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</p>
+                </div>
+            </div>
+
+
+@*             <div class="card text-white bg-secondary mb-3 last-card" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/cuidadoEspecial1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Cuidado Especial</h5>
+                    <p class="card-text">Servicios de atención personalizada y cuidado para mascotas con necesidades especiales o médicas.</p>
+                </div>
+            </div> *@
+
+        </div>
+
+
+      
+        </div>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+
+
+        <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 310" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(149, 165, 166, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,62L40,56.8C80,52,160,41,240,46.5C320,52,400,72,480,72.3C560,72,640,52,720,56.8C800,62,880,93,960,118.8C1040,145,1120,165,1200,170.5C1280,176,1360,165,1440,144.7C1520,124,1600,93,1680,108.5C1760,124,1840,186,1920,211.8C2000,238,2080,227,2160,217C2240,207,2320,196,2400,206.7C2480,217,2560,248,2640,242.8C2720,238,2800,196,2880,191.2C2960,186,3040,217,3120,232.5C3200,248,3280,248,3360,211.8C3440,176,3520,103,3600,82.7C3680,62,3760,93,3840,134.3C3920,176,4000,227,4080,217C4160,207,4240,134,4320,118.8C4400,103,4480,145,4560,144.7C4640,145,4720,103,4800,108.5C4880,114,4960,165,5040,165.3C5120,165,5200,114,5280,98.2C5360,83,5440,103,5520,129.2C5600,155,5680,186,5720,201.5L5760,217L5760,310L5720,310C5680,310,5600,310,5520,310C5440,310,5360,310,5280,310C5200,310,5120,310,5040,310C4960,310,4880,310,4800,310C4720,310,4640,310,4560,310C4480,310,4400,310,4320,310C4240,310,4160,310,4080,310C4000,310,3920,310,3840,310C3760,310,3680,310,3600,310C3520,310,3440,310,3360,310C3280,310,3200,310,3120,310C3040,310,2960,310,2880,310C2800,310,2720,310,2640,310C2560,310,2480,310,2400,310C2320,310,2240,310,2160,310C2080,310,2000,310,1920,310C1840,310,1760,310,1680,310C1600,310,1520,310,1440,310C1360,310,1280,310,1200,310C1120,310,1040,310,960,310C880,310,800,310,720,310C640,310,560,310,480,310C400,310,320,310,240,310C160,310,80,310,40,310L0,310Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(149, 165, 166, 1)" offset="0%"></stop><stop stop-color="rgba(149, 165, 166, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,31L40,62C80,93,160,155,240,186C320,217,400,217,480,201.5C560,186,640,155,720,118.8C800,83,880,41,960,46.5C1040,52,1120,103,1200,139.5C1280,176,1360,196,1440,201.5C1520,207,1600,196,1680,191.2C1760,186,1840,186,1920,170.5C2000,155,2080,124,2160,113.7C2240,103,2320,114,2400,118.8C2480,124,2560,124,2640,103.3C2720,83,2800,41,2880,46.5C2960,52,3040,103,3120,139.5C3200,176,3280,196,3360,211.8C3440,227,3520,238,3600,232.5C3680,227,3760,207,3840,196.3C3920,186,4000,186,4080,196.3C4160,207,4240,227,4320,237.7C4400,248,4480,248,4560,237.7C4640,227,4720,207,4800,211.8C4880,217,4960,248,5040,217C5120,186,5200,93,5280,51.7C5360,10,5440,21,5520,36.2C5600,52,5680,72,5720,82.7L5760,93L5760,310L5720,310C5680,310,5600,310,5520,310C5440,310,5360,310,5280,310C5200,310,5120,310,5040,310C4960,310,4880,310,4800,310C4720,310,4640,310,4560,310C4480,310,4400,310,4320,310C4240,310,4160,310,4080,310C4000,310,3920,310,3840,310C3760,310,3680,310,3600,310C3520,310,3440,310,3360,310C3280,310,3200,310,3120,310C3040,310,2960,310,2880,310C2800,310,2720,310,2640,310C2560,310,2480,310,2400,310C2320,310,2240,310,2160,310C2080,310,2000,310,1920,310C1840,310,1760,310,1680,310C1600,310,1520,310,1440,310C1360,310,1280,310,1200,310C1120,310,1040,310,960,310C880,310,800,310,720,310C640,310,560,310,480,310C400,310,320,310,240,310C160,310,80,310,40,310L0,310Z"></path></svg>
+        @RenderBody()
+    </section>
+
+   
+
+    <section id="dispositivoA">
+        <div id="contenedorDispositivo">
+        <div class="dispositivo-info">
+            <h2 style="text-align: center; font:bold; margin-bottom: 50px; margin-top: 5%;">Nuestro Dispositivo</h2>
+            <div>
+                <img src="~/media/img/werable.png" class="dispositivoImagen" style="border-radius: 15px">
+
+                <div class="contenido">
+                    <p>
+                            Introducimos el "ComfortPet Sensor" un dispositivo vestible revolucionario diseñado para
+                        brindar a los dueños de mascotas la máxima tranquilidad y comodidad para sus amigos peludos. Con tecnología de vanguardia y una atención constante a la seguridad y el bienestar de su mascota, este dispositivo es una verdadera innovación en el cuidado de animales de compañía.
+                    </p>
+
+                        <h3 style="text-align: center; margin-bottom: 4%; margin-top: 4%;"> Características principales </h3>
+
+                    <p>
+                            <strong>⩥ Monitoreo de temperatura en tiempo real:</strong> El "ComfortPet Sensor" está equipado con sensores de temperatura avanzados que controlan constantemente el ambiente de la habitación de su mascota. Detecta cualquier aumento significativo en la temperatura y mantiene un registro preciso de las condiciones climáticas.
+                    </p>
+                    <p>
+                            <strong>⩥ Alertas personalizadas:</strong> Si la temperatura ambiente supera un umbral predefinido, el dispositivo genera una alerta para informarle de inmediato a través de su teléfono móvil. Esto le permite tomar medidas rápidas en caso de condiciones de calor inusualmente altas.
+                    </p>
+                    <p>
+                            <strong>⩥ Sistema de alerta crítica:</strong> Cuando la temperatura alcanza niveles peligrosos para su mascota, el dispositivo no solo le notifica, sino que también inicia automáticamente los ventiladores de la habitación para reducir la temperatura y proteger la salud de su compañero peludo.
+                    </p>
+                    <p style="margin-bottom: 8%;">
+                            Con el "ComfortPet Sensor", su mascota estará siempre protegida de las temperaturas extremas, y usted tendrá el control total de su bienestar, sin importar dónde se encuentre.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="about" class="info-last" style="margin-top: -6%;">
+
+        <div class="svg-wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,100.02 C149.99,0.00 349.20,200.00 500.00,100.02 L500.00,0.00 L0.00,0.00 Z"
+                      style="stroke: none; fill: #95a5a6;"></path>
+            </svg>
+        </div>
+        <div class="contenedor last-section" style="display: flex; align-items: center;">
+            <div class="contenedor-textos-main">
+                <h2 class="titulo left">Sobre nosotros</h2>
+                <p class="parrafo-about">
+                    En Pets Inc, sabemos que tus mascotas son parte de tu familia, y su bienestar y felicidad son nuestra principal prioridad. Como un exclusivo hotel de mascotas,
+                    nos enorgullece ofrecer un refugio seguro y acogedor para tus amigos peludos cuando no puedes estar con ellos. Con años de experiencia en el cuidado de animales,
+                    hemos creado un entorno que combina comodidad, diversión y atención personalizada para garantizar que tus mascotas se sientan como en casa.
+                    Nuestro personal altamente capacitado está dedicado a brindar el mejor cuidado a tus mascotas. Desde alojamiento y alimentación de alta calidad hasta actividades 
+                    recreativas y atención médica, nos esforzamos por superar tus expectativas y mantener a tus amigos de cuatro patas sanos y felices.
+
+                    <br>
+                    En Pets Inc, comprendemos la importancia de mantener un vínculo fuerte con tus mascotas, y por eso ofrecemos servicios de calidad excepcional. Ya sea que necesites alojar a tu mascota durante un viaje, proporcionarles un día divertido de juegos y socialización, o brindarles cuidados médicos de confianza, estamos aquí para cuidarlos como si fueran nuestros propios.
+                    Agradecemos la confianza que nos brindas al elegirnos para el cuidado de tus mascotas y estamos comprometidos a brindarles la mejor experiencia posible. Tu amor por tus mascotas se refleja en la confianza que depositas en nosotros, y en Pets Inc, cuidar a tus amigos peludos es un honor que tomamos en serio.
+                    Bienvenido a Pets Inc, donde cada mascota es una parte valiosa de nuestra familia.
+                </p>
+
+            </div>
+            <img id="no" src="~/media/img/verificadoP.gif" style="max-width: 40%; height: auto; margin-left: 6%; border-radius: 15px;">
+        </div>
+
+        <div class="svg-wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #95a5a6;"></path>
+            </svg>
+        </div>
+    </section>
+
+
+ 
+
+
+    <section id="contacto">
+        <h2 class="titulo">Contáctanos!</h2>
+        <div class="contenedor">
+            <div>
+            <gmp-map center="9.933066368103027,-84.02772521972656" zoom="14" map-id="DEMO_MAP_ID">
+                <gmp-advanced-marker position="9.933066368103027,-84.02772521972656" title="My location">
+                </gmp-advanced-marker>
+            </gmp-map>
+                <h5 class="titulo left"><strong>San Jose, Curridabat, Granadilla</strong></h5>
+                <p class="parrafo" style="text-align: center;">Calle Frente a Crispy Churros Granadilla, 150 m este a mano derecha.</p>
+                <p class="parrafo" style="text-align: center;">Horario: Lunes a Viernes 8 AM a 5 PM, Sábado y Domingo 9 AM a 5 PM</p>
+            </div>
+            <form action="" class="form">
+                <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Correo Electronico">
+                <input type="tel" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="Número telefonico">
+                <textarea class="form-control" id="mensaje" rows="3" style="height: 145px;" spellcheck="false" placeholder="Mensaje"></textarea>
+                <button type="submit" class="btn btn-primary" id="boton-enviar">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+  
+
+    <footer class="footer" style="background-color:#2c3e50">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95a5a6" fill-opacity="1" d="M0,160L30,181.3C60,203,120,245,180,234.7C240,224,300,160,360,122.7C420,85,480,75,540,96C600,117,660,171,720,176C780,181,840,139,900,112C960,85,1020,75,1080,74.7C1140,75,1200,85,1260,80C1320,75,1380,53,1410,42.7L1440,32L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+        <div style="text-align: center; margin-top: -5%;">
+            <p class="" style="color: #ffffff; font-size: 18px; font-weight: bold;">Pets Inc</p>
+            <div style=" width: 100%; height: 70px;">
+                <a href="https://www.instagram.com/" target="_blank"><img src="~/media/img/insta.svg" class="iconos-footer" alt="Perfil de Instagram"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="~/media/img/fc.svg" class="iconos-footer" alt="Perfil de Facebook"></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><img src="~/media/img/ws.svg" class="iconos-footer" alt="Chat de WhatsApp"></a>
+            </div>
+            <hr class="linea-footer">
+            <p> <a href="#" style="text-decoration: none; color: #ffffff">Quantum Coders &copy; 2023</a></p>
+            <p style="color: #ffffff; margin-bottom: 0%;">Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-hZqp_2KmHJWm0e7MmdTobU8eAozfI8s&callback=console.debug&libraries=maps,marker&v=beta"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
