@@ -14,13 +14,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
 
 
-#boton {
-    margin-right: 120px;
-}
-
-
-
-
 :root,
 [data-bs-theme=light] {
     --bs-blue: #2c3e50;
@@ -12136,6 +12129,405 @@ textarea.form-control-lg {
 }
 
 
-#barra {
-    background-color: aqua;
+/*--------------------------------------------------------------------------CSS del LandingPage de Pets Inc----------------------------------------------------------------*/
+
+#boton {
+    margin-right: 3px;
 }
+
+.servicios img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.card-image {
+    position: relative;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+    .card-image img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+.hero {
+    background-image: linear-gradient(120deg, rgba(118, 248, 226, 0.699) 0%, rgba(156, 50, 62, 0.692) 100%), url("/media/img/HPT2.jpg");
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.textos-hero {
+    height: 500px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .textos-hero h1 {
+        font-size: 60px;
+    }
+
+    .textos-hero p {
+        font-size: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .textos-hero a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 14px 17px;
+        background: #9775e7da;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+
+.svg-hero {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dispositivo-info {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#dispositivo {
+    background-color: #C0C0C0;
+}
+
+
+/*formulario*/
+
+#contacto {
+    background-color: #95a5a6;
+    color: white;
+    margin-top: -7%;
+}
+
+.form {
+    display: grid;
+}
+
+.input {
+    background: transparent;
+    color: #000000;
+    outline: none;
+    border: 3px solid #5627c2;
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+    .input::placeholder {
+        color: #000000;
+        font-family: 'raleway', 'sans-serif';
+    }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    display: inline-block;
+    /*    width: 49%;*/
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+}
+
+    input[type="submit"]:hover {
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        background: #fad0c4;
+    }
+
+
+.form {
+    width: 50%;
+    margin-left: 10%;  /*Para que se pueda usar con el Mapa*/
+}
+
+/*FIn*/
+
+.contenedor,
+.wave-contenedor {
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+
+.contenedor {
+    display: flex;
+}
+
+
+gmp-map {
+    width: 100%; 
+    height: 400px;
+    border-radius: 10px; 
+}
+
+
+.titulo {
+    margin-top: 6%;
+    text-align: center;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.card {
+    transition: transform 0.2s; 
+}
+
+    .card:hover {
+        transform: scale(1.05); 
+    }
+
+
+/*Dispositivo*/
+
+.contenedorDispositivo {
+    display: flex;
+    flex-direction: row;
+}
+
+.columna-izquierda {
+    flex: 1;
+    padding: 0 20px; 
+}
+
+.columna-derecha {
+    flex: 1;
+    padding: 0 20px;
+}
+
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .columna-izquierda, .columna-derecha {
+        flex: none; 
+        padding: 0; 
+    }
+}
+
+#dispositivoA {
+    text-align: center;
+
+}
+
+#contenedorDispositivo {
+    background-color: #95a5a6;
+    margin-top: -2px;
+}
+
+.dispositivo-info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-bottom: 6%;
+
+}
+
+    .dispositivo-info img {
+        max-width: 90%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+
+
+.contenido strong {
+    font-weight: bold;
+}
+
+#ContenedorCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 0fr));
+    gap: 10px;
+    justify-content: center;
+
+}
+
+
+@media (min-width: 830px) and (max-width: 1230px) {
+    #ContenedorCards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(22rem, 0fr));
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+/* Estilos para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+
+
+    .dispositivoImagen {
+        max-height: auto; /* Restablece la altura máxima para que la imagen conserve su relación de aspecto */
+    }
+
+    .contenido {
+        max-width: 90%; /* Limita el ancho del contenido en pantallas pequeñas */
+        margin: 0 auto; /* Centra el contenido horizontalmente */
+    }
+
+}
+
+.textos-hero {
+    height: 500px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .textos-hero h1 {
+        font-size: 60px;
+    }
+
+    .textos-hero p {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+.iconos-footer {
+    width: 70px;
+    height: 50px;
+}
+
+
+@media screen and (max-width:800px) {
+    .textos-hero h1 {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        width: 90%;
+        margin-left: 2%;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 0%;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .titulo,
+    .textos-hero h1 {
+        font-size: 30px;
+    }
+
+    .textos-hero p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 9%;
+        margin-right: 0%;
+    }
+
+    .form {
+        width: 90%;
+        margin-left: 2%;
+    }
+}
+
+
+@media screen and (max-width:389px) {
+    .titulo,
+    .textos-hero h1 {
+        font-size: 30px;
+    }
+
+    .textos-hero p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 5%;
+        margin-right: 0%;
+    }
+
+    .form {
+        width: 90%;
+        margin-left: 2%;
+    }
+}
+
+
+/*.estilo-servicios {
+    background-image: url('/media/img/fondo1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+*/
+
+.last-section {
+    background-image: url('/media/img/fondo1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.parrafo-about {
+    text-align: justify;
+    background: #95a5a642;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.iconos-footer {
+    transition: transform 0.2s; 
+}
+
+    .iconos-footer:hover {
+        transform: scale(1.2); 
+    }
+
+/*--------------------------------------------------------------------------FIN DEL CSS del LandingPage de Pets Inc----------------------------------------------------------------*/
