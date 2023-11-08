@@ -67,11 +67,11 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("EMAIL", usuario.email);
             operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
             operation.AddVarcharParam("NOMBRE", usuario.nombre);
-            operation.AddVarcharParam("APELLIDO_1", usuario.apellido1);
-            operation.AddVarcharParam("APELLIDO_2", usuario.apellido2);
-            operation.AddVarcharParam("DOCUMENTO_IDENTIDAD", usuario.documentoIdentidad);
+            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
+            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
+            operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
             operation.AddVarcharParam("TELEFONO", usuario.telefono);
-            operation.AddVarcharParam("DIRECCION_MAPA", usuario.direccionMapa);
+            operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
             operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
