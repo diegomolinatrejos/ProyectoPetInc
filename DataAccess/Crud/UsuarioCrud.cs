@@ -56,7 +56,7 @@ namespace DataAccess.Crud
         }
 
         public override void Update(BaseClass entityDTO)
-        {
+    {
             throw new NotImplementedException();
         }
     }

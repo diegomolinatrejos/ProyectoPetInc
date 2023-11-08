@@ -9,7 +9,7 @@ namespace DTO.Models
 {
     public class Mascota : BaseClass
     {
-        public Cliente idUsuario { get; set; }
+        public Cliente cliente { get; set; }
         public string nombreMascota { get; set; }
         public string descripcion { get; set; }
         public DateTime fechaNacimiento { get; set; }

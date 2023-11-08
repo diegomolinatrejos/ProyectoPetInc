@@ -69,7 +69,7 @@ namespace DataAccess.Mapper
         }
 
         public SqlOperation RetrieveByIdStatement(int Id)
-        {
+    {
             throw new NotImplementedException();
         }
     }
