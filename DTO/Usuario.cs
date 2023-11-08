@@ -18,5 +18,7 @@ namespace DTO.Models
         public string direccionMapa { get; set; }
         public string foto { get; set; }
         public Rol rol { get; set; }
+        public Rol rolInfo { get; set; }
+        public Estado estadoInfo {  get; set; }
     }
 }

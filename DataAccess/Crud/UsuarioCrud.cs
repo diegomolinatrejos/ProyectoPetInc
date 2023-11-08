@@ -1,4 +1,6 @@
-﻿using DTO.Models;
+﻿using DataAccess.Dao;
+using DataAccess.Mapper;
+using DTO.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,8 @@ namespace DataAccess.Crud
     public class UsuarioCrud : CrudFactory
     {
         private UsuarioMapper usuarioMapper;
-        //Constructor
 
+        //Constructor
         public UsuarioCrud() : base()
         {
             usuarioMapper = new UsuarioMapper();
@@ -34,30 +36,52 @@ namespace DataAccess.Crud
         public override List<T> RetrieveAll<T>()
         {
             List<T> lstResults = new List<T>();
-            SqlOperation operation = usuarioMapper.RetrieveAllStatement() ;
+            SqlOperation operation = usuarioMapper.RetrieveAllStatement();
+
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
                 var dtoObjects = usuarioMapper.BuildObjects(dataResults);
 
-                foreach (var obj in dtoObjects)
+                foreach (var ob in dtoObjects)
                 {
-                    lstResults.Add((T)Convert.ChangeType(obj, typeof(T)));
+                    lstResults.Add((T)Convert.ChangeType(ob, typeof(T)));
                 }
             }
-
             return lstResults;
         }
 
         public override T RetrieveById<T>(int id)
         {
-            throw new NotImplementedException();
+            var dataResults = dao.ExecuteStoredProcedureWithQuery(usuarioMapper.RetrieveByIdStatement(id));
+
+            var objArt = usuarioMapper.BuildObject(dataResults[0]);
+
+            return (T)Convert.ChangeType(objArt, typeof(T));
         }
 
         public override void Update(BaseClass entityDTO)
-    {
+        {
             throw new NotImplementedException();
+        }
+
+        public List<T> RetrieveBySearchPhrase<T>(string phrase)
+        {
+            var lstResults = new List<T>();
+
+            var dataResults = dao.ExecuteStoredProcedureWithQuery(usuarioMapper.GetRetrieveByPhraseStatement(phrase));
+
+            if (dataResults.Count > 0)
+            {
+                var objPo = usuarioMapper.BuildObjects(dataResults);
+
+                foreach (var po in objPo)
+                {
+                    lstResults.Add((T)Convert.ChangeType(po, typeof(T)));
+                }
+            }
+            return lstResults;
         }
     }
 }

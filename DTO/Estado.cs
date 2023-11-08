@@ -1,5 +1,4 @@
-﻿using DTO.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO.Models
 {
-    public class Rol : BaseClass
+    public class Estado : BaseClass
     {
-        public string nombreRol {  get; set; }
+        public string nombreEstado {  get; set; }
     }
 }

@@ -12,12 +12,32 @@ namespace DataAccess.Mapper
     {
         public BaseClass BuildObject(Dictionary<string, object> row)
         {
-            throw new NotImplementedException();
+            var mascota = new Mascota()
+            {
+                //cliente = row["Cliente"].ToString(),
+                nombreMascota = row["nombreMascota"].ToString(),
+                descripcion = row["descripcion"].ToString(),
+                fechaNacimiento = DateTime.Parse(row["fechaNacimiento"].ToString()),
+                raza = row["raza"].ToString(),
+                agresividad = int.Parse(row["agresividad"].ToString()),
+                foto1 = row["foto1"].ToString(),
+                foto2 = row["foto2"].ToString(),
+                estado = int.Parse(row["estado"].ToString()),
+            };
+
+            return mascota;
         }
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
         {
-            throw new NotImplementedException();
+            var lstResult = new List<BaseClass>();
+
+            foreach (var objRow in listRows)
+            {
+                var mascota = BuildObject(objRow);
+                lstResult.Add(mascota);
+            }
+            return lstResult;
         }
 
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
@@ -28,9 +48,14 @@ namespace DataAccess.Mapper
 
             Mascota mas = (Mascota)entityDTO;
 
-            operation.AddVarcharParam("Cliente", mas.FirstName);
-            operation.AddVarcharParam("LastName", mas.LastName);
-            operation.AddVarcharParam("Charge", mas.Charge);
+            //operation.AddVarcharParam("Cliente", mas.FirstName);
+            operation.AddVarcharParam("descripcion", mas.descripcion);
+            operation.AddDateTimeParam("fechaNacimiento", mas.fechaNacimiento);
+            operation.AddVarcharParam("raza", mas.raza);
+            operation.AddIntegerParam("agresividad", mas.agresividad);
+            operation.AddVarcharParam("foto1", mas.foto1);
+            operation.AddVarcharParam("foto2", mas.foto2);
+            operation.AddIntegerParam("estado", mas.estado);
 
             return operation;
         }

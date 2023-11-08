@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Mapper
 {
-    public class UsuarioMapper : IObjectMapper,ICrudStatements
+    public class UsuarioMapper : ICrudStatements, IObjectMapper
     {
-        public BaseClass BuildObject(Dictionary<string, object> objectRow)
+        public BaseClass BuildObject(Dictionary<string, object> row)
         {
-            var Usuario = new Usuario()
+            var usuario = new Usuario()
             {
-                Id = int.Parse(objectRow["ID"].ToString()),
-                email = objectRow["EMAIL"].ToString(),
-                contrasena = objectRow["CONTRASENA"].ToString(),
-                nombre = objectRow["NOMBRE"].ToString(),
-                apellido1 = objectRow["APELLIDO_1"].ToString(),
-                apellido2 = objectRow["APELLIDO_2"].ToString(),
-                documentoIdentidad = objectRow["DOCUMENTO_IDENTIDAD"].ToString(),
-                telefono = objectRow["TELEFONO"].ToString(),
-                direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
-                foto = objectRow["FOTO"].ToString(),
+                email = row["Email"].ToString(),
+                contrasena = row["Contrasena"].ToString(),
+                nombre = row["nombre"].ToString(),
+                apellido1 = row["apellido1"].ToString(),
+                apellido2 = row["apellido2"].ToString(),
+                documentoIdentidad = row["documentoIdentidad"].ToString(),
+                telefono = row["telefono"].ToString(),
+                direccionMapa = row["direccionMapa"].ToString(),
+                foto = row["foto"].ToString(),
             };
+
             var rol = new Rol()
             {
-                Id = int.Parse(objectRow["ID"].ToString()),
-                nombreRol = objectRow["NOMBRE_ROL"].ToString()
+                Id = int.Parse(row["Rol_Id"].ToString()),
+                nombreRol = row["nombreRol"].ToString(),   
             };
 
-            Usuario.rol = rol;
+            usuario.rolInfo = rol;
 
-            return Usuario;
+            return usuario;
         }
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
@@ -50,7 +50,25 @@ namespace DataAccess.Mapper
 
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "PR_CREATE_USUARIO";
+
+            Usuario usuario = (Usuario)entityDTO;
+
+            //agregar los parametros al operation
+            operation.AddVarcharParam("email", usuario.email);
+            operation.AddVarcharParam("contrasena", usuario.contrasena);
+            operation.AddVarcharParam("nombre", usuario.nombre);
+            operation.AddVarcharParam("apellido1", usuario.apellido1);
+            operation.AddVarcharParam("apellido2", usuario.apellido2);
+            operation.AddVarcharParam("documentoIdentidad", usuario.documentoIdentidad);
+            operation.AddVarcharParam("telefono", usuario.telefono);
+            operation.AddVarcharParam("direccionMapa", usuario.direccionMapa);
+            operation.AddVarcharParam("foto", usuario.foto);
+            operation.AddVarcharParam("rol", usuario.rolInfo.nombreRol);
+
+
+            return operation;
         }
 
         public SqlOperation GetDeleteStatement(BaseClass entityDTO)
@@ -65,12 +83,37 @@ namespace DataAccess.Mapper
 
         public SqlOperation RetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "";
+
+            return operation;
         }
 
         public SqlOperation RetrieveByIdStatement(int Id)
-    {
-            throw new NotImplementedException();
+        {
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "";
+
+            operation.AddIntegerParam("usuario_id", Id);
+
+            return operation;
+        }
+
+        //Método para hacer consultas por diferentes criterios de filtro
+        //Cada criterio que queramos evaluar, va a ser un search type y el valor el
+        //search phrase
+        public SqlOperation GetRetrieveByPhraseStatement(string searchPhrase)
+        {
+            var operation = new SqlOperation()
+            {
+                ProcedureName = ""
+            };
+
+            operation.AddVarcharParam("searchPhrase", searchPhrase);
+
+            return operation;
         }
     }
 }
