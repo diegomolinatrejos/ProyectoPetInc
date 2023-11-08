@@ -25,6 +25,14 @@ namespace DataAccess.Mapper
                 foto = row["foto"].ToString(),
             };
 
+            var rol = new Rol()
+            {
+                Id = int.Parse(row["Rol_Id"].ToString()),
+                nombreRol = row["nombreRol"].ToString(),   
+            };
+
+            usuario.rolInfo = rol;
+
             return usuario;
         }
 
@@ -57,6 +65,7 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("telefono", usuario.telefono);
             operation.AddVarcharParam("direccionMapa", usuario.direccionMapa);
             operation.AddVarcharParam("foto", usuario.foto);
+            operation.AddVarcharParam("rol", usuario.rolInfo.nombreRol);
 
 
             return operation;
