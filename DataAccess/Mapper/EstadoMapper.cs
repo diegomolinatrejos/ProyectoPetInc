@@ -8,18 +8,17 @@ using DTO.Models;
 
 namespace DataAccess.Mapper
 {
-    public class RolMapper : IObjectMapper, ICrudStatements
-
+    public class EstadoMapper : ICrudStatements, IObjectMapper
     {
         public BaseClass BuildObject(Dictionary<string, object> objectRow)
         {
-            var rol = new Rol()
+            var estado = new Estado()
             {
                 Id = int.Parse(objectRow["ID"].ToString()),
-                nombreRol = objectRow["NOMBRE_ROL"].ToString()     
+                nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
 
-            return rol;
+            return estado;
         }
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
@@ -28,23 +27,23 @@ namespace DataAccess.Mapper
 
             foreach (var objRow in listRows)
             {
-                var rol = BuildObject(objRow);
-                lstResult.Add(rol);
+                var estado = BuildObject(objRow);
+                lstResult.Add(estado);
             }
             return lstResult;
         }
 
+
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR_CREATE_ROL";
+            operation.ProcedureName = "PR_CREATE_ESTADO";
 
-            Rol rol = (Rol)entityDTO;
+            Estado estado = (Estado)entityDTO;
             //se agregan los parametros al operation
-            operation.AddVarcharParam("NOMBRE_ROL", rol.nombreRol);
+            operation.AddVarcharParam("NOMBRE_ESTADO", estado.nombreEstado );
 
             return operation;
-
         }
 
         public SqlOperation GetDeleteStatement(BaseClass entityDTO)
@@ -60,7 +59,7 @@ namespace DataAccess.Mapper
         public SqlOperation RetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR_GET_ALL_ROLES";
+            operation.ProcedureName = "PR_GET_ALL_ESTADOS";
 
             return operation;
         }
@@ -69,9 +68,9 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "PR_GET_ROL_BY_ID";
+            operation.ProcedureName = "PR_GET_ESTADO_BY_ID";
 
-            operation.AddIntegerParam("RolID", Id);
+            operation.AddIntegerParam ("ID", Id);
 
             return operation;
         }

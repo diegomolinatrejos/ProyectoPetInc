@@ -10,28 +10,37 @@ namespace DataAccess.Mapper
 {
     public class UsuarioMapper : ICrudStatements, IObjectMapper
     {
-        public BaseClass BuildObject(Dictionary<string, object> row)
+        public BaseClass BuildObject(Dictionary<string, object> objectRow)
         {
             var usuario = new Usuario()
             {
-                email = row["Email"].ToString(),
-                contrasena = row["Contrasena"].ToString(),
-                nombre = row["nombre"].ToString(),
-                apellido1 = row["apellido1"].ToString(),
-                apellido2 = row["apellido2"].ToString(),
-                documentoIdentidad = row["documentoIdentidad"].ToString(),
-                telefono = row["telefono"].ToString(),
-                direccionMapa = row["direccionMapa"].ToString(),
-                foto = row["foto"].ToString(),
+                Id = int.Parse(objectRow["ID"].ToString()),
+                email = objectRow["EMAIL"].ToString(),
+                contrasena = objectRow["CONTRASENA"].ToString(),
+                nombre = objectRow["NOMBRE"].ToString(),
+                apellido1 = objectRow["APELLIDO_1"].ToString(),
+                apellido2 = objectRow["APELLIDO_2"].ToString(),
+                documentoIdentidad = objectRow["DOCUMENTO_IDENTIDAD"].ToString(),
+                telefono = objectRow["TELEFONO"].ToString(),
+                direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
+                foto = objectRow["FOTO"].ToString(),
             };
 
             var rol = new Rol()
             {
-                Id = int.Parse(row["Rol_Id"].ToString()),
-                nombreRol = row["nombreRol"].ToString(),   
+                Id = int.Parse(objectRow["ID"].ToString()),
+                //nombreRol = objectRow["NOMBRE_ROL"].ToString()   
             };
 
-            usuario.rolInfo = rol;
+
+            var estado = new Estado()
+            { 
+                Id = int.Parse(objectRow["ID"].ToString()),
+                //nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
+            };
+
+            usuario.rol = rol;
+            usuario.estadoInfo = estado;
 
             return usuario;
         }
@@ -56,16 +65,17 @@ namespace DataAccess.Mapper
             Usuario usuario = (Usuario)entityDTO;
 
             //agregar los parametros al operation
-            operation.AddVarcharParam("email", usuario.email);
-            operation.AddVarcharParam("contrasena", usuario.contrasena);
-            operation.AddVarcharParam("nombre", usuario.nombre);
-            operation.AddVarcharParam("apellido1", usuario.apellido1);
-            operation.AddVarcharParam("apellido2", usuario.apellido2);
-            operation.AddVarcharParam("documentoIdentidad", usuario.documentoIdentidad);
-            operation.AddVarcharParam("telefono", usuario.telefono);
-            operation.AddVarcharParam("direccionMapa", usuario.direccionMapa);
-            operation.AddVarcharParam("foto", usuario.foto);
-            operation.AddVarcharParam("rol", usuario.rolInfo.nombreRol);
+            operation.AddVarcharParam("EMAIL", usuario.email);
+            operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
+            operation.AddVarcharParam("NOMBRE", usuario.nombre);
+            operation.AddVarcharParam("APELLIDO_1", usuario.apellido1);
+            operation.AddVarcharParam("APELLIDO_2", usuario.apellido2);
+            operation.AddVarcharParam("DOCUMENTO_IDENTIDAD", usuario.documentoIdentidad);
+            operation.AddVarcharParam("TELEFONO", usuario.telefono);
+            operation.AddVarcharParam("DIRECCION_MAPA", usuario.direccionMapa);
+            operation.AddVarcharParam("FOTO", usuario.foto);
+            operation.AddIntegerParam("ROL", usuario.rol.Id);
+            operation.AddIntegerParam ("ESTADO", usuario.estadoInfo.Id);
 
 
             return operation;
@@ -85,7 +95,7 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "";
+            operation.ProcedureName = "PR_GET_ALL_USUARIOS";
 
             return operation;
         }
@@ -94,9 +104,9 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "";
+            operation.ProcedureName = "PR_GET_USUARIO_BY_ID";
 
-            operation.AddIntegerParam("usuario_id", Id);
+            operation.AddIntegerParam("ID", Id);
 
             return operation;
         }
