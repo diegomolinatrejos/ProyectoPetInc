@@ -29,14 +29,13 @@ namespace DataAccess.Mapper
             var rol = new Rol()
             {
                 Id = int.Parse(objectRow["ID"].ToString()),
-                //nombreRol = objectRow["NOMBRE_ROL"].ToString()   
+                nombreRol = objectRow["NOMBRE_ROL"].ToString()
             };
-
 
             var estado = new Estado()
             { 
                 Id = int.Parse(objectRow["ID"].ToString()),
-                //nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
+                nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
 
             usuario.rol = rol;
@@ -75,7 +74,7 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("DIRECCION_MAPA", usuario.direccionMapa);
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
-            operation.AddIntegerParam ("ESTADO", usuario.estadoInfo.Id);
+            operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
 
 
             return operation;
@@ -106,7 +105,7 @@ namespace DataAccess.Mapper
 
             operation.ProcedureName = "PR_GET_USUARIO_BY_ID";
 
-            operation.AddIntegerParam("ID", Id);
+            operation.AddIntegerParam("usuario_id", Id);
 
             return operation;
         }
@@ -118,7 +117,7 @@ namespace DataAccess.Mapper
         {
             var operation = new SqlOperation()
             {
-                ProcedureName = ""
+                ProcedureName = "PR_GET_USUARIO_BY_PHRASE"
             };
 
             operation.AddVarcharParam("searchPhrase", searchPhrase);

@@ -33,5 +33,22 @@ namespace API.Controllers
 
         }
 
+        [HttpGet]
+        public Usuario GetUsuarioPorId (int id)
+        {
+            AdminUsuarios adminUsuario = new AdminUsuarios();
+            return adminUsuario.GetUsuarioById(id);
+            
+        }
+        [HttpGet]
+        public List <Usuario> GetUsuarioPorFrase(string searchPhrase)
+        {
+            AdminUsuarios adminUsuario = new AdminUsuarios();
+
+            return adminUsuario.GetUsuarioByPhrase (searchPhrase);
+
+        }
+
+
     }
 }

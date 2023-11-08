@@ -31,5 +31,17 @@ namespace App_Logic.Admins
             return uCrud.RetrieveById<Usuario>(Id);
 
         }
+        public List<Usuario> GetUsuarioByPhrase(string searchPhrase)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            return uCrud.RetrieveBySearchPhrase <Usuario>(searchPhrase);
+        }
+
+        public static Usuario AuthenticateUser(string email, string password)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            return uCrud.UsuarioAutenticado(email, password);
+        }
+
     }
 }

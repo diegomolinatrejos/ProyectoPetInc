@@ -83,5 +83,19 @@ namespace DataAccess.Crud
             }
             return lstResults;
         }
+
+        public Usuario UsuarioAutenticado(string email, string password)
+        {
+            var lstResults = RetrieveBySearchPhrase <Usuario>(email);
+
+            if (lstResults.Count > 0)
+            {
+                // El método RetreiveUserByPhrase ya filtra por nombre de usuario, ahora verifica la contraseña
+                var authenticatedUser = lstResults.FirstOrDefault(user => user.contrasena == password);
+                return authenticatedUser;
+            }
+
+            return null;
+        }
     }
 }

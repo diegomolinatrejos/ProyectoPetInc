@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor Accesor
+<DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,10 +39,17 @@
                             <a class="nav-link" href="#contacto">Contáctenos</a>
                         </li>
                     </ul>
-                    <div class="nav-bottoms">
-                        <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Iniciar Sesión</button>
+                      @if (Accesor.HttpContext.Session.GetString("email") == null)
+                        {
+                    <div class="nav-bottoms" style="text-align:right">
+                            <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
+                            <a asp-controller="Login" asp-action="Login"  class="btn btn-secondary my-2 my-sm-0" type="text/asp">Iniciar Sesión</a>
                     </div>
+                        }else
+                    {
+                        var user = "Bienvenido: " + Accesor.HttpContext.Session.GetString("nombre");
+                        <a asp-controller="Login" asp-action="Logout" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Logout</a>
+                    }
                 </div>
             </div>
         </nav>
