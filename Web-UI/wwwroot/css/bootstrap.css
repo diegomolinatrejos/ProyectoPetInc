@@ -12508,7 +12508,7 @@ gmp-map {
 }
 */
 
-.last-section {
+.last-section{
     background-image: url('/media/img/fondo1.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -12531,3 +12531,11 @@ gmp-map {
     }
 
 /*--------------------------------------------------------------------------FIN DEL CSS del LandingPage de Pets Inc----------------------------------------------------------------*/
+
+
+.dashboard {
+    background-image: url('/media/img/fondo1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

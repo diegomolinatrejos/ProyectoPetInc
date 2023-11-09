@@ -7,36 +7,12 @@ namespace Web_UI.Controllers
 {
     public class LandingPagePetsIncController : Controller
     {
-        private readonly ILogger<LandingPagePetsIncController> _logger;
 
-        public LandingPagePetsIncController(ILogger<LandingPagePetsIncController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
+        public IActionResult _LayoutLanding()
         {
             return View();
         }
 
-        public IActionResult About()
-        {
-            return View();
-        }
 
-        public IActionResult Device()
-        {
-            return View();
-        }
-
-        public IActionResult Services()
-        {
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            return View();
-        }
     }
 }
