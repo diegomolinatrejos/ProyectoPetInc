@@ -7,15 +7,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Configuracion de CORS
-builder.Services.AddCors(options => {
+// configuracion de CORS
+
+builder.Services.AddCors(options =>
+{
     options.AddPolicy(name: "MyCorsPolicy",
-             policy => {
-                 policy.AllowAnyOrigin();  //www.mypage.com, www.mypage.net, otros
-                 policy.AllowAnyHeader(); //application/json, application/xml, application/text, application/html
-                 policy.AllowAnyMethod(); // GET, POST, PUT, DELETE 
-             });
+        policy =>
+        {
+            policy.AllowAnyOrigin();// www.mypage.com, www.mypage.net, otros
+            policy.AllowAnyHeader();// application /json, aplication/xml, application/text, application/html
+            policy.AllowAnyMethod();// get, post, put, delete
+        });
 });
+
 
 var app = builder.Build();
 
@@ -26,8 +30,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();

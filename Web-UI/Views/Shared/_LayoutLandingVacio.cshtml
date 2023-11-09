@@ -1,0 +1,62 @@
+﻿@inject IHttpContextAccessor Accesor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pets Inc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" /> 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav id="barra" class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+    </header>
+
+   
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95a5a6" fill-opacity="1" d="M0,128L60,160C120,192,240,256,360,250.7C480,245,600,171,720,154.7C840,139,960,181,1080,192C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+   @RenderBody()
+   
+  
+
+    <footer class="footer" style="background-color:#2c3e50">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95a5a6" fill-opacity="1" d="M0,160L30,181.3C60,203,120,245,180,234.7C240,224,300,160,360,122.7C420,85,480,75,540,96C600,117,660,171,720,176C780,181,840,139,900,112C960,85,1020,75,1080,74.7C1140,75,1200,85,1260,80C1320,75,1380,53,1410,42.7L1440,32L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+        <div style="text-align: center; margin-top: -5%;">
+            <p class="" style="color: #ffffff; font-size: 18px; font-weight: bold;">Pets Inc</p>
+            <div style=" width: 100%; height: 70px;">
+                <a href="https://www.instagram.com/" target="_blank"><img src="~/media/img/insta.svg" class="iconos-footer" alt="Perfil de Instagram"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="~/media/img/fc.svg" class="iconos-footer" alt="Perfil de Facebook"></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><img src="~/media/img/ws.svg" class="iconos-footer" alt="Chat de WhatsApp"></a>
+            </div>
+            <hr class="linea-footer">
+            <p> <a href="#" style="text-decoration: none; color: #ffffff">Quantum Coders &copy; 2023</a></p>
+            <p style="color: #ffffff; margin-bottom: 0%;">Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-hZqp_2KmHJWm0e7MmdTobU8eAozfI8s&callback=console.debug&libraries=maps,marker&v=beta"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

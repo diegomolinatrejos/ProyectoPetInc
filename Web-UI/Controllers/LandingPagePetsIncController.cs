@@ -14,5 +14,15 @@ namespace Web_UI.Controllers
         }
 
 
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
     }
 }

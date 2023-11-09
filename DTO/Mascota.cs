@@ -18,5 +18,10 @@ namespace DTO.Models
         public string foto1 { get; set; }
         public string foto2 { get; set; }
         public int estado { get; set; }
+
+        //public static implicit operator Mascota(Mascota v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

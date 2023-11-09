@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTO.Models
 {
-    public class BaseClass
+    public class Estado : BaseClass
     {
-        public int Id { get; set; }
-
+        public string nombreEstado {  get; set; }
     }
 }
