@@ -124,28 +124,103 @@
 
     <section id="perfilUsuario">
         <h1 class="titulo">Información de Perfil</h1>
-        <div class="contenedor-datos-perfil" style="display: block; text-align: start; margin-left: 5%">               
-           <h2 class="col-sm-2 col-form-label titulo-perfil">Nombre</h2>
-            <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Limberth Isaias Hernandez Mora">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Identificación</h2>
-            <input id="identificación" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="20990111">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Teléfono</h2>
-            <input id="telefono" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="88888822">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico</h2>
-            <input id="email" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="usuario@inicial.com">
+
+
+        <div class="contenedor perfil-info">
+        <div class="contenedor-datos-perfil">               
+           <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
+            <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="nombrePerfil" value="Limberth Isaias Hernandez Mora">
+            <label class="col-sm-2 col-form-label titulo-perfil">Identificación:</label>
+            <input id="identificación" type="text" readonly="" class="form-control-plaintext" id="emailPerfil" value="20990111">
+            <label class="col-sm-2 col-form-label titulo-perfil">Teléfono:</label>
+            <input id="telefono" type="text" readonly="" class="form-control-plaintext" id="telefonoPerfil" value="88888822">
+            <label class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico:</label>
+            <input id="email" type="text" readonly="" class="form-control-plaintext" id="emailPerfil" value="usuario@inicial.com">
+            <label class="col-sm-2 col-form-label titulo-perfil">Rol:</label>
+            <input id="email" type="text" readonly="" class="form-control-plaintext" id="rolPerfil" value="Administrador">
         </div>
 
+            <div style="width:50%;">
+                <img src="~/media/img/perfildefault.png">
+        </div>
+        </div>
 
-            <div id="datos" style="margin-top: 6px">
-                <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com">
-            </div>
-
-            <div>
-                 <img src=" ~/media/img/perfilDefault.png" style="height: auto; width: 100%;">
-            </div>
+        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #2C3E50;"></path>
+            </svg>
         </div>
     </section>
 
+
+   @*  <section id="registroMascota">
+        <h1 class="titulo">Registro de Mascotas</h1>
+
+
+        <div class="contenedor mascota-info">
+            <div class="contenedor-registro-mascota">
+                <form action="" class="registro-mascota">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota</label>
+                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre de su mascota">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Raza</label>
+                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingrese la raza de su mascota">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Edad</label>
+                    <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad</label>
+                    <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Descripción</label>
+                    <textarea class="form-control" id="mensaje" rows="3" style="height: 145px;" spellcheck="false" placeholder="Descripción"></textarea>
+                    <button type="submit" class="btn btn-primary" id="boton-enviar">Registrar</button>
+                </form>
+               
+            </div>
+
+            <div id="ContenedorListaMascotas">
+                <h2>Mascotas Actuales</h2>
+                <table class="table table-hover tabla-mascotas-registro">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Agresividad</th>
+                            <th scope="col">Activo</th>
+                            <th scope="col">Inactivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-active">
+                            <td>Toto</td>
+                            <td>Labrador</td>
+                            <td>4 meses</td>
+                            <td>1</td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                        </tr>
+                        <tr class="table-active">
+                            <td>Yoda</td>
+                            <td>Bull Terrier</td>
+                            <td>10 años</td>
+                            <td>4</td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                        </tr>
+                        <tr class="table-active">
+                            <td>Kobe</td>
+                            <td>Labrador</td>
+                            <td>3 años</td>
+                            <td>3</td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                        </tr>
+                    </tbody>
+            </div>
+        </div>
+
+      
+    </section>
+ *@
 
 @*     <footer class="border-top footer text-muted">
         <div class="container">

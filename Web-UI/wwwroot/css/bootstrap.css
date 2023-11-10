@@ -12553,72 +12553,170 @@ gmp-map {
 /*formulario*/
 
 #perfilUsuario {
+
     text-align: center;
 }
 
-.titulo-perfil{
-    font-weight: bold;
+.perfil-info {
+    margin-top: -5%;
+}
 
+.titulo-perfil {
+    font-weight: bold;
 }
 
 .contenedor-datos-perfil {
     display: block;
     text-align: start;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 6%;
-}
-
-.
-
-.form {
-    display: grid;
-}
-
-.input {
-    background: transparent;
-    color: #000000;
-    outline: none;
-    border: 3px solid #5627c2;
-    border-radius: 5px;
-    padding: 20px 10px;
-}
-
-    .input::placeholder {
-        color: #000000;
-        font-family: 'raleway', 'sans-serif';
-    }
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    display: inline-block;
-    /*    width: 49%;*/
-    margin-bottom: 30px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-}
-
-.form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-input[type="submit"] {
-    width: 120px;
-    text-align: center;
-    padding: 14px 0;
-}
-
-    input[type="submit"]:hover {
-        cursor: pointer;
-        color: rgb(0, 0, 0);
-        background: #fad0c4;
-    }
-
-
-.form {
     width: 50%;
-    margin-left: 10%; /*Para que se pueda usar con el Mapa*/
 }
 
+
+
+    .contenedor-datos-perfil label {
+        width: 100%;
+    }
+
+
+    .contenedor-datos-perfil input {
+        width: 100%;
+    }
+
+
+
+.contenedor-perfil-info img {
+    margin-left: -30%;
+}
+
+
+
+/*------------------------------------------------------------Formulario de registro de mascotas----------------------------------------------------------*/
+
+#registroMascota {
+    text-align: center;
+}
+
+.perfil-info {
+    margin-top: -5%;
+}
+
+.titulo-perfil {
+    font-weight: bold;
+}
+
+.contenedor-registro-mascota {
+    display: block;
+    text-align: start;
+    margin-top: 6%;
+    width: 50%;
+}
+
+.registro-mascota {
+    width: 92%;
+    /* margin-left: 10%;*/
+}
+
+.contenedor-registro-mascota label {
+    width: 100%;
+}
+
+
+    .contenedor-registro-mascota input {
+        width: 100%;
+    }
+
+
+
+.contenedor-perfil-info img {
+    margin-left: -30%;
+}
+
+#ContenedorListaMascotas{
+    margin-top: 5%;
+}
+
+.tabla-mascotas-registro {
+    border: solid;
+    border-color: #2C3E50;
+}
+
+
+@media screen and (max-width: 430px) {
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 12%;
+        margin-right: 0%;
+    }
+
+    .contenedor-registro-mascota {
+        display: block;
+        text-align: start;
+        margin-top: 6%;
+        width: 90%;
+    }
+
+
+    .registro-mascota {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .tabla-mascotas-registro {
+       font-size: 10px;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .titulo,
+    .textos-hero h1 {
+        font-size: 30px;
+    }
+
+    .textos-hero p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 9%;
+        margin-right: 0%;
+    }
+
+    .form {
+        width: 90%;
+        margin-left: 2%;
+    }
+}
+
+
+@media screen and (max-width:389px) {
+    .titulo,
+    .textos-hero h1 {
+        font-size: 30px;
+    }
+
+    .textos-hero p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #ContenedorCards {
+        display: block;
+        justify-content: center;
+        margin-left: 5%;
+        margin-right: 0%;
+    }
+
+    .form {
+        width: 90%;
+        margin-left: 2%;
+    }
+}
+.
 /*FIn*/
