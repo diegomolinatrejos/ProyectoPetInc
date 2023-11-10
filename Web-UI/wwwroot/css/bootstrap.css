@@ -12539,3 +12539,86 @@ gmp-map {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
+.dashboard {
+    background-image: url('/media/img/fondo1.png');
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*-----------------------------------------------Perfil de usuario----------------------------------------------------*/
+
+/*formulario*/
+
+#perfilUsuario {
+    text-align: center;
+}
+
+.titulo-perfil{
+    font-weight: bold;
+
+}
+
+.contenedor-datos-perfil {
+    display: block;
+    text-align: start;
+    margin-left: 10%;
+    margin-top: 6%;
+}
+
+.
+
+.form {
+    display: grid;
+}
+
+.input {
+    background: transparent;
+    color: #000000;
+    outline: none;
+    border: 3px solid #5627c2;
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+    .input::placeholder {
+        color: #000000;
+        font-family: 'raleway', 'sans-serif';
+    }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    display: inline-block;
+    /*    width: 49%;*/
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+}
+
+    input[type="submit"]:hover {
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        background: #fad0c4;
+    }
+
+
+.form {
+    width: 50%;
+    margin-left: 10%; /*Para que se pueda usar con el Mapa*/
+}
+
+/*FIn*/
