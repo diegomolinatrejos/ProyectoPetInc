@@ -1,15 +1,240 @@
-﻿@* @{
+﻿@inject IHttpContextAccessor Accesor
+@{
     ViewData["Title"] = "Home Page";
 }
+    <header>
+        <nav id="barra" class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dispositivoA">Dispositivo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contáctenos</a>
+                        </li>
+                    </ul>
+                    @if (Accesor.HttpContext.Session.GetString("email") == null)
+                    {
+                        <div class="nav-bottoms" style="text-align:right">
+                            <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
+                            <a asp-controller="Login" asp-action="Login" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Iniciar Sesión</a>
+                        </div>
+                    }
+                    else
+                    {
+                        var user = "Bienvenido: " + Accesor.HttpContext.Session.GetString("nombre");
+                        <a asp-controller="Login" asp-action="Logout" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Logout</a>
+                    }
+                </div>
+            </div>
+        </nav>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
- *@
 
-<div class="HomeLayoutAdmin dashboard" style=" width: 100%; text-align: center; padding: 18%; color: #333333;">
-        <h1>Bienvenido a la aplicación de Pets Inc</h1>
-        <h2>Que deseas realizar?</h2>
-    <img id="no" src="~/media/img/perroGift.gif" style="max-width: 40%; height: auto; margin-left: 6%; border-radius: 15px;">
-</div>
+        <div class="hero">
+            <div class="textos-hero">
+                <h1 style="text-align: center;">Bienvenidos a Pets Inc</h1>
+                <p>
+                    Confort, Hotel, Cuidado, Innovación y más.. <img src="~/media/img/mas2.png" style="height: 35px; width: 37px;">
+                </p>
+            </div>
+
+            <div class="svg-hero" style="height: 150px; overflow: hidden;">
+                <svg viewBox="0 0 500 150"
+                     preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                          style="stroke: none; fill: #fff;"></path>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios" class="estilo-servicios" style="margin-top: -6%;">
+        <h2 style="text-align: center; font:bold; margin-bottom: 50px; margin-top: 7%;">Nuestros Servicios</h2>
+
+        <div id="ContenedorCards">
+
+            <div class="card text-white bg-secondary mb-3 " style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/grooming1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Grooming</h5>
+                    <p class="card-text">Servicio de aseo y cuidado personal para que tus mascotas se vean y e sientan geniales.</p>
+                </div>
+            </div>
+
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/entrenamiento1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Entrenamiento</h5>
+                    <p class="card-text">Clases de entrenamiento profesional para mejorar el comportamiento y habilidades de tus mascotas.</p>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/vet1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Veterinaria</h5>
+                    <p class="card-text">Atención médica y cuidados veterinarios de alta calidad para mantener a tus mascotas sanas y felices.</p>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-secondary mb-3 last-card" style="max-width: 20rem; margin-right: 10px;">
+                <div class="card-image">
+                    <img src="~/media/servicios/paseo1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Paseos</h5>
+                    <p class="card-text">Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</p>
+                </div>
+            </div>
+
+
+            @*             <div class="card text-white bg-secondary mb-3 last-card" style="max-width: 20rem; margin-right: 10px;">
+            <div class="card-image">
+            <img src="~/media/servicios/cuidadoEspecial1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">Cuidado Especial</h5>
+            <p class="card-text">Servicios de atención personalizada y cuidado para mascotas con necesidades especiales o médicas.</p>
+            </div>
+            </div> *@
+
+        </div>
+
+
+        </div>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95a5a6" fill-opacity="1" d="M0,128L60,160C120,192,240,256,360,250.7C480,245,600,171,720,154.7C840,139,960,181,1080,192C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </section>
+
+
+
+    <section id="dispositivoA">
+        <div id="contenedorDispositivo">
+            <div class="dispositivo-info">
+                <h2 style="text-align: center; font:bold; margin-bottom: 50px; margin-top: 5%;">Nuestro Dispositivo</h2>
+                <div>
+                    <img src="~/media/img/werable.png" class="dispositivoImagen" style="border-radius: 15px">
+
+                    <div class="contenido">
+                        <p>
+                            Introducimos el "ComfortPet Sensor" un dispositivo vestible revolucionario diseñado para
+                            brindar a los dueños de mascotas la máxima tranquilidad y comodidad para sus amigos peludos. Con tecnología de vanguardia y una atención constante a la seguridad y el bienestar de su mascota, este dispositivo es una verdadera innovación en el cuidado de animales de compañía.
+                        </p>
+
+                        <h3 style="text-align: center; margin-bottom: 4%; margin-top: 4%;"> Características principales </h3>
+
+                        <p>
+                            <strong>⩥ Monitoreo de temperatura en tiempo real:</strong> El "ComfortPet Sensor" está equipado con sensores de temperatura avanzados que controlan constantemente el ambiente de la habitación de su mascota. Detecta cualquier aumento significativo en la temperatura y mantiene un registro preciso de las condiciones climáticas.
+                        </p>
+                        <p>
+                            <strong>⩥ Alertas personalizadas:</strong> Si la temperatura ambiente supera un umbral predefinido, el dispositivo genera una alerta para informarle de inmediato a través de su teléfono móvil. Esto le permite tomar medidas rápidas en caso de condiciones de calor inusualmente altas.
+                        </p>
+                        <p>
+                            <strong>⩥ Sistema de alerta crítica:</strong> Cuando la temperatura alcanza niveles peligrosos para su mascota, el dispositivo no solo le notifica, sino que también inicia automáticamente los ventiladores de la habitación para reducir la temperatura y proteger la salud de su compañero peludo.
+                        </p>
+                        <p style="margin-bottom: 8%;">
+                            Con el "ComfortPet Sensor", su mascota estará siempre protegida de las temperaturas extremas, y usted tendrá el control total de su bienestar, sin importar dónde se encuentre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="about" class="info-last" style="margin-top: -6%;">
+
+        <div class="svg-wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,100.02 C149.99,0.00 349.20,200.00 500.00,100.02 L500.00,0.00 L0.00,0.00 Z"
+                      style="stroke: none; fill: #95a5a6;"></path>
+            </svg>
+        </div>
+        <div class="contenedor last-section" style="display: flex; align-items: center;">
+            <div class="contenedor-textos-main">
+                <h2 class="titulo left">Sobre nosotros</h2>
+                <p class="parrafo-about">
+                    En Pets Inc, sabemos que tus mascotas son parte de tu familia, y su bienestar y felicidad son nuestra principal prioridad. Como un exclusivo hotel de mascotas,
+                    nos enorgullece ofrecer un refugio seguro y acogedor para tus amigos peludos cuando no puedes estar con ellos. Con años de experiencia en el cuidado de animales,
+                    hemos creado un entorno que combina comodidad, diversión y atención personalizada para garantizar que tus mascotas se sientan como en casa.
+                    Nuestro personal altamente capacitado está dedicado a brindar el mejor cuidado a tus mascotas. Desde alojamiento y alimentación de alta calidad hasta actividades
+                    recreativas y atención médica, nos esforzamos por superar tus expectativas y mantener a tus amigos de cuatro patas sanos y felices.
+
+                    <br>
+                    En Pets Inc, comprendemos la importancia de mantener un vínculo fuerte con tus mascotas, y por eso ofrecemos servicios de calidad excepcional. Ya sea que necesites alojar a tu mascota durante un viaje, proporcionarles un día divertido de juegos y socialización, o brindarles cuidados médicos de confianza, estamos aquí para cuidarlos como si fueran nuestros propios.
+                    Agradecemos la confianza que nos brindas al elegirnos para el cuidado de tus mascotas y estamos comprometidos a brindarles la mejor experiencia posible. Tu amor por tus mascotas se refleja en la confianza que depositas en nosotros, y en Pets Inc, cuidar a tus amigos peludos es un honor que tomamos en serio.
+                    Bienvenido a Pets Inc, donde cada mascota es una parte valiosa de nuestra familia.
+                </p>
+
+            </div>
+            <img id="no" src="~/media/img/verificadoP.gif" style="max-width: 40%; height: auto; margin-left: 6%; border-radius: 15px;">
+        </div>
+
+        <div class="svg-wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #95a5a6;"></path>
+            </svg>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="contacto">
+        <h2 class="titulo">Contáctanos!</h2>
+        <div class="contenedor">
+            <div>
+                <gmp-map center="9.933066368103027,-84.02772521972656" zoom="14" map-id="DEMO_MAP_ID">
+                    <gmp-advanced-marker position="9.933066368103027,-84.02772521972656" title="My location">
+                    </gmp-advanced-marker>
+                </gmp-map>
+                <h5 class="titulo left"><strong>San Jose, Curridabat, Granadilla</strong></h5>
+                <p class="parrafo" style="text-align: center;">Calle Frente a Crispy Churros Granadilla, 150 m este a mano derecha.</p>
+                <p class="parrafo" style="text-align: center;">Horario: Lunes a Viernes 8 AM a 5 PM, Sábado y Domingo 9 AM a 5 PM</p>
+            </div>
+            <form action="" class="form">
+                <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Correo Electronico">
+                <input type="tel" class="form-control" id="telefono" aria-describedby="emailHelp" placeholder="Número telefonico">
+                <textarea class="form-control" id="mensaje" rows="3" style="height: 145px;" spellcheck="false" placeholder="Mensaje"></textarea>
+                <button type="submit" class="btn btn-primary" id="boton-enviar">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+

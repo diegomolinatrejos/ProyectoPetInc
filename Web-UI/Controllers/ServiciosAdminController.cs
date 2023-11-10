@@ -4,7 +4,7 @@ namespace Web_UI.Controllers
 {
     public class ServiciosAdminController : Controller
     {
-        public IActionResult Index()
+        public IActionResult DashBoardAdmin()
         {
             return View();
         }

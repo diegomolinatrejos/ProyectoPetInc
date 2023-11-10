@@ -17,12 +17,12 @@ namespace Web_UI.Controllers
         }
         public IActionResult Cancel()
         {
-            return RedirectToAction("Index", "LandingPagePetsInc");
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "LandingPagePetsInc");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -43,7 +43,7 @@ namespace Web_UI.Controllers
             HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
             HttpContext.Session.SetString("nombre", userAutenticado.nombre);
 
-            return RedirectToAction("Index", "LandingPagePetsInc");
+            return RedirectToAction("DashboardHome", "Dashboard");
         }
     }
 }
