@@ -122,9 +122,50 @@
     </div>
 
 
-    <section id="perfilUsuario">
-        <h1 class="titulo">Información de Perfil</h1>
-        <div class="contenedor-datos-perfil" style="display: block; text-align: start; margin-left: 5%">               
+    <section id="registroDeReserva">
+        <div class="text-center">
+            <h1 class="display-4">Reservas</h1>
+        </div>
+        <div class="form-group">
+            <!--Formulario para mostrar datos de la Lista-->
+            <form id="frmCrearReserva">
+                <div>
+                    <label for="txtNombreCliente">Nombre del Cliente:</label>
+                    <select id="listaClientes" class="form-select">
+                </div>
+                <div>
+                    <label for="txtNombreMascota">Nombre de la Mascota:</label>
+                    <select id="listaMascotas" class="form-select">
+                </div>
+                <div id="serviciosConPaquetes">
+                    <div>
+                        <label for="txtServicios">Servicios: </label>
+                        <select id="listaServicios" class="form-select" multiple>
+                            <option value="1">Servicio 1</option>
+                            <option value="2">Servicio 2</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="txtPaquetes">Paquetes : </label>
+                        <select id="listaPaquetes" class="form-select" multiple>
+                            <option value="1">Paquete 1 - Descripción 1</option>
+                            <option value="2">Paquete 2 - Descripción 2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="btnCreate">Crear Reserva</button>
+                    <button type="reset" class="btn btn-info" id="btnReset">Limpiar</button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+@* 
+        <div class="contenedor-datos-reserva" style="display: block; text-align: start; margin-left: 5%">               
            <h2 class="col-sm-2 col-form-label titulo-perfil">Nombre</h2>
             <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Limberth Isaias Hernandez Mora">
             <h2 class="col-sm-2 col-form-label titulo-perfil">Identificación</h2>
@@ -143,7 +184,7 @@
             <div>
                  <img src=" ~/media/img/perfilDefault.png" style="height: auto; width: 100%;">
             </div>
-        </div>
+        </div> *@
     </section>
 
 
