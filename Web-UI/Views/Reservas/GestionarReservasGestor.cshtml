@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="realizarReserva">
+    <h1 class="titulo">Gestionar reservas</h1>
+
+    <div style="max-width: 90%; margin-left: 5%;">
+        <input class="form-control me-sm-2" type="search" placeholder="Buscar reservas por usuario..">
+        <button class="btn btn-secondary my-2 my-sm-0" style="margin-bottom: 2%; margin-top: 2%;" type="submit">Buscar</button>
+    </div>
+
+    <div id="contenedorListaReservas" style="font-size: 14px;">
+        <table class="table table-hover tabla-servicios-registro" style=" max-width: 90%; margin-left: 5%; margin-bottom: 12%;">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre del cliente</th>
+                    <th scope="col">Nombre de la mascota</th>
+                    <th scope="col">Número de reserva</th>
+                    <th scope="col">Fecha de llegada</th>
+                    <th scope="col">Fecha de reserva</th>
+                    <th scope="col">Servicios</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Asignar dispositivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    <td>Alejandro Salazar Lobo</td>
+                    <td>Toto</td>
+                    <td>3</td>
+                    <td>12/11/2023</td>
+                    <td>16/11/2023</td>
+                    <td>Paquete de Hospedaje + Grooming</td>
+                    <td>₡34.000</td>
+                    <td>Pendiente</td>
+                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Asignar dispositivo</button></td>
+                </tr>
+                <tr class="table-active">
+                    <td>Diego Molina Trejos</td>
+                    <td>Kolbi</td>
+                    <td>2</td>
+                    <td>18/10/2023</td>
+                    <td>22/10/2023</td>
+                    <td>Hospedaje</td>
+                    <td>₡20.000</td>
+                    <td>Inactiva</td>
+                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                </tr>
+                <tr class="table-active">
+                    <td>Alejandro Salazar Lobo</td>
+                    <td>Kobe</td>
+                    <td>1</td>
+                    <td>18/10/2023</td>
+                    <td>22/10/2023</td>
+                    <td>Hospedaje</td>
+                    <td>₡20.000</td>
+                    <td>Inactiva</td>
+                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #2C3E50;"></path>
+            </svg>
+        </div>
+    </div>
+</section>

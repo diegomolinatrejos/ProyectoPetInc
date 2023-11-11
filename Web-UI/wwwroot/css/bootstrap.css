@@ -12611,7 +12611,55 @@ gmp-map {
 /*------------------------------------------Realizar Reserva----------------------------------------------------------*/
 
 
+#realizarReserva {
+    text-align: center;
+}
 
+.perfil-info {
+    margin-top: -5%;
+}
+
+.contenedor-registro-reserva {
+    display: block;
+    text-align: start;
+    margin-top: 6%;
+    width: 50%;
+}
+
+.registro-reserva {
+    width: 92%;
+    /* margin-left: 10%;*/
+}
+
+.contenedor-registro-reserva label {
+    width: 100%;
+}
+
+
+.contenedor-registro-reserva input {
+    width: 100%;
+}
+
+
+.contenedor-registro-reserva button {
+    margin-left:32%;
+}
+
+
+
+.contenedor-perfil-info img {
+    margin-left: -30%;
+}
+
+#contenedorListaReservas {
+    margin-top: 8%;
+}
+
+
+.tabla-servicios-registro {
+    border: solid;
+    border-color: #2C3E50;
+}
 
 
 /*------------------------------------------Registrar Dispositivo-------------------------------------------------------*/
@@ -12689,8 +12737,19 @@ gmp-map {
         margin-left: 3%;
     }
 
+
+
     .tabla-mascotas-registro {
         font-size: 12px;
+    }
+
+    .contenedor-registro-reserva {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .contenedor-registro-reserva button {
+        margin-left: 37%;
     }
 
 
@@ -12805,6 +12864,26 @@ gmp-map {
 
     .tabla-mascotas-registro {
        font-size: 10px;
+    }
+
+
+    .contenedor-registro-reserva {
+        display: block;
+        text-align: start;
+        margin-top: 6%;
+    }
+
+        .contenedor-registro-reserva button {
+            margin-left: 23%;
+        }
+
+    .registro-reserva {
+        width: 100%;
+        margin-left: 3%;
+    }
+
+    .tabla-servicios-registro {
+        font-size: 10px;
     }
 
     #contenedorNovedades {
