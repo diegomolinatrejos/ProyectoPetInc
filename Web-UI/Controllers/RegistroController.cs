@@ -13,6 +13,19 @@ namespace Web_UI.Controllers
         {
             return View();
         }
-    }// fin de la clase
 
-}// fin de namespace
+
+        public IActionResult Register()
+        {
+            return RedirectToAction("Login", "Login");
+
+        }
+
+        public IActionResult Cancel()
+        {
+            return RedirectToAction("Index", "Home");
+
+         }
+    }
+
+}
