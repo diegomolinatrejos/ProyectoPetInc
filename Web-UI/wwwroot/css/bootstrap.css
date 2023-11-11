@@ -12608,6 +12608,48 @@ gmp-map {
     margin-bottom: 2%;
 }
 
+/*------------------------------------------------------------Formulario de registro de usuario----------------------------------------------------------*/
+
+#registroUsuario {
+    text-align: center;
+}
+
+
+
+.contenedor-registro-usuario {
+    display: block;
+    text-align: center;
+    margin-top: 3%;
+    width: 90%;
+    margin-bottom: 5%;
+}
+
+.registro-usuario {
+    width: 70%;
+    margin-left: 20%;
+    padding: 0% 10%;
+}
+
+
+.contenedor-registro-usuario label {
+    width: 100%;
+}
+
+
+.contenedor-registro-usuario input {
+    background-color: #ECF0F1;
+    width: 100%;
+}
+
+.contenedor-registro-usuario textarea {
+    background-color: #ECF0F1;
+}
+
+.contenedor-registro-usuario button {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 /*------------------------------------------Realizar Reserva----------------------------------------------------------*/
 
 

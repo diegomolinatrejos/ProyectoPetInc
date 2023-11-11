@@ -8,5 +8,11 @@ namespace Web_UI.Controllers
         {
             return View();
         }
-    }
-}
+
+        public IActionResult RegistroUsuario()
+        {
+            return View();
+        }
+    }// fin de la clase
+
+}// fin de namespace

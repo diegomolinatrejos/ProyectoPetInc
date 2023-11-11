@@ -1,0 +1,43 @@
+﻿@section Scripts {
+    <script src="~/js/pages/registros/RegistroUsuario.js"></script>
+ }
+
+@{
+    ViewBag.Title = "Registrar Usuario";
+    Layout = "../Shared/_LayoutLandingVacio.cshtml";
+}
+
+<section id="registroUsuario">
+    <h1 class="titulo">Registro de Usuarios</h1>
+    <div class="contenedor-registro-usuario">
+        <form action="" class="registro-usuario">
+            <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Apellido 1:</label>
+            <input type="text" class="form-control" id="apellido1" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Apellido 2:</label>
+            <input type="text" class="form-control" id="apellido2" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Identificación:</label>
+            <input type="text" class="form-control" id="identificacion" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Correo electrónico:</label>
+            <input type="email" class="form-control" id="email" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Direccion:</label>
+            <input type="text" class="form-control" id="direccion" style="margin-bottom: 2%;">
+            <div class"fotos-registro-usuario">
+                <label class="col-sm-2 col-form-label titulo-perfil">Foto:</label>
+                <input type="file" class="form-control foto-servicio-formulario" id="fotoUsuario">
+            </div>
+            <button type="submit" class="btn btn-primary" id="boton-enviar">Registrar</button>
+            <button type="submit" class="btn btn-primary" id="boton-cancelar">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
