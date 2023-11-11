@@ -10,8 +10,5 @@ namespace DTO.Models
     {
         public int Id { get; set; }
 
-        public string nombreEstado { get; set; }  
-
-        public bool numeroEstado { get; set; }
     }
 }

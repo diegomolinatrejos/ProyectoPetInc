@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="perfilUsuario">
+    <h1 class="titulo">Información de Perfil</h1>
+
+
+    <div class="contenedor perfil-info">
+        <div class="contenedor-datos-perfil">
+            <h2 class="col-sm-2 col-form-label titulo-perfil">Nombre</h2>
+            <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Limberth Isaias Hernandez Mora">
+            <h2 class="col-sm-2 col-form-label titulo-perfil">Identificación</h2>
+            <input id="identificación" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="20990111">
+            <h2 class="col-sm-2 col-form-label titulo-perfil">Teléfono</h2>
+            <input id="telefono" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="88888822">
+            <h2 class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico</h2>
+            <input id="email" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="usuario@inicial.com">
+        </div>
+
+        <div style="width:50%;">
+            <img src="~/media/img/perfildefault.png">
+        </div>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+

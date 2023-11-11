@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+
+<section id="configuracionBase">
+    <h1 class="titulo">Configuración de precios base</h1>
+    <div class="contenedor-registro-servicio">
+        <form action="" class="registro-servicio">
+            <label class="col-sm-2 col-form-label titulo-perfil">Monto de impuesto:</label>
+            <input type="text" class="form-control" id="impuesto" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Monto base de paquetes:</label>
+            <input type="text" class="form-control" id="paquetes" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Monto base de servicios:</label>
+            <input type="text" class="form-control" id="servicio">
+
+            <button type="submit" class="btn btn-primary" id="boton-enviar">Guardar</button>
+            <button type="submit" class="btn btn-primary" id="boton-enviar">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
