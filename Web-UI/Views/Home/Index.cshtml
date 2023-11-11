@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@*      <header>
+      <header>
         <nav id="barra" class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Novedades</a>
+                        <a class="nav-link" href="#novedades">Novedades</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#servicios">Servicios</a>
@@ -27,18 +27,10 @@
                             <a class="nav-link" href="#contacto">Contáctenos</a>
                         </li>
                     </ul>
-                    @if (Accesor.HttpContext.Session.GetString("email") == null)
-                    {
-                        <div class="nav-bottoms" style="text-align:right">
-                            <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
-                            <a asp-controller="Login" asp-action="Login" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Iniciar Sesión</a>
-                        </div>
-                    }
-                    else
-                    {
-                        var user = "Bienvenido: " + Accesor.HttpContext.Session.GetString("nombre");
-                        <a asp-controller="Login" asp-action="Logout" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Logout</a>
-                    }
+                <div class="nav-bottoms" style="text-align:right">
+                    <button id="boton" class="btn btn-secondary my-2 my-sm-0" type="submit">Registrarse</button>
+                    <a asp-controller="Login" asp-action="Login" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Iniciar Sesión</a>
+                </div>
                 </div>
             </div>
         </nav>
@@ -62,10 +54,63 @@
         </div>
     </header>
 
+
+    <section id="novedades" style="text-align: center;">
+
+        <h2> Novedades </h2>
+
+    <div id="contenedorNovedades">
+
+        <div id="novedad1" class="card text-white bg-secondary mb-3 anuncio">
+            <div class="card-body">
+                <div class="contenido-Novedad">
+                <div class="card-content">
+                <h5 class="card-title">Nuevo Paquete!!!</h5>
+                        <p class="card-text" style="font-size: 12px;">
+                            Nuevo paquete de servicios con precio especial!
+                            Disfruta de un nuevo paquete que incluye el servicio de hospedaje de 3 noches + groming a un increible precio.
+                        
+                        <br>
+                            <br>
+
+                            <strong> Precio: ₡35.000 </strong>
+
+                        </p>
+                </div>
+                    <div class="card-image imagen-novedades card-content">
+                        <img src="~/media/servicios/grooming1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <div id="novedad2" class="card text-white bg-secondary mb-3 anuncio">
+                <div class="card-body" style="text-align: justify">
+                    <div class="contenido-Novedad">
+                    <div class="card-content">
+                            <h5 class="card-title">Nueva Compañia!!!</h5>
+                            <p class="card-text" style="font-size: 12px;">
+                                ¡Estamos emocionados de anunciar que César Millán, el famoso “Encantador de Perros”, estará con nosotros como socio en Pets Inc! 
+                                Conocido por su increíble habilidad para entender y comunicarse con los perros, César compartirá sus valiosos conocimientos y
+                            experiencias con nosotros y brindara a tus mascotas experiencias únicas e inolvidables llenas de aprendizaje y diversión!
+                            </p>
+                        </div>
+                        <div class="card-image imagen-novedades card-content">
+                            <img src="~/media/img/cesarMillan.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                        </div>
+                    </div>
+                </div>
+           </div>
+      </div>  
+
+    </section>
+
+
     <section id="servicios" class="estilo-servicios" style="margin-top: -6%;">
         <h2 style="text-align: center; font:bold; margin-bottom: 50px; margin-top: 7%;">Nuestros Servicios</h2>
 
-        <div id="ContenedorCards">
+        <div id="contenedorCards">
 
             <div class="card text-white bg-secondary mb-3 " style="max-width: 20rem; margin-right: 10px;">
                 <div class="card-image">
@@ -110,29 +155,12 @@
                     <p class="card-text">Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</p>
                 </div>
             </div>
-
-
-            @*             <div class="card text-white bg-secondary mb-3 last-card" style="max-width: 20rem; margin-right: 10px;">
-            <div class="card-image">
-            <img src="~/media/servicios/cuidadoEspecial1.jpg" class="d-block user-select-none" width="100%" height="200" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">Cuidado Especial</h5>
-            <p class="card-text">Servicios de atención personalizada y cuidado para mascotas con necesidades especiales o médicas.</p>
-            </div>
-            </div> *@
-
-@*         </div>
-
-
-        </div>
-        </div>
-
+       </div>
 
         <br>
         <br>
         <br>
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95a5a6" fill-opacity="1" d="M0,128L60,160C120,192,240,256,360,250.7C480,245,600,171,720,154.7C840,139,960,181,1080,192C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
     </section>
 
@@ -237,4 +265,4 @@
         </div>
     </section> 
 
- *@
+

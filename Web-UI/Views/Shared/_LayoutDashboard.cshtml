@@ -101,10 +101,6 @@
                                 </li>
                             }
                         }
-                       @*  <li class="nav-item">
-                            <text>Bienvenido: @Accesor.HttpContext.Session.GetString("nombre")</text>
-                            <a asp-controller="Login" asp-action="Logout" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Logout</a>
-                        </li> *@
                     </ul>
                     <div class="nav-bottoms" style="margin-right: 1%;">
                         <a asp-controller="Login" asp-action="Logout" class="btn btn-secondary my-2 my-sm-0" type="text/asp">Cerrar Sesión</a>
@@ -115,14 +111,14 @@
 
 
 
-    <div class="containerLayoutAdmin" style=" width: 100%;">
+    <div class="container-layout-admin" style=" width: 100%;">
         <main role="main" class="pb-3" style=" margin-bottom: -2%;">
             @RenderBody()
         </main>
     </div>
 
 
-    <section id="perfilUsuario">
+@*     <section id="perfilUsuario">
         <h1 class="titulo">Información de Perfil</h1>
 
 
@@ -151,32 +147,37 @@
                       style="stroke: none; fill: #2C3E50;"></path>
             </svg>
         </div>
-    </section>
+    </section> *@
 
 
-   @*  <section id="registroMascota">
+    <section id="registroMascota">
         <h1 class="titulo">Registro de Mascotas</h1>
 
 
         <div class="contenedor mascota-info">
             <div class="contenedor-registro-mascota">
                 <form action="" class="registro-mascota">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota</label>
-                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre de su mascota">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Raza</label>
-                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingrese la raza de su mascota">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Edad</label>
-                    <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad</label>
-                    <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Descripción</label>
-                    <textarea class="form-control" id="mensaje" rows="3" style="height: 145px;" spellcheck="false" placeholder="Descripción"></textarea>
+                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
+                    <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
+                    <input type="email" class="form-control" id="raza" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
+                    <input type="date" class="form-control" id="fechaNacimiento">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
+                    <input type="number" class="form-control" id="agresividad">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
+                    <textarea class="form-control" id="descripcion" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                    <div class"fotos-registro-mascotas">
+                        <label class="col-sm-2 col-form-label titulo-perfil">Fotos de la mascota:</label>
+                        <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota">
+                        <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota2">
+                    </div>
                     <button type="submit" class="btn btn-primary" id="boton-enviar">Registrar</button>
                 </form>
-               
+
             </div>
 
-            <div id="ContenedorListaMascotas">
+            <div id="contenedorListaMascotas">
                 <h2>Mascotas Actuales</h2>
                 <table class="table table-hover tabla-mascotas-registro">
                     <thead>
@@ -215,16 +216,29 @@
                             <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
                         </tr>
                     </tbody>
+                    </table>
             </div>
         </div>
 
-      
+
+        <div>
+        <div>
+        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #2C3E50;"></path>
+            </svg>
+        </div>
+        </div>
+        </div>
     </section>
- *@
 
 @*     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Web_UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="svg-wave" style="height: 150px; overflow: hidden;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #2C3E50;"></path>
+            </svg>
         </div>
     </footer> *@
 
