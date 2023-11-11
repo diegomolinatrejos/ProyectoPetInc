@@ -50,19 +50,18 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("AuthenticateUser")]
         public IActionResult AuthenticateUser(Usuario user)
         {
             AdminUsuarios adminUsuarios = new AdminUsuarios();
+            var userAutenticado = adminUsuarios.AuthenticateUser(user.email, user.contrasena);
 
-            var authenticatedUser = adminUsuarios.AuthenticateUser (user.email, user.contrasena);
-
-            if (authenticatedUser == null)
+            if (userAutenticado != null)
             {
-                return Unauthorized(); // O cualquier otro código o mensaje de error que desees.
+                return Ok(userAutenticado);
             }
 
-            // Puedes devolver información adicional si es necesario
-            return Ok(new { email = authenticatedUser.email, rol = authenticatedUser.rol.nombreRol, nombre = authenticatedUser.nombre });
+            return NotFound();
         }
     }
 }
