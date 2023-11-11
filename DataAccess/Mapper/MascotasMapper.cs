@@ -22,7 +22,7 @@ namespace DataAccess.Mapper
                 agresividad = int.Parse(row["agresividad"].ToString()),
                 foto1 = row["foto1"].ToString(),
                 foto2 = row["foto2"].ToString(),
-                estado = int.Parse(row["estado"].ToString()),
+               // estado = int.Parse(row["estado"].ToString()),
             };
 
             return mascota;
@@ -55,7 +55,7 @@ namespace DataAccess.Mapper
             operation.AddIntegerParam("agresividad", mas.agresividad);
             operation.AddVarcharParam("foto1", mas.foto1);
             operation.AddVarcharParam("foto2", mas.foto2);
-            operation.AddIntegerParam("estado", mas.estado);
+            //operation.AddIntegerParam("estado", mas.estado);
 
             return operation;
         }
