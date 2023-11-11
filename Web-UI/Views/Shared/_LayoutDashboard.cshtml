@@ -49,6 +49,7 @@
                         <li class="nav-item ">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
                             <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="VistaPerfil">Visualización de Perfil</a>
                                 <a class="dropdown-item" href="#">Editar perfil</a>
                                 <a class="dropdown-item" href="#">Cambio de contraseña</a>
                             </div>
@@ -60,7 +61,12 @@
                                 <a class="nav-link" href="#">Gestión de usuarios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="ServiciosAdmin" asp-action="ServiciosAdminList">Gestión de servicios</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Servicios</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="RegistroServicios">Registrar un nuevo servicio</a>
+@*                                     <a class="dropdown-item" asp-area="" asp-controller="#" asp-action="#">Editar servicios</a> *@
+                                    <a class="dropdown-item" href="#">Tipos de reportes restantes</a>
+                                </div>
                             </li>
                             <li class="nav-item admin-options">
                                 <a class="nav-link" href="#">Gestión de dispositivos</a>
@@ -112,7 +118,7 @@
 
 
     <div class="container-layout-admin" style=" width: 100%;">
-        <main role="main" class="pb-3" style=" margin-bottom: -2%;">
+        <main role="main" style=" margin-bottom: -2%;">
             @RenderBody()
         </main>
     </div>
@@ -150,15 +156,19 @@
     </section> *@
 
 
-    <section id="registroMascota">
-        <h1 class="titulo">Registro de Mascotas</h1>
+   <section id="realizarReserva">
+        <h1 class="titulo">Realizar Reserva</h1>
 
 
         <div class="contenedor mascota-info">
             <div class="contenedor-registro-mascota">
                 <form action="" class="registro-mascota">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
-                    <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Seleccione una mascota:</label>
+                    <select class="form-select" id="selecionMascota" disabled="">
+                        <option>Toto</option>
+                        <option>Yoda</option>
+                        <option>Kobe</option>
+                    </select>
                     <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
                     <input type="email" class="form-control" id="raza" style="margin-bottom: 2%;">
                     <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
@@ -231,7 +241,10 @@
         </div>
         </div>
         </div>
-    </section>
+    </section> 
+
+
+
 
 @*     <footer class="border-top footer text-muted">
         <div class="svg-wave" style="height: 150px; overflow: hidden;">

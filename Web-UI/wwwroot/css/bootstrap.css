@@ -12595,7 +12595,62 @@ gmp-map {
 
 
 .contenedor-registro-servicio input {
+    background-color: #ECF0F1;
     width: 100%;
+}
+
+.contenedor-registro-servicio textarea {
+    background-color: #ECF0F1;
+}
+
+.contenedor-registro-servicio button {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/*------------------------------------------Realizar Reserva----------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------Registrar Dispositivo-------------------------------------------------------*/
+
+/*Cambiar las clases y Ids cuando hace el formulario de registrar dispositivo*/
+
+#registroServicios {
+    text-align: center;
+}
+
+
+
+.contenedor-registro-servicio {
+    display: block;
+    text-align: center;
+    margin-top: 3%;
+    width: 90%;
+    margin-bottom: 5%;
+}
+
+.registro-servicio {
+    width: 70%;
+    margin-left: 20%;
+    padding: 0% 10%;
+}
+
+
+.contenedor-registro-servicio label {
+    width: 100%;
+}
+
+
+.contenedor-registro-servicio input {
+    background-color: #ECF0F1;
+    width: 100%;
+}
+
+.contenedor-registro-servicio textarea {
+    background-color: #ECF0F1;
 }
 
 .contenedor-registro-servicio button {
