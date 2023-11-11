@@ -1,0 +1,29 @@
+﻿@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="~/js/pages/reportesadm/griddefinitionreporteadm.js"></script>
+    <script src="~/js/pages/reportesadm/reporteadm.js"></script>
+ }
+
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<div>
+    <div>
+        <h2>Reporte de ventas totales</h2>
+        <div id="myGrid" style="height: 200px; width: 100%;" class="ag-theme-alpine"></div>
+        <p>Despues de cada tabla estara un grafico por ejmplo uno de barras para mostrar ingresos por reservas según tipo de mascota. Tambien gráfico tipo pastel para mostrar porcentaje de las reservas segun tipo de mascotas. </p>
+    </div>
+
+    <div>
+        <h2>Grafico</h2>
+        <div id="barChart" style="height: 400px; width: 100%;" class="ag-theme-alpine"></div>
+
+    </div>
+
+    <div>
+        <h2>Grafico</h2>
+        <div id="pieChart" style="height: 400px; width: 100%;" class="ag-theme-alpine"></div>
+    </div>
+</div>
