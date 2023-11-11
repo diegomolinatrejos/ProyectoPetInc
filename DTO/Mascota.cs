@@ -9,7 +9,7 @@ namespace DTO.Models
 {
     public class Mascota : BaseClass
     {
-        public Cliente cliente { get; set; }
+        public Usuario cliente { get; set; }
         public string nombreMascota { get; set; }
         public string descripcion { get; set; }
         public DateTime fechaNacimiento { get; set; }
@@ -17,7 +17,7 @@ namespace DTO.Models
         public int agresividad { get; set; }
         public string foto1 { get; set; }
         public string foto2 { get; set; }
-        public int estado { get; set; }
+        public Estado estado { get; set; }
 
         //public static implicit operator Mascota(Mascota v)
         //{

@@ -9,6 +9,6 @@ namespace DTO.Models
     public class Dispositivo : BaseClass
     {
         public string numeroSerie { get; set; }
-        public bool disponibilidad { get; set; }
+        public int disponibilidad { get; set; }
     }
 }

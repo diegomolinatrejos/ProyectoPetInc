@@ -8,8 +8,8 @@ namespace DTO.Models
 {
     public class PrecioImpuesto : BaseClass
     {
-        public decimal PrecioBase { get; set; }
-        public decimal DescuentoPaquete { get; set; }
-        public decimal Impuesto { get; set; }
+        public decimal precioBase { get; set; }
+        public decimal descuentoPaquete { get; set; }
+        public decimal impuesto { get; set; }
     }
 }
