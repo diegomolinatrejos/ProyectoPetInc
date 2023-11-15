@@ -8,12 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App-Logic\App-Logic.csproj" />
     <ProjectReference Include="..\DTO\DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\FormulariosEdicion\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
