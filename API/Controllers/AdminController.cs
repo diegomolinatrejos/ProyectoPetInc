@@ -50,7 +50,6 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        [Route("AuthenticateUser")]
         public IActionResult AuthenticateUser(Usuario user)
         {
             AdminUsuarios adminUsuarios = new AdminUsuarios();

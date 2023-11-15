@@ -44,7 +44,7 @@ namespace Web_UI.Controllers
             using (HttpClient client = new HttpClient())
             {
                 // Reemplaza la URL con la URL correcta de tu API
-                string apiUrl = "https://petsincqc.azurewebsites.net/api/Admin/AuthenticateUser";
+                string apiUrl = "https://petsincapiqc.azurewebsites.net/api/Admin/AuthenticateUser";
 
                 // Convierte el usuario a formato JSON
                 string jsonUser = JsonConvert.SerializeObject(user);
