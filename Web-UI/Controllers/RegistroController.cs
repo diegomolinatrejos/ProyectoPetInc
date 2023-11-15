@@ -13,6 +13,17 @@ namespace Web_UI.Controllers
         {
             return View();
         }
+
+        public IActionResult RegistroMascotas()
+        {
+            return View();
+        }
+
+
+        public IActionResult Cancelar()
+        {
+            return View();
+        }
     }// fin de la clase
 
 }// fin de namespace

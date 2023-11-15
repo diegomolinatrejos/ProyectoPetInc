@@ -136,6 +136,51 @@
     </div>
 
 
+    <section id="perfilUsuario">
+        <h1 class="titulo">Edición de Perfil</h1>
+
+
+        <div class="contenedor perfil-info">
+            <div class="contenedor-registro-mascota">
+                <form action="" class="registro-mascota">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;" value="limbert">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Primer Apellido:</label>
+                    <input type="text" class="form-control" id="raza" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Segundo Apellido:</label>
+                    <input type="text" class="form-control" id="raza" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Documento de identidad:</label>
+                    <input type="text" class="form-control" id="raza" style="margin-bottom: 2%;">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Número de teléfono:</label>
+                    <input type="number" class="form-control" id="agresividad">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
+                    <input type="date" class="form-control" id="fechaNacimiento">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Dirección:</label>
+                    <input type="text" class="form-control" id="fechaNacimiento">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Foto de perfil:</label>
+                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota">
+
+                    <button type="submit" class="btn btn-primary" id="boton-enviar">Guardar</button>
+                    <button type="submit" class="btn btn-primary" id="boton-enviar">Cancelar</button>
+                </form>
+
+            </div>
+
+            <div style="width:50%;">
+                <img src="~/media/img/perfildefault.png">
+            </div>
+        </div>
+
+        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #2C3E50;"></path>
+            </svg>
+        </div>
+    </section>
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
