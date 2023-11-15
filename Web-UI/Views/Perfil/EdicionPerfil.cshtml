@@ -3,24 +3,38 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
-<section id="perfilUsuario">
-    <h1 class="titulo">Información de Perfil</h1>
+<section id="perfilUsuarioEditar">
+    <h1 class="titulo">Edición de Perfil</h1>
 
 
     <div class="contenedor perfil-info">
-        <div class="contenedor-datos-perfil">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Nombre</h2>
-            <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Limberth Isaias Hernandez Mora">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Identificación</h2>
-            <input id="identificación" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="20990111">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Teléfono</h2>
-            <input id="telefono" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="88888822">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico</h2>
-            <input id="email" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="usuario@inicial.com">
+        <div class="contenedor-registro-mascota">
+            <form action="" class="registro-mascota">
+                <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
+                <input type="text" class="form-control" id="nombrePerfilEdit" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Primer Apellido:</label>
+                <input type="text" class="form-control" id="apellido1PerfilEdit" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Segundo Apellido:</label>
+                <input type="text" class="form-control" id="apellido2PerfilEdit" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Documento de identidad:</label>
+                <input type="text" class="form-control" id="documentoIdentidadPerfilEdit" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Número de teléfono:</label>
+                <input type="text" class="form-control" id="telefonoPerfilEdit">
+                <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
+                <input type="date" class="form-control" id="fechaNacimientoPerfilEdit">
+                <label class="col-sm-2 col-form-label titulo-perfil">Dirección:</label>
+                <input type="text" class="form-control" id="DdireccionPerfilEdit">
+                <label class="col-sm-2 col-form-label titulo-perfil">Foto de perfil:</label>
+                <input type="file" class="form-control fotos-mascotas-formulario" id="fotoPerfilEdit">
+
+                <button type="submit" class="btn btn-primary" id="botonGuardarPerfilEdit">Guardar</button>
+                <button type="submit" class="btn btn-primary" id="botonCancelarPerfilEdit">Cancelar</button>
+            </form>
+
         </div>
 
         <div style="width:50%;">
-            <img src="~/media/img/perfildefault.png">
+            <img id="imagenfotoPerfilEdit" src="~/media/img/perfildefault.png">
         </div>
     </div>
 
