@@ -1,42 +1,49 @@
-﻿using DataAccess.Crud;
+﻿using App_Logic.Admins;
 using DTO;
-using DTO.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace App_Logic
 {
     public class AdminOTP
     {
-        public List<OTP> GetAllOTP()
-        {
-            OTPCrud otpCrud = new OTPCrud();
+        #region Properties
+        public AdminUsuarios adminUsuarios;
+        public AdminEmail adminEmail;
+        #endregion
 
-            return otpCrud.RetrieveAll<OTP>();
+        #region Queries
+        readonly string updateuserquery = "UPDATE USUARIOS SET OTP = @OTP WHERE ID = @UserID";
+        #endregion
+
+        public AdminOTP()
+        {
+            adminUsuarios = new AdminUsuarios();
+            adminEmail = new AdminEmail();
         }
-        public string CreateOTP(OTP otp)
+
+        public async Task<string> CreateOTP(CreateOtpDto otp)
         {
             Random random = new Random();
             int secretPassword = random.Next(100000, 999999);
+
+            var usuario = adminUsuarios.GetUsuarioById(otp.id);
+
+            SaveOTPToDatabase(usuario.Id, secretPassword);
+
+            await adminEmail.SendOTPEmail(usuario.email, secretPassword);
+
             return secretPassword.ToString();
         }
 
-        public void SaveOTPToDatabase(string email, string otp)
+        private async void SaveOTPToDatabase(int id, int otp)
         {
-            using (SqlConnection connection = new SqlConnection("Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678"))
+            await using (SqlConnection connection = new SqlConnection("Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678"))
             {
                 connection.Open();
 
-                string query = "UPDATE USUARIOS SET OTP = @OTP WHERE EMAIL = @UserID";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(updateuserquery, connection))
                 {
-                    command.Parameters.AddWithValue("@UserId", email);
+                    command.Parameters.AddWithValue("@UserId", id);
                     command.Parameters.AddWithValue("@OTP", otp);
 
                     command.ExecuteNonQuery();

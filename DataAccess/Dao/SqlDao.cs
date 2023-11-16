@@ -16,8 +16,7 @@ namespace DataAccess.Dao
     public class SqlDao
     {
         private static SqlDao instance = new SqlDao();
-        private string _connectionString = "Server=tcp:servidor-daniel-proyecto.database.windows.net,1433;Initial Catalog=Proyecto_Pet_Inc;Persist Security Info=False;User ID=AdminPetInc;Password=Psw123456*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-    
+        private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
 
         //Patrón de diseño Singleton
         public static SqlDao GetInstance() 

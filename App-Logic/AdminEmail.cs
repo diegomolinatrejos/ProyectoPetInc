@@ -13,7 +13,7 @@ namespace App_Logic
     {
         public async Task<string> SendEmail(string subject, string plainTextContent, string emailAddress)
         {
-            string connectionString = "endpoint=https://pruebacommservice.unitedstates.communication.azure.com/;accesskey=kv7myOIT97wztp21rrZAEnt2pRM1Ag44EvwVovVMaEe7nMkciCBOy2/iquIfsvHqsInfHUg3haPzzVkr8sJEWA=";
+            string connectionString = "endpoint=https://isa-ieee-communicationservice.unitedstates.communication.azure.com/;accesskey=p/eEvRFgsQVGdGdACB1wInqOKaxSdGOfpoO0g5ybFqp7kKWquqTF4SPsTyfm7EX8nTgfGlGnX7mF3q/SYxrmsQ==";
 
             EmailClient emailClient = new EmailClient(connectionString);
 
@@ -31,7 +31,7 @@ namespace App_Logic
             return emailSendOperation.Value.Status.ToString();
         }
 
-        public async Task<string> SendOTPEmail(string emailAddress, string otp)
+        public async Task<string> SendOTPEmail(string emailAddress, int otp)
         {
 
             string subject = "Your OTP";

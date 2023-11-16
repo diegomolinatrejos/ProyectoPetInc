@@ -96,5 +96,10 @@ namespace DataAccess.Crud
 
             return null;
         }
+
+        public override T RetrieveByEmail<T>(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

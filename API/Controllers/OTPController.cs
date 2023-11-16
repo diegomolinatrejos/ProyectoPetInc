@@ -17,13 +17,13 @@ namespace API.Controllers
     public class OTPController : Controller
     {
         [HttpPost]
-        public string CreateOTP(OTP otp)
+        public async Task<string> CreateOTP(CreateOtpDto otp)
         {
             AdminOTP adminOTP = new AdminOTP();
 
-            adminOTP.CreateOTP(otp);
+            await adminOTP.CreateOTP(otp);
 
-            return "OK";
+            return "Ok";
 
         }
 
