@@ -31,9 +31,9 @@
                     <td>16/11/2023</td>
                     <td>Paquete de Hospedaje + Grooming</td>
                     <td>₡34.000</td>
-                    <td><button type="submit" class="btn btn-primary boton-pagar" id="boton-pagar">Pendiente</button></td>
-                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Editar</button></td>
-                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Cancelar</button></td>
+                    <td><button type="submit" class="btn btn-primary boton-pagar" id="">Pendiente</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
+                    <td><button type="submit" class="btn btn-primary" id="">Cancelar</button></td>
                 </tr>
                 <tr class="table-active">
                     <td>Alejandro Salazar Lobo</td>
@@ -43,9 +43,9 @@
                     <td>22/10/2023</td>
                     <td>Hospedaje</td>
                     <td>₡20.000</td>
-                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Pagada</button></td>
-                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Editar</button></td>
-                    <td><button type="submit" class="btn btn-primary" id="boton-enviar">Cancelar</button></td>
+                    <td><button type="submit" class="btn btn-primary" id="">Pagada</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
+                    <td><button type="submit" class="btn btn-primary" id="">Cancelar</button></td>
                 </tr>
             </tbody>
         </table>
@@ -60,12 +60,3 @@
     </div>
 </section>
 
-<script>
-    document.getElementById("boton-pagar").addEventListener("mouseover", function () {
-        this.innerHTML = "  Pagar  ";
-    });
-
-    document.getElementById("boton-pagar").addEventListener("mouseout", function () {
-        this.innerHTML = "Pendiente";
-    });
-</script>

@@ -9,7 +9,7 @@
 
     <div class="contenedor perfil-info">
         <div class="contenedor-registro-mascota">
-            <form action="" class="registro-mascota">
+            <form action="" id="edicionPerfil" class="registro-mascota">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
                 <input type="text" class="form-control" id="nombrePerfilEdit" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Primer Apellido:</label>
@@ -23,12 +23,12 @@
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
                 <input type="date" class="form-control" id="fechaNacimientoPerfilEdit">
                 <label class="col-sm-2 col-form-label titulo-perfil">Dirección:</label>
-                <input type="text" class="form-control" id="DdireccionPerfilEdit">
+                <input type="text" class="form-control" id="direccionPerfilEdit">
                 <label class="col-sm-2 col-form-label titulo-perfil">Foto de perfil:</label>
                 <input type="file" class="form-control fotos-mascotas-formulario" id="fotoPerfilEdit">
-
+     
                 <button type="submit" class="btn btn-primary" id="botonGuardarPerfilEdit">Guardar</button>
-                <button type="submit" class="btn btn-primary" id="botonCancelarPerfilEdit">Cancelar</button>
+               <a asp-controller="Perfil" asp-action="VistaPerfil" class="btn btn-primary" id="botonCancelarPerfilEdit">Cancelar</a>
             </form>
 
         </div>
@@ -45,3 +45,11 @@
         </svg>
     </div>
 </section>
+
+<script src="~/js/pages/perfil/Perfil.js" asp-append-version="true"></script>
+
+        <script>
+
+            validarFormularioEdicionPerfil();
+
+        </script>

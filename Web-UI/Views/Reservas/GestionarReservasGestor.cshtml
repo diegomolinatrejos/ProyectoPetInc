@@ -24,6 +24,7 @@
                     <th scope="col">Precio</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Asignar dispositivo</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,7 @@
                     <td>₡34.000</td>
                     <td>Pendiente</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Asignar dispositivo</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
                 <tr class="table-active">
                     <td>Diego Molina Trejos</td>
@@ -48,6 +50,7 @@
                     <td>₡20.000</td>
                     <td>Inactiva</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
                 <tr class="table-active">
                     <td>Alejandro Salazar Lobo</td>
@@ -59,6 +62,7 @@
                     <td>₡20.000</td>
                     <td>Inactiva</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
             </tbody>
         </table>

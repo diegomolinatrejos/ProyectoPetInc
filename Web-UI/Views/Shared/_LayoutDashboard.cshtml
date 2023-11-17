@@ -46,11 +46,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item ">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="VistaPerfil">Visualización de Perfil</a>
-                                <a class="dropdown-item" href="#">Editar perfil</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="VistaPerfil">Editar perfil</a>
                                 <a class="dropdown-item" href="#">Cambio de contraseña</a>
                             </div>
                         </li>
@@ -60,7 +60,7 @@
                             <li class="nav-item admin-options">
                                 <a class="nav-link" href="#">Gestión de usuarios</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Servicios</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="RegistroServicios">Registrar un nuevo servicio</a>
@@ -88,13 +88,13 @@
                         {
                             if (Accesor.HttpContext.Session.GetString("rol") == "Cliente")
                             {
-                             <li>
+                                <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Mascotas</a>
                                 <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="RegistroMascotas">Registrar Mascota</a>
                                 </div>
                             </li>
-                                <li class="nav-item">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Reservas</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="RealizarReserva">Realizar Reserva</a>
@@ -110,7 +110,7 @@
                                 <li class="nav-item admin-options">
                                     <a class="nav-link" href="#">Gestión de Paquetes</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Reservas</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="RealizarReservaGestor">Realizar Reserva</a>
@@ -137,41 +137,14 @@
 
 
 
-    <section id="registroMascota">
-        <h1 class="titulo">Edición de Mascotas</h1>
 
-
-        <div class="contenedor mascota-info">
-            <div class="contenedor-registro-mascota">
-                <form action="" class="registro-mascota">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
-                    <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
-                    <input type="email" class="form-control" id="raza" style="margin-bottom: 2%;">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
-                    <input type="date" class="form-control" id="fechaNacimiento">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
-                    <input type="number" class="form-control" id="agresividad">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
-                    <textarea class="form-control" id="descripcion" rows="3" style="height: 145px;" spellcheck="false"></textarea>
-                    <div class"fotos-registro-mascotas">
-                        <label class="col-sm-2 col-form-label titulo-perfil">Fotos de la mascota:</label>
-                        <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota">
-                        <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota2">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="boton-enviar">Registrar</button>
-                </form>
-
-            </div>
-
-        </div>
-    </section>
 
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/pages/formularios/Validaciones.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

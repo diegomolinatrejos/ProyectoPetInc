@@ -12557,17 +12557,50 @@ gmp-map {
     margin-left: -30%;
 }
 
-#contenedorListaMascotas{
-    margin-top: 8%;
+#contenedorListaMascotas {
+    margin-top: 5%;
+    max-width: 90%;
+    text-align: center;
+    margin-left: 5%;
 }
+
+
 
 .tabla-mascotas-registro {
     border: solid;
     border-color: #2C3E50;
+    text-align: center;
 }
 
-/*------------------------------------------------------------Formulario de registro de servicios----------------------------------------------------------*/
+.contenedorVisualizacionImagenMascota {
+    display: flex;
+    margin-left: 0%;
+    justify-content: space-evenly;
+}
 
+
+.imagen-mascota {
+    display: inline-block; 
+    width: 200px; 
+    margin-top: 5%; 
+    height: 200px;
+}
+
+#imagenMascota2 {
+    margin-left: 5%;
+}
+
+
+#contenedorImagenes {
+   margin-left: 5%; 
+   margin-top: 10%; 
+   margin-bottom: 3%;
+   text-align: center;
+}
+
+
+
+/*------------------------------------------------------------Formulario de registro de servicios----------------------------------------------------------*/
 #registroServicios {
     text-align: center;
 }
@@ -12748,20 +12781,30 @@ gmp-map {
     margin-bottom: 2%;
 }
 
+
+/*------------------------------------------Edición Mascotas----------------------------------------------------------*/
+
+#edicionMascota{
+    margin-top: 3%;
+}
+
+
+.contenedor-imagen-servicios {
+    margin-left: 15%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+
 /*------------------------------------------Media Querys----------------------------------------------------------*/
-
-
-
 @media (max-width: 800px) {
-
-
     .dispositivoImagen {
-        max-height: auto; 
+        max-height: auto;
     }
 
     .contenido {
-        max-width: 90%; 
-        margin: 0 auto; 
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .contenedor {
@@ -12790,9 +12833,9 @@ gmp-map {
         margin-left: 0%;
     }
 
-    .contenedor-registro-reserva button {
-        margin-left: 37%;
-    }
+        .contenedor-registro-reserva button {
+            margin-left: 37%;
+        }
 
 
     #contenedorNovedades {
@@ -12813,7 +12856,7 @@ gmp-map {
         max-width: 100%;
     }
 
-    .contenido-novedad{
+    .contenido-novedad {
         display: block;
         text-align: center;
     }
@@ -12822,6 +12865,12 @@ gmp-map {
         width: 60%;
         margin-left: 20%;
         border-radius: 3%;
+    }
+
+    .contenedor-imagen-servicios {
+        margin-left: 0%;
+        margin-top: 10%;
+        text-align: center;
     }
 }
 
@@ -12942,7 +12991,23 @@ gmp-map {
         margin-left: 4%;
         border-radius: 3%;
     }
+
+    .contenedorVisualizacionImagenMascota {
+        display: block;
+    }
+
+    #imagenMascota2 {
+        margin-left: 0%;
+    }
+
+
+    #contenedorImagenes {
+        margin-left: 0%;
+        margin-top: 10%;
+        margin-bottom: 3%;
+    }
 }
+
 
 @media screen and (max-width:410px) {
     .titulo,

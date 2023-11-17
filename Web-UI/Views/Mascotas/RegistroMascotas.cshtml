@@ -3,17 +3,18 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
+
 <section id="registroMascota">
     <h1 class="titulo">Registro de Mascotas</h1>
 
 
     <div class="contenedor mascota-info">
         <div class="contenedor-registro-mascota">
-            <form action="" class="registro-mascota">
+            <form id="formularioRegistroMascotas" action="" class="registro-mascota">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
                 <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
-                <input type="email" class="form-control" id="raza" style="margin-bottom: 2%;">
+                <input type="text" class="form-control" id="raza" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
                 <input type="date" class="form-control" id="fechaNacimiento">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
@@ -29,7 +30,36 @@
             </form>
 
         </div>
+
+
+
+            <div id="contenedorImagenes">
+                <h2>Visualización de imagenes</h2>
+                <div class="contenedorVisualizacionImagenMascota">
+                    <img id="imagenMascota" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 2">
+                    <img id="imagenMascota2" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 1">
+                </div>
+            </div>    
+       
     </div>
 
 
 </section>
+
+<script src="~/js/pages/mascotas/RegistroMascotas.js" asp-append-version="true"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        validarFormularioRegistroMascotas();
+
+        // Lógica para mostrar imágenes después de que el DOM se haya cargado
+        document.getElementById('fotoMascota').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenMascota');
+        });
+
+        document.getElementById('fotoMascota2').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenMascota2');
+        });
+    });
+</script>
