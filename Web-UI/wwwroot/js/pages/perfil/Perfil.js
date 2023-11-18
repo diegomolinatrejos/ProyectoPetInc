@@ -17,6 +17,30 @@
         const direccionPerfilEdit = document.getElementById('direccionPerfilEdit').value.trim();
         const fotoPerfilEdit = document.getElementById('fotoPerfilEdit').value.trim();
 
+
+
+        if (telefonoPerfilEdit.length > 8 || telefonoPerfilEdit.length < 8) {
+            Swal.fire({
+                title: 'Error',
+                text: 'El número de teléfono no puede tener más de 8 dígitos o menos de 8 digitos',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return; // Detenemos la ejecución de la función si la validación falla
+        }
+
+        // Validamos que el número de documento de identidad tenga no más de 9 dígitos
+        if (documentoIdentidadPerfilEdit.length > 9 || documentoIdentidadPerfilEdit.length < 9) {
+            Swal.fire({
+                title: 'Error',
+                text: 'El documento de identidad no puede tener más de 9 dígitos o menos de 9 digitos',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            return; // Detenemos la ejecución de la función si la validación falla
+        }
+
+
         // Resto de la validación
         if (nombrePerfilEdit === '' || apellido1PerfilEdit === '' || apellido2PerfilEdit === '' ||
             documentoIdentidadPerfilEdit === '' || telefonoPerfilEdit === '' ||
@@ -42,4 +66,13 @@
             });
         }
     });
+}
+
+function mostrarImagen(input, idImagen) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById(idImagen).src = e.target.result;
+        document.getElementById(idImagen).style.display = "inline-block";
+    };
+    reader.readAsDataURL(input.files[0]);
 }

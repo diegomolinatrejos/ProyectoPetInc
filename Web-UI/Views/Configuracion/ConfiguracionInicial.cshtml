@@ -7,16 +7,17 @@
 <section id="configuracionBase">
     <h1 class="titulo">Configuración de precios base</h1>
     <div class="contenedor-registro-servicio">
-        <form action="" class="registro-servicio">
+        <form action="" class="registro-servicio" id="formularioConfiguracionBase">
             <label class="col-sm-2 col-form-label titulo-perfil">Porcentaje base de impuestos:</label>
             <input type="text" class="form-control" id="impuesto" style="margin-bottom: 2%;">
             <label class="col-sm-2 col-form-label titulo-perfil">Porcentaje base de descuento:</label>
-            <input type="text" class="form-control" id="paquetes" style="margin-bottom: 2%;">
+            <input type="text" class="form-control" id="descuento" style="margin-bottom: 2%;">
             <label class="col-sm-2 col-form-label titulo-perfil">Monto base de servicios:</label>
-            <input type="text" class="form-control" id="servicio">
+            <input type="text" class="form-control" id="servicio" style="margin-bottom: 2%;">
 
-            <button type="submit" class="btn btn-primary" id="boton-enviar">Guardar</button>
-            <button type="submit" class="btn btn-primary" id="boton-enviar">Cancelar</button>
+
+            <button type="submit" class="btn btn-primary" id="botonGuardar">Guardar</button>
+            <a asp-controller="Dashboard" asp-action="DashboardHome" class="btn btn-primary" id="cancelar">Cancelar</a>
         </form>
     </div>
 
@@ -27,3 +28,11 @@
         </svg>
     </div>
 </section>
+
+<script src="~/js/pages/configuracion/Configuracion.js" asp-append-version="true"></script>
+
+<script>
+
+        validarFormularioConfiguracionBase();
+
+</script>

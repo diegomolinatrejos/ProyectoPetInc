@@ -8,7 +8,7 @@
 
 
     <div class="contenedor perfil-info">
-        <div class="contenedor-registro-mascota">
+        <div class="contenedor-registro-mascota" style="margin-left: 5%;">
             <form action="" id="edicionPerfil" class="registro-mascota">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre:</label>
                 <input type="text" class="form-control" id="nombrePerfilEdit" style="margin-bottom: 2%;">
@@ -33,7 +33,7 @@
 
         </div>
 
-        <div style="width:50%;">
+        <div style="width:50%; margin-top: 5%; text-align: center;">
             <img id="imagenfotoPerfilEdit" src="~/media/img/perfildefault.png">
         </div>
     </div>
@@ -49,7 +49,16 @@
 <script src="~/js/pages/perfil/Perfil.js" asp-append-version="true"></script>
 
         <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-            validarFormularioEdicionPerfil();
+        validarFormularioEdicionPerfil();
+
+        // Lógica para mostrar imágenes después de que el DOM se haya cargado
+        document.getElementById('fotoPerfilEdit').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenfotoPerfilEdit');
+        });
+
+    });
+
 
         </script>

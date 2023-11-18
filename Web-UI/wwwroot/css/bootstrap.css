@@ -12489,6 +12489,8 @@ gmp-map {
 
 .perfil-info img {
     margin-top: 8%;
+    width: 350px;
+    height: 350px;
 }
 
 .contenedor-datos-perfil {
