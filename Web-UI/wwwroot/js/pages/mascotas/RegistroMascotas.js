@@ -28,7 +28,7 @@
         }
 
         // Resto de la validación
-        if (nombre === '' || raza === '' || fechaNacimiento === '' || descripcion === '' || fotoMascota === '' || fotoMascota2 === '') {
+        if (nombre === '' || raza === '' || fechaNacimiento === '' || agresividad === '' || descripcion === '' || fotoMascota === '' || fotoMascota2 === '') {
             // Si algún campo obligatorio está vacío, mostramos un mensaje de error con SweetAlert
             Swal.fire({
                 title: 'Error',
@@ -83,7 +83,7 @@ function validarFormularioEdicionMascotas() {
         }
 
         // Resto de la validación
-        if (nombreMascotaEditar === '' || razaMascotaEditar === '' || fechaNacimientoMascotaEditar === '' || descripcionMascotaEditar === '' || fotoMascotaEditar === '' || fotoMascotaEditar2 === '') {
+        if (nombreMascotaEditar === '' || razaMascotaEditar === '' || agresividad === '' || fechaNacimientoMascotaEditar === '' || descripcionMascotaEditar === '' || fotoMascotaEditar === '' || fotoMascotaEditar2 === '') {
             // Si algún campo obligatorio está vacío, mostramos un mensaje de error con SweetAlert
             Swal.fire({
                 title: 'Error',
