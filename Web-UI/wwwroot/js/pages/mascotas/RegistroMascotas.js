@@ -8,16 +8,17 @@
         e.preventDefault();
 
         // Validamos que todos los campos obligatorios estén completos
-        const nombre = document.getElementById('nombre').value.trim();
-        const raza = document.getElementById('raza').value.trim();
-        const fechaNacimiento = document.getElementById('fechaNacimiento').value.trim();
-        let agresividad = document.getElementById('agresividad').value.trim(); // Convertimos a cadena para evitar problemas con parseInt
-        const descripcion = document.getElementById('descripcion').value.trim();
+        const nombreMascota = document.getElementById('txtInputNombreMascota').value.trim();
+        const especieMascota = document.getElementById('txtInputEspecieMascota').value.trim();
+        const razaMascota = document.getElementById('txtInputRaza').value.trim();
+        const fechaNacimientoMascota = document.getElementById('txtInputFechaNacimiento').value.trim();
+        let agresividadMascota = document.getElementById('txtInputAgresividad').value.trim(); // Convertimos a cadena para evitar problemas con parseInt
+        const descripcionMascota = document.getElementById('txtInputDescripcion').value.trim();
         const fotoMascota = document.getElementById('fotoMascota').value.trim();
         const fotoMascota2 = document.getElementById('fotoMascota2').value.trim();
 
         // Validamos que la agresividad sea un número y no mayor a 10
-        if (isNaN(agresividad) || agresividad < 0 || agresividad > 10) {
+        if (isNaN(agresividadMascota) || agresividadMascota < 0 || agresividadMascota > 10) {
             Swal.fire({
                 title: 'Error',
                 text: 'La agresividad debe ser un número entre un rango de 0 a 10',
@@ -28,7 +29,7 @@
         }
 
         // Resto de la validación
-        if (nombre === '' || raza === '' || fechaNacimiento === '' || agresividad === '' || descripcion === '' || fotoMascota === '' || fotoMascota2 === '') {
+        if (nombreMascota === '' || especieMascota === '' || razaMascota === '' || fechaNacimientoMascota === '' || agresividadMascota === '' || descripcionMascota === '' || fotoMascota === '' || fotoMascota2 === '') {
             // Si algún campo obligatorio está vacío, mostramos un mensaje de error con SweetAlert
             Swal.fire({
                 title: 'Error',
@@ -52,7 +53,6 @@
     });
 }
 
-
 function validarFormularioEdicionMascotas() {
     // Seleccionamos el formulario por su ID
     const formularioEdicionMascotas = document.getElementById('formularioEdicionMascotas');
@@ -63,11 +63,12 @@ function validarFormularioEdicionMascotas() {
         e.preventDefault();
 
         // Validamos que todos los campos obligatorios estén completos
-        const nombreMascotaEditar = document.getElementById('nombreMascotaEditar').value.trim();
-        const razaMascotaEditar = document.getElementById('razaMascotaEditar').value.trim();
-        const fechaNacimientoMascotaEditar = document.getElementById('fechaNacimientoMascotaEditar').value.trim();
-        let agresividadMascotaEditar = document.getElementById('agresividadMascotaEditar').value.trim(); // Convertimos a cadena para evitar problemas con parseInt
-        const descripcionMascotaEditar = document.getElementById('descripcionMascotaEditar').value.trim();
+        const nombreMascotaEditar = document.getElementById('txtInputNombreMascotaEditar').value.trim();
+        const especieMascotaEditar = document.getElementById('txtInputEspecieMascotaEditar').value.trim();
+        const razaMascotaEditar = document.getElementById('txtInputRazaMascotaEditar').value.trim();
+        const fechaNacimientoMascotaEditar = document.getElementById('dateInputFechaNacimientoMascotaEditar').value.trim();
+        let agresividadMascotaEditar = document.getElementById('numberInputAgresividadMascotaEditar').value.trim(); // Convertimos a cadena para evitar problemas con parseInt
+        const descripcionMascotaEditar = document.getElementById('txtInputDescripcionMascotaEditar').value.trim();
         const fotoMascotaEditar = document.getElementById('fotoMascotaEditar').value.trim();
         const fotoMascotaEditar2 = document.getElementById('fotoMascotaEditar2').value.trim();
 
@@ -83,7 +84,7 @@ function validarFormularioEdicionMascotas() {
         }
 
         // Resto de la validación
-        if (nombreMascotaEditar === '' || razaMascotaEditar === '' || agresividad === '' || fechaNacimientoMascotaEditar === '' || descripcionMascotaEditar === '' || fotoMascotaEditar === '' || fotoMascotaEditar2 === '') {
+        if (nombreMascotaEditar === '' || especieMascotaEditar === '' || razaMascotaEditar === '' || fechaNacimientoMascotaEditar === '' || agresividadMascotaEditar === '' || descripcionMascotaEditar === '' || fotoMascotaEditar === '' || fotoMascotaEditar2 === '') {
             // Si algún campo obligatorio está vacío, mostramos un mensaje de error con SweetAlert
             Swal.fire({
                 title: 'Error',
@@ -106,7 +107,6 @@ function validarFormularioEdicionMascotas() {
         }
     });
 }
-
 function mostrarImagen(input, idImagen) {
     var reader = new FileReader();
     reader.onload = function (e) {

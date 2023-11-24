@@ -4,9 +4,9 @@
     formularioConfiguracionBase.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const impuesto = document.getElementById('impuesto').value.trim();
-        const descuento = document.getElementById('descuento').value.trim();
-        const servicio = document.getElementById('servicio').value.trim();
+        const impuesto = document.getElementById('txtInputImpuesto').value.trim();
+        const descuento = document.getElementById('txtInputDescuento').value.trim();
+        const servicio = document.getElementById('txtInputservicio').value.trim();
 
         if (impuesto === '' || descuento === '' || servicio === '') {
             Swal.fire({

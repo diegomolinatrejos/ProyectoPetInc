@@ -8,17 +8,17 @@
     <div class="contenedor-registro-servicio">
         <form action="" class="registro-servicio" id="formularioEdicionDispositivos">
             <label class="col-sm-2 col-form-label titulo-perfil">Nombre del dispositivo:</label>
-            <input type="text" class="form-control" id="nombre" style="margin-bottom: 2%;">
+            <input type="text" class="form-control" id="txtInputnombre" style="margin-bottom: 2%;">
             <label class="col-sm-2 col-form-label titulo-perfil">Número de serie del dispositivo:</label>
-            <input type="text" class="form-control" id="numero" style="margin-bottom: 2%;">
+            <input type="text" class="form-control" id="txtInputnumero" style="margin-bottom: 2%;">
             <label class="col-sm-2 col-form-label titulo-perfil">Estado del dispositivo:</label>
-            <select class="form-select" id="selecionEstado">
+            <select class="form-select" id="selectBoxEstado">
                 <option selected>Activo</option>
                 <option>Inactivo</option>
             </select>
             <div style="margin-top: 2%; text-align: center;">
-                <button type="submit" class="btn btn-primary" id="guardarDispositivo">Guardar</button>
-                <a asp-controller="Dispositivos" asp-action="DispositivosActuales" class="btn btn-primary" id="cancelarEdicionDispositivo"> Cancelar </a>
+                <button type="submit" class="btn btn-primary" id="btnGuardarDispositivo">Guardar</button>
+                <a asp-controller="Dispositivos" asp-action="DispositivosActuales" class="btn btn-primary" id="btnCancelarEdicionDispositivo"> Cancelar </a>
             </div>
         </form>
     </div>

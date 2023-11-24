@@ -11,29 +11,31 @@
         <div class="contenedor-registro-mascota">
             <form id="formularioEdicionMascotas" action="" class="registro-mascota">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
-                <input type="text" class="form-control" id="nombreMascotaEditar" style="margin-bottom: 2%;">
+                <input type="text" class="form-control" id="txtInputNombreMascotaEditar" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Especie:</label>
+                <input type="text" class="form-control" id="txtInputEspecieMascotaEditar" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
-                <input type="text" class="form-control" id="razaMascotaEditar" style="margin-bottom: 2%;">
+                <input type="text" class="form-control" id="txtInputRazaMascotaEditar" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
-                <input type="date" class="form-control" id="fechaNacimientoMascotaEditar">
+                <input type="date" class="form-control" id="dateInputFechaNacimientoMascotaEditar">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
-                <input type="number" class="form-control" id="agresividadMascotaEditar">
+                <input type="number" class="form-control" id="numberInputAgresividadMascotaEditar">
                 <label class="col-sm-2 col-form-label titulo-perfil">Estado:</label>
-                <select class="form-select" id="selecionEstado">
+                <select class="form-select" id="selectBoxEstado">
                     <option selected>Activo</option>
                     <option>Inactivo</option>
                 </select>
                 <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
-                <textarea class="form-control" id="descripcionMascotaEditar" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                <textarea class="form-control" id="txtInputDescripcionMascotaEditar" rows="3" style="height: 145px;" spellcheck="false"></textarea>
                 <div class"fotos-registro-mascotas">
                     <label class="col-sm-2 col-form-label titulo-perfil">Fotos de la mascota:</label>
-                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascotaEditar" onchange="mostrarImagen(this, 'imagenMascotaEditar')">
-                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascotaEditar2" onchange="mostrarImagen(this, 'imagenMascotaEditar2')">
+                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascotaEditar" onchange="mostrarImagen(this, 'imagenMascota')">
+                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascotaEditar2" onchange="mostrarImagen(this, 'imagenMascota2')">
 
                 </div>
 
-                <button type="submit" class="btn btn-primary" id="guardarMascotaEditar">Guardar</button>
-                <a asp-controller="Mascotas" asp-action="MisMascotas" class="btn btn-primary" id="cancelar">Cancelar</a>
+                <button type="submit" class="btn btn-primary" id="btnGuardarMascotaEditar">Guardar</button>
+                <a asp-controller="Mascotas" asp-action="MisMascotas" class="btn btn-primary" id="btnCancelar">Cancelar</a>
             </form>
         </div>
 
