@@ -43,88 +43,38 @@ namespace Web_UI.Controllers
 
             using (HttpClient client = new HttpClient())
             {
-                // Reemplaza la URL con la URL correcta de tu API
-                string apiUrl = "https://petsincqc.azurewebsites.net/api/Admin/AuthenticateUser";
+                // Reemplaza la URL con la URL correcta de tu API y método de autenticación
+                string apiUrl = "https://petsincapiqc.azurewebsites.net/api/Admin/GetUsuarioPorFrase?searchPhrase=" + user.email;
 
-                // Convierte el usuario a formato JSON
-                string jsonUser = JsonConvert.SerializeObject(user);
-
-                // Realiza la llamada POST a la API
-                var response = await client.PostAsync(apiUrl, new StringContent(jsonUser, System.Text.Encoding.UTF8, "application/json"));
+                // Realiza la llamada GET al API para obtener el usuario por email
+                var response = await client.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Si la autenticación es exitosa, obtén el usuario autenticado
+                    // Si la llamada es exitosa, verifica la contraseña
                     var content = await response.Content.ReadAsStringAsync();
-                    var userAutenticado = JsonConvert.DeserializeObject<Usuario>(content);
+                    var usuarios = JsonConvert.DeserializeObject<List<Usuario>>(content);
 
-                    HttpContext.Session.SetString("email", userAutenticado.email);
-                    HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
-                    HttpContext.Session.SetString("nombre", userAutenticado.nombre);
+                    var userAutenticado = usuarios.FirstOrDefault(u => u.contrasena == user.contrasena);
 
-                    return RedirectToAction("DashboardHome", "Dashboard");
+                    if (userAutenticado != null)
+                    {
+                        // Si la autenticación es exitosa, establece las sesiones y redirige
+                        HttpContext.Session.SetString("email", userAutenticado.email);
+                        HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
+                        HttpContext.Session.SetString("nombre", userAutenticado.nombre);
+
+                        return RedirectToAction("DashboardHome", "Dashboard");
+                    }
                 }
-                else
-                {
-                    // Si la autenticación falla, muestra un mensaje de error
-                    ViewBag.Message = "Usuario y/o Password incorrectos";
-                    return View();
-                }
+
+                // Si la autenticación falla, muestra un mensaje de error
+                ViewBag.Message = "Usuario y/o Password incorrectos";
+                return View();
             }
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Login(Usuario user)
-        //{
-        //    if (user.email == null || user.contrasena == null)
-        //    {
-        //        ViewBag.Message = "Usuario y/o Password vacios";
-        //        return View();
-        //    }
-
-        //    // Llamar al API para autenticar al usuario
-        //    var apiResponse = await _apiClient.GetAsync($"api/Admin/AuthenticateUser?email={user.email}&password={user.contrasena}");
-
-        //    if (!apiResponse.IsSuccessStatusCode)
-        //    {
-        //        ViewBag.Message = "Usuario y/o Password incorrectos";
-        //        return View();
-        //    }
-
-        //    // Leer el contenido de la respuesta
-        //    var responseContent = await apiResponse.Content.ReadAsStringAsync();
-        //    var userAutenticado = JsonSerializer.Deserialize<Usuario>(responseContent);
-
-        //    HttpContext.Session.SetString("email", userAutenticado.email);
-        //    HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
-        //    HttpContext.Session.SetString("nombre", userAutenticado.nombre);
-
-        //    return RedirectToAction("DashboardHome", "Dashboard");
-        //}
-
-
-        //[HttpPost]
-        //public IActionResult Login (Usuario user)
-        //{
-        //    if (user.email == null || user.contrasena == null)
-        //    {
-        //        ViewBag.Message = "Usuario y/o Password vacios";
-        //        return View();
-        //    }
-
-        //Usuario userAutenticado = AdminUsuarios.AuthenticateUser(user.email, user.contrasena);
-
-        //if (userAutenticado == null)
-        //{
-        //    ViewBag.Message = "Usuario y/o Password incorrectos";
-        //    return View();
-        //}
-        //HttpContext.Session.SetString("email", userAutenticado.email);
-        //HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
-        //HttpContext.Session.SetString("nombre", userAutenticado.nombre);
-
-        //return RedirectToAction("DashboardHome", "Dashboard");
-        //        }
     }
-}
+
+ }
+
 

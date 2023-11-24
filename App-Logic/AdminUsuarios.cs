@@ -11,7 +11,7 @@ namespace App_Logic.Admins
 {
     public class AdminUsuarios
     {
-        public List<Usuario> GetAllUsuarios() 
+        public List<Usuario> GetAllUsuarios()
         {
             UsuarioCrud usuarioCrud = new UsuarioCrud();
 
@@ -19,7 +19,7 @@ namespace App_Logic.Admins
         }
 
         public void CreateUsuario(Usuario usuario)
-        { 
+        {
             UsuarioCrud usuarioCrud = new UsuarioCrud();
             usuarioCrud.Create(usuario);
         }
@@ -34,14 +34,27 @@ namespace App_Logic.Admins
         public List<Usuario> GetUsuarioByPhrase(string searchPhrase)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
-            return uCrud.RetrieveBySearchPhrase <Usuario>(searchPhrase);
+            return uCrud.RetrieveBySearchPhrase<Usuario>(searchPhrase);
         }
 
-        public  Usuario AuthenticateUser(string email, string password)
+        public void DeleteUsuarioByEmail(string email)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
-            return uCrud.UsuarioAutenticado(email, password);
+            uCrud.Delete(new Usuario { email = email });
         }
+
+        public void UpdateUsuario(Usuario usuario)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            uCrud.Update(usuario);
+        }
+
+
+        //public  Usuario AuthenticateUser(string email, string password)
+        //{
+        //    UsuarioCrud uCrud = new UsuarioCrud();
+        //    return uCrud.UsuarioAutenticado(email, password);
+        //}
 
     }
 }
