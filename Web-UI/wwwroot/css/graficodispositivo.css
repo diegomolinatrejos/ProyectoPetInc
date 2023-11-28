@@ -1,0 +1,19 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#contenedor {
+
+    height: 100%;
+    margin: 0 auto;
+    max-height: 80%;
+    padding: 0 15% 80%;
+    text-align: center;
+    display: inline-block;
+}
+
+/*#encabezado, #contegrafico, #botones {
+    display: inline-block;
+    vertical-align: top;
+}*/

@@ -1,0 +1,34 @@
+﻿@section Scripts {
+    
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="~/js/pages/reportesadm/griddefinitionreporteadm.js"></script>
+    <script src="~/js/pages/reportesadm/MonitorDispositivo.js"></script>
+    <link rel="stylesheet" href="~/css/graficodispositivo.css" asp-append-version="true" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+ }
+
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<div id="contenedor">
+    <div id="encabezado" style="text-align: center;">
+        <h1 style="margin-top: 3%">Monitoreo de dispositivo</h1>
+        <br />
+        <p>Esta es una vista de los parámetros que esta monitoreando el dispositivo y se actualiza a intervalos determinados. </p>
+    </div>
+    <div id="contegrafico">
+        <div>
+            <h2>Dispositivo 1</h2>
+        </div>
+        <div>
+            <canvas id="miGrafico"></canvas>
+        </div>
+    </div>
+    <div id="botones">
+        <input id="iniciarContinuarBtn" type="button" value="Iniciar/Continuar" />
+        <input id="pausarBtn" type="button" value="Pausar" />
+
+    </div>
+</div>
