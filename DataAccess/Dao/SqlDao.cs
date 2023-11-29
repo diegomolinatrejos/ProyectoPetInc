@@ -16,7 +16,7 @@ namespace DataAccess.Dao
     public class SqlDao
     {
         private static SqlDao instance = new SqlDao();
-        private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
+        //private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
         //private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";

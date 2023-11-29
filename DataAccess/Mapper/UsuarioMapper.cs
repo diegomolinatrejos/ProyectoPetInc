@@ -18,8 +18,8 @@ namespace DataAccess.Mapper
                 email = objectRow["EMAIL"].ToString(),
                 contrasena = objectRow["CONTRASENA"].ToString(),
                 nombre = objectRow["NOMBRE"].ToString(),
-                primerApellido = objectRow["APELLIDO_1"].ToString(),
-                segundoApellido = objectRow["APELLIDO_2"].ToString(),
+                apellido1 = objectRow["APELLIDO_1"].ToString(),
+                apellido2 = objectRow["APELLIDO_2"].ToString(),
                 documentoIdentidad = objectRow["DOCUMENTO_IDENTIDAD"].ToString(),
                 telefono = objectRow["TELEFONO"].ToString(),
                 direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
@@ -67,8 +67,8 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("EMAIL", usuario.email);
             operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
             operation.AddVarcharParam("NOMBRE", usuario.nombre);
-            operation.AddVarcharParam("APELLIDO1", usuario.primerApellido);
-            operation.AddVarcharParam("APELLIDO2", usuario.segundoApellido);
+            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
+            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
             operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
             operation.AddVarcharParam("TELEFONO", usuario.telefono);
             operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);

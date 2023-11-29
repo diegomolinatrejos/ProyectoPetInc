@@ -15,8 +15,8 @@
         usuario.email = $('#txtCorreoElectronico').val();
         usuario.contrasena = "132";
         usuario.nombre = $('#txtNombre').val();
-        usuario.primerApellido = $('#txtPrimerApellido').val();
-        usuario.segundoApellido = $('#txtSegundoApellido').val();
+        usuario.apellido1 = $('#txtPrimerApellido').val();
+        usuario.apellido2 = $('#txtSegundoApellido').val();
         usuario.documentoIdentidad = $('#txtDocumentoIdentidad').val();
         usuario.telefono = $('#txtTelefono').val();
         usuario.direccionMapa = $('#txtDireccion').val();

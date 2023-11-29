@@ -33,9 +33,9 @@ namespace Web_UI.Controllers
 
         public IActionResult Registrar()
         {
-            return RedirectToAction("Index", "Home");
+            return View();
         }
 
-    }// fin de la clase
 
+    }
 }
