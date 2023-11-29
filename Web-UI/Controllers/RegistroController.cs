@@ -25,6 +25,12 @@ namespace Web_UI.Controllers
         {
             return RedirectToAction("Index", "Home");
         }
+        public IActionResult RegistroUsuario()
+        {
+
+            return View();
+        }
+
         public IActionResult Registrar()
         {
             return RedirectToAction("Index", "Home");
