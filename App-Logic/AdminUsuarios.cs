@@ -18,10 +18,13 @@ namespace App_Logic.Admins
             return usuarioCrud.RetrieveAll<Usuario>();
         }
 
-        public void CreateUsuario(Usuario usuario)
-        {
+        public async void CreateUsuario(Usuario usuario)
+        {   
             UsuarioCrud usuarioCrud = new UsuarioCrud();
-            usuarioCrud.Create(usuario);
+			
+
+			usuarioCrud.Create(usuario);
+            
         }
 
         public Usuario GetUsuarioById(int Id)
