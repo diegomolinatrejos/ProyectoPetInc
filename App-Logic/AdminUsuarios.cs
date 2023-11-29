@@ -11,17 +11,22 @@ namespace App_Logic.Admins
 {
     public class AdminUsuarios
     {
-        public List<Usuario> GetAllUsuarios() 
+		
+
+		public List<Usuario> GetAllUsuarios() 
         {
             UsuarioCrud usuarioCrud = new UsuarioCrud();
 
             return usuarioCrud.RetrieveAll<Usuario>();
         }
 
-        public void CreateUsuario(Usuario usuario)
-        { 
+        public async void CreateUsuario(Usuario usuario)
+        {   
             UsuarioCrud usuarioCrud = new UsuarioCrud();
-            usuarioCrud.Create(usuario);
+			
+
+			usuarioCrud.Create(usuario);
+            
         }
 
         public Usuario GetUsuarioById(int Id)

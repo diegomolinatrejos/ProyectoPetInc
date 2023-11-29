@@ -20,7 +20,7 @@ namespace App_Logic
             EmailContent emailContent = new EmailContent(subject);
             emailContent.PlainText = plainTextContent;
 
-            List<EmailAddress> emailAddresses = new List<EmailAddress> { new EmailAddress(emailAddress, "Suscriptor de ISA-IEEE") };
+            List<EmailAddress> emailAddresses = new List<EmailAddress> { new EmailAddress(emailAddress, "Suscriptor de Pet Inc.") };
             EmailRecipients emailRecipients = new EmailRecipients(emailAddresses);
             EmailMessage emailMessage = new EmailMessage("DoNotReply@fc248c30-351e-4e54-a77b-1859390c2d5b.azurecomm.net", emailRecipients, emailContent);
             EmailSendOperation emailSendOperation = await emailClient.SendAsync(WaitUntil.Completed, emailMessage, CancellationToken.None);

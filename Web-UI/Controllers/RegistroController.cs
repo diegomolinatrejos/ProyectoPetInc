@@ -1,31 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DTO.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Web_UI.Controllers
 {
     public class RegistroController : Controller
     {
-        public IActionResult RegistroServicios()
+        public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult RegistroUsuario()
-        {
-            return View();
-        }
-
-
-        public IActionResult Register()
-        {
-            return RedirectToAction("Login", "Login");
-
         }
 
         public IActionResult Cancel()
         {
             return RedirectToAction("Index", "Home");
 
-         }
+        }
+
+        public IActionResult RegistroUsuario()
+        {
+            return View();
+            
+        }
     }
 
 }
