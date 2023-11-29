@@ -20,7 +20,7 @@ namespace App_Logic.Admins
             return usuarioCrud.RetrieveAll<Usuario>();
         }
 
-        public async void CreateUsuario(Usuario usuario)
+        public void CreateUsuario(Usuario usuario)
         {   
             UsuarioCrud usuarioCrud = new UsuarioCrud();
 			
