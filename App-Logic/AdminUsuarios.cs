@@ -18,11 +18,9 @@ namespace App_Logic.Admins
             return usuarioCrud.RetrieveAll<Usuario>();
         }
 
-        public async void CreateUsuario(Usuario usuario)
+        public void CreateUsuario(Usuario usuario)
         {   
             UsuarioCrud usuarioCrud = new UsuarioCrud();
-			
-
 			usuarioCrud.Create(usuario);
             
         }
@@ -52,12 +50,11 @@ namespace App_Logic.Admins
             uCrud.Update(usuario);
         }
 
-
-        //public  Usuario AuthenticateUser(string email, string password)
-        //{
-        //    UsuarioCrud uCrud = new UsuarioCrud();
-        //    return uCrud.UsuarioAutenticado(email, password);
-        //}
+        public Usuario AuthenticateUser(string email, string password)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            return uCrud.UsuarioAutenticado(email, password);
+        }
 
     }
 }
