@@ -53,11 +53,11 @@ namespace App_Logic.Admins
         }
 
 
-        //public  Usuario AuthenticateUser(string email, string password)
-        //{
-        //    UsuarioCrud uCrud = new UsuarioCrud();
-        //    return uCrud.UsuarioAutenticado(email, password);
-        //}
+        public  Usuario AuthenticateUser(string email, string password)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            return uCrud.UsuarioAutenticado(email, password);
+        }
 
     }
 }

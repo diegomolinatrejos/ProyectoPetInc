@@ -14,6 +14,7 @@ namespace Web_UI.Controllers
         public IActionResult Cancel()
         {
             return RedirectToAction("Index", "Home");
+        }
 
         public IActionResult RegistroMascotas()
         {
