@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+
+<section id="edicionServicio">
+    <h1 class="titulo">Edición de Servicio</h1>
+
+    <div class="contenedor mascota-info" style="margin-top: -3%;">
+        <div class="contenedor-registro-mascota">
+            <form id="formularioEdicionServicios" action="" class="registro-mascota">
+                <label class="col-sm-2 col-form-label titulo-perfil">Nombre del servicio:</label>
+                <input type="text" class="form-control" id="nombreServicioEditar" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
+                <textarea class="form-control" id="descripcionServicioEditar" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                <label class="col-sm-2 col-form-label titulo-perfil">Precio:</label>
+                <input type="text" class="form-control" id="precioServicioEditar">
+                <label class="col-sm-2 col-form-label titulo-perfil">Estado:</label>
+                <select class="form-select" id="selecionEstado">
+                    <option selected>Activo</option>
+                    <option>Inactivo</option>
+                </select>
+                <div class="fotos-registro-mascotas">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Foto del servicio:</label>
+                    <input type="file" class="form-control foto-servicio-formulario" id="fotoServicioEditar" onchange="mostrarImagen(this, 'imagenServicioEditar')">
+                </div>
+                <div style="margin-top: 2%; text-align: center;">
+                    <button type="submit" class="btn btn-primary" id="guardarServicioEditar">Guardar</button>
+                    <a asp-controller="Servicios" asp-action="ServiciosActuales" class="btn btn-primary" id="cancelarServicioEditar">Cancelar</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="contenedor-imagen-servicios">
+            <h2>Visualización de imagen</h2>
+            <div style=" margin-left: 0%;">
+                <img id="imagenServicioEditar" class="imagen-servicio" src="~/media/img/huella.png" alt="Imagen del servicio" style=" display: inline-block; width: 300px; margin-top: 5%; height: 300px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 10%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+
+<script src="~/js/pages/servicios/Servicios.js" asp-append-version="true"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        validarFormularioEdicionServicios()
+
+
+        document.getElementById('fotoMascotaEditar').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenMascota');
+        });
+
+        document.getElementById('fotoMascotaEditar2').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenMascota2');
+        });
+    });
+</script>

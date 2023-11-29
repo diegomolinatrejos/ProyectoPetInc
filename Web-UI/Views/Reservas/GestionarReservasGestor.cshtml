@@ -3,7 +3,7 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
-<section id="realizarReserva">
+<section id="reservasAdminGestor">
     <h1 class="titulo">Gestionar reservas</h1>
 
     <div style="max-width: 90%; margin-left: 5%;">
@@ -24,6 +24,7 @@
                     <th scope="col">Precio</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Asignar dispositivo</th>
+                    <th scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,7 @@
                     <td>₡34.000</td>
                     <td>Pendiente</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Asignar dispositivo</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
                 <tr class="table-active">
                     <td>Diego Molina Trejos</td>
@@ -48,6 +50,7 @@
                     <td>₡20.000</td>
                     <td>Inactiva</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
                 <tr class="table-active">
                     <td>Alejandro Salazar Lobo</td>
@@ -59,12 +62,13 @@
                     <td>₡20.000</td>
                     <td>Inactiva</td>
                     <td><button type="submit" class="btn btn-primary" id="boton-enviar">Reserva Inactiva</button></td>
+                    <td> <a asp-controller="Reservas" asp-action="EdicionReserva" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div>
-        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+        <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 0%;">
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
                 <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
                       style="stroke: none; fill: #2C3E50;"></path>

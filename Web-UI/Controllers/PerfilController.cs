@@ -8,5 +8,11 @@ namespace Web_UI.Controllers
         {
             return View();
         }
+
+
+        public IActionResult EdicionPerfil()
+        {
+            return View();
+        }
     }
 }
