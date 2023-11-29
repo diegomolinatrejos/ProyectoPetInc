@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="registroMascota">
+    <h1 class="titulo">Registro de Mascotas</h1>
+
+    <div class="contenedor mascota-info">
+        <div class="contenedor-registro-mascota">
+            <form id="formularioRegistroMascotas" action="" class="registro-mascota">
+                <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
+                <input type="text" class="form-control" id="txtInputNombreMascota" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
+                <input type="text" class="form-control" id="txtInputRaza" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
+                <input type="date" class="form-control" id="txtInputFechaNacimiento">
+                <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
+                <input type="number" class="form-control" id="txtInputAgresividad">
+                <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
+                <textarea class="form-control" id="txtInputDescripcion" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                <div class="fotos-registro-mascotas">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Fotos de la mascota:</label>
+                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota">
+                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota2">
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnEnviarRegistro">Registrar</button>
+            </form>
+        </div>
+
+        <div id="contenedorImagenes">
+            <h2>Visualización de imágenes</h2>
+            <div class="contenedorVisualizacionImagenMascota">
+                <img id="imagenMascota" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 2">
+                <img id="imagenMascota2" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 1">
+            </div>
+        </div>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 10%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+
+<script src="~/js/pages/perfil/Perfil.js" asp-append-version="true"></script>
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        validarFormularioEdicionPerfil();
+
+        // Lógica para mostrar imágenes después de que el DOM se haya cargado
+        document.getElementById('fotoPerfilEdit').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenfotoPerfilEdit');
+        });
+
+    });
+
+
+        </script>

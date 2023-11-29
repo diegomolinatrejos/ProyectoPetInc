@@ -49,6 +49,22 @@ namespace API.Controllers
 
         }
 
+        [HttpPut]
+        public string UpdateUsuario(Usuario usuario)
+        {
+            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            adminUsuarios.UpdateUsuario(usuario);
+            return "Usuario Actualizado";
+        }
+
+        [HttpDelete]
+        public string DeleteUsuario(string email)
+        {
+            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            adminUsuarios.DeleteUsuarioByEmail(email);
+            return "Usuario eliminado";
+        }
+
         [HttpPost]
         public IActionResult AuthenticateUser(Usuario user)
         {

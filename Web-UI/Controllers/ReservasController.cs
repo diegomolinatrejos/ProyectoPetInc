@@ -23,5 +23,15 @@ namespace Web_UI.Controllers
         {
             return View();
         }
+
+        public IActionResult EdicionReserva()
+        {
+            return View();
+        }
+
+        public IActionResult EdicionReservaGestor()
+        {
+            return View();
+        }
     }
 }

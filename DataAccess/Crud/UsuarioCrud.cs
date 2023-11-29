@@ -29,7 +29,9 @@ namespace DataAccess.Crud
 
         public override void Delete(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            Usuario usuario = (Usuario)entityDTO;
+            SqlOperation operation = usuarioMapper.GetDeleteStatement(usuario);
+            dao.ExecuteStoredProcedure(operation);
         }
 
         public override List<T> RetrieveAll<T>()
@@ -62,7 +64,10 @@ namespace DataAccess.Crud
 
         public override void Update(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            Usuario usuario = (Usuario)entityDTO;
+     
+            SqlOperation operation = usuarioMapper.GetUpdateStatement(entityDTO);
+            dao.ExecuteStoredProcedure(operation);
         }
 
         public List<T> RetrieveBySearchPhrase<T>(string phrase)
@@ -83,23 +88,18 @@ namespace DataAccess.Crud
             return lstResults;
         }
 
-        public Usuario UsuarioAutenticado(string email, string password)
-        {
-            var lstResults = RetrieveBySearchPhrase <Usuario>(email);
+        //public Usuario UsuarioAutenticado(string email, string password)
+        //{
+        //    var lstResults = RetrieveBySearchPhrase <Usuario>(email);
 
-            if (lstResults.Count > 0)
-            {
-                // El método RetreiveUserByPhrase ya filtra por nombre de usuario, ahora verifica la contraseña
-                var authenticatedUser = lstResults.FirstOrDefault(user => user.contrasena == password);
-                return authenticatedUser;
-            }
+        //    if (lstResults.Count > 0)
+        //    {
+        //        // El método RetreiveUserByPhrase ya filtra por nombre de usuario, ahora verifica la contraseña
+        //        var authenticatedUser = lstResults.FirstOrDefault(user => user.contrasena == password);
+        //        return authenticatedUser;
+        //    }
 
-            return null;
-        }
-
-        public override T RetrieveByEmail<T>(string email)
-        {
-            throw new NotImplementedException();
-        }
+        //    return null;
+        //}
     }
 }

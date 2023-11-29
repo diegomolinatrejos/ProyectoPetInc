@@ -15,13 +15,20 @@ namespace Web_UI.Controllers
         {
             return RedirectToAction("Index", "Home");
 
-        }
-
-        public IActionResult RegistroUsuario()
+        public IActionResult RegistroMascotas()
         {
             return View();
-            
         }
 
-    }
+        public IActionResult Cancelar()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Registrar()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+    }// fin de la clase
+
 }

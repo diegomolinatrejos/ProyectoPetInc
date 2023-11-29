@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="edicionDispositivo">
+    <h1 class="titulo">Edición de Dispositivo</h1>
+    <div class="contenedor-registro-servicio">
+        <form action="" class="registro-servicio" id="formularioEdicionDispositivos">
+            <label class="col-sm-2 col-form-label titulo-perfil">Nombre del dispositivo:</label>
+            <input type="text" class="form-control" id="txtInputnombre" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Número de serie del dispositivo:</label>
+            <input type="text" class="form-control" id="txtInputnumero" style="margin-bottom: 2%;">
+            <label class="col-sm-2 col-form-label titulo-perfil">Estado del dispositivo:</label>
+            <select class="form-select" id="selectBoxEstado">
+                <option selected>Activo</option>
+                <option>Inactivo</option>
+            </select>
+            <div style="margin-top: 2%; text-align: center;">
+                <button type="submit" class="btn btn-primary" id="btnGuardarDispositivo">Guardar</button>
+                <a asp-controller="Dispositivos" asp-action="DispositivosActuales" class="btn btn-primary" id="btnCancelarEdicionDispositivo"> Cancelar </a>
+            </div>
+        </form>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 10%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+
+
+<script src="~/js/pages/dispositivos/Dispositivos.js" asp-append-version="true"></script>
+
+<script>
+
+    validarFormularioEdicionDispositivos();
+
+</script>

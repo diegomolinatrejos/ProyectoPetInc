@@ -6,17 +6,21 @@
 <section id="perfilUsuario">
     <h1 class="titulo">Información de Perfil</h1>
 
-
     <div class="contenedor perfil-info">
         <div class="contenedor-datos-perfil">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Nombre</h2>
-            <input id="nombre" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="Limberth Isaias Hernandez Mora">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Identificación</h2>
-            <input id="identificación" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="20990111">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Teléfono</h2>
-            <input id="telefono" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="88888822">
-            <h2 class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico</h2>
-            <input id="email" type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="usuario@inicial.com">
+            <label class="col-sm-2 col-form-label titulo-perfil">Nombre</label>
+            <input id="txtInputNombrePerfil" type="text" readonly="" class="form-control-plaintext" value="Limberth Isaias Hernandez Mora">
+            <label class="col-sm-2 col-form-label titulo-perfil">Identificación</label>
+            <input id="txtInputIdentificacionPerfil" type="text" readonly="" class="form-control-plaintext" value="20990111">
+            <label class="col-sm-2 col-form-label titulo-perfil">Teléfono</label>
+            <input id="txtInputTelefonoPerfil" type="text" readonly="" class="form-control-plaintext" value="88888822">
+            <label class="col-sm-2 col-form-label titulo-perfil">Correo Electrónico</label>
+            <input id="txtInputEmailPerfil" type="text" readonly="" class="form-control-plaintext" value="usuario@inicial.com">
+
+            <a asp-controller="Perfil" asp-action="EdicionPerfil" class="btn btn-primary" id="btnPerfilEdit">Editar</a>
+
+            <div>
+            </div>
         </div>
 
         <div style="width:50%;">
@@ -31,4 +35,5 @@
         </svg>
     </div>
 </section>
+
 
