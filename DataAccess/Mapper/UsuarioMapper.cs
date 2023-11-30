@@ -18,8 +18,8 @@ namespace DataAccess.Mapper
                 email = objectRow["EMAIL"].ToString(),
                 contrasena = objectRow["CONTRASENA"].ToString(),
                 nombre = objectRow["NOMBRE"].ToString(),
-                apellido1 = objectRow["APELLIDO_1"].ToString(),
-                apellido2 = objectRow["APELLIDO_2"].ToString(),
+                primerApellido = objectRow["APELLIDO_1"].ToString(),
+                segundoApellido = objectRow["APELLIDO_2"].ToString(),
                 documentoIdentidad = objectRow["DOCUMENTO_IDENTIDAD"].ToString(),
                 telefono = objectRow["TELEFONO"].ToString(),
                 direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
@@ -28,13 +28,13 @@ namespace DataAccess.Mapper
 
             var rol = new Rol()
             {
-                Id = int.Parse(objectRow["ID"].ToString()),
+                Id = int.Parse(objectRow["ROL"].ToString()),
                 nombreRol = objectRow["NOMBRE_ROL"].ToString()
             };
 
             var estado = new Estado()
             { 
-                Id = int.Parse(objectRow["ID"].ToString()),
+                Id = int.Parse(objectRow["ESTADO"].ToString()),
                 nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
 
@@ -67,8 +67,8 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("EMAIL", usuario.email);
             operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
             operation.AddVarcharParam("NOMBRE", usuario.nombre);
-            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
-            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
+            operation.AddVarcharParam("APELLIDO1", usuario.primerApellido);
+            operation.AddVarcharParam("APELLIDO2", usuario.segundoApellido);
             operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
             operation.AddVarcharParam("TELEFONO", usuario.telefono);
             operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);
@@ -82,12 +82,38 @@ namespace DataAccess.Mapper
 
         public SqlOperation GetDeleteStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_DELETE_USUARIO_BY_EMAIL";
+          
+            Usuario usuario = (Usuario)entityDTO;
+
+            operation.AddVarcharParam("email", usuario.email);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "PR_UPDATE_USUARIO";
+
+            Usuario usuario = (Usuario)entityDTO;
+
+            operation.AddIntegerParam("ID", usuario.Id);
+            operation.AddVarcharParam("EMAIL", usuario.email);
+            operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
+            operation.AddVarcharParam("NOMBRE", usuario.nombre);
+            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
+            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
+            operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
+            operation.AddVarcharParam("TELEFONO", usuario.telefono);
+            operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);
+            operation.AddVarcharParam("FOTO", usuario.foto);
+            operation.AddIntegerParam("ROL", usuario.rol.Id);
+            operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
+
+            return operation;
         }
 
         public SqlOperation RetrieveAllStatement()

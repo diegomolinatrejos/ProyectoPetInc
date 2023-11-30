@@ -11,17 +11,20 @@ namespace App_Logic.Admins
 {
     public class AdminUsuarios
     {
-        public List<Usuario> GetAllUsuarios() 
+        public List<Usuario> GetAllUsuarios()
         {
             UsuarioCrud usuarioCrud = new UsuarioCrud();
 
             return usuarioCrud.RetrieveAll<Usuario>();
         }
 
-        public void CreateUsuario(Usuario usuario)
-        { 
+        public async void CreateUsuario(Usuario usuario)
+        {   
             UsuarioCrud usuarioCrud = new UsuarioCrud();
-            usuarioCrud.Create(usuario);
+			
+
+			usuarioCrud.Create(usuario);
+            
         }
 
         public Usuario GetUsuarioById(int Id)
@@ -34,14 +37,27 @@ namespace App_Logic.Admins
         public List<Usuario> GetUsuarioByPhrase(string searchPhrase)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
-            return uCrud.RetrieveBySearchPhrase <Usuario>(searchPhrase);
+            return uCrud.RetrieveBySearchPhrase<Usuario>(searchPhrase);
         }
 
-        public static Usuario AuthenticateUser(string email, string password)
+        public void DeleteUsuarioByEmail(string email)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
-            return uCrud.UsuarioAutenticado(email, password);
+            uCrud.Delete(new Usuario { email = email });
         }
+
+        public void UpdateUsuario(Usuario usuario)
+        {
+            UsuarioCrud uCrud = new UsuarioCrud();
+            uCrud.Update(usuario);
+        }
+
+
+        //public  Usuario AuthenticateUser(string email, string password)
+        //{
+        //    UsuarioCrud uCrud = new UsuarioCrud();
+        //    return uCrud.UsuarioAutenticado(email, password);
+        //}
 
     }
 }

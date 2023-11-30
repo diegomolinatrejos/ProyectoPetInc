@@ -1,43 +1,79 @@
-﻿
-// sweet alert
-// Seleccionamos el botón por su ID
-const botonEnviar = document.getElementById('boton-enviar');
-
-// Agregamos un evento click al botón
-botonEnviar.addEventListener('click', function (e) {
-    // Prevenimos el envío del formulario por defecto
-    e.preventDefault();
-
-    // Validamos que todos los campos obligatorios estén completos
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellido1 = document.getElementById('apellido1').value.trim();
-    const apellido2 = document.getElementById('apellido2').value.trim();
-    const identificacion = document.getElementById('identificacion').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const direccion = document.getElementById('direccion').value.trim();
-    const fotoUsuario = document.getElementById('fotoUsuario').value.trim();
-
-
-    if (nombre === '' || apellido1 === '' || apellido2 === '' || identificacion === '' || telefono === '' || email === '' || direccion === '' || fotoUsuario === '') {
-        // Si algún campo obligatorio está vacío, mostramos un mensaje de error con SweetAlert
-        Swal.fire({ //método de la biblioteca SweetAlert que permite mostrar alertas personalizadas en el navegador
-            title: 'Error',
-            text: 'Por favor completa todos los campos obligatorios',
-            icon: 'error',
-            confirmButtonText: 'Aceptar'
-        });
-    } else {
-        // Si todos los campos obligatorios están completos, mostramos un mensaje de éxito con SweetAlert y enviamos el formulario
-        Swal.fire({
-            title: 'Formulario enviado',
-            text: 'Gracias por enviar tu información',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.form.submit();
-            }
+﻿function RegistroUsuario() {
+    //Init view nos va a permitir inicializar funciones y eventos
+    console.log("entrar metodo")    
+    this.InitView = function () {
+        $('#btnRegistrar').click(function () {
+ 
+            var view = new RegistroUsuario();
+            view.SubmitUserToCreate();
         });
     }
+
+    this.SubmitUserToCreate = function () {
+        //usuario
+        var usuario = {};
+        usuario.email = $('#txtCorreoElectronico').val();
+        usuario.contrasena = "132";
+        usuario.nombre = $('#txtNombre').val();
+        usuario.primerApellido = $('#txtPrimerApellido').val();
+        usuario.segundoApellido = $('#txtSegundoApellido').val();
+        usuario.documentoIdentidad = $('#txtDocumentoIdentidad').val();
+        usuario.telefono = $('#txtTelefono').val();
+        usuario.direccionMapa = $('#txtDireccion').val();
+        usuario.foto = $('#txtFoto').val();
+
+        usuario.rol = {
+            "id": 1,
+            "nombreRol": "string"
+        };
+
+        usuario.estadoInfo = {
+            "id": 1,
+            "nombreEstado": "string"
+        };
+
+        usuario.otp = 0;
+   
+        
+
+        //llamar al API para crear el usuario
+        console.log("usuario", usuario);
+
+        var apiUrl = API_URL_BASE + "/api/Admin/CreateUsuario";
+
+        //Enviar los datos al API para que cree el Usuario
+        console.log("usuario", usuario);
+        $.ajax({
+            headers: {
+                'Accept': "application/json",
+                'Content-Type': "application/json"
+            },
+            method: "POST",
+            url: apiUrl,
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(usuario),
+            hasContent: true
+
+        }).done(function (data) {
+            console.log(data);
+            Swal.fire({
+                title: "Success",
+                icon: 'info',
+                text: 'El usuario fue creado exitosamente'
+            });
+        }).fail(function (error) {
+            console.log(error);
+            Swal.fire({
+                title: "Error",
+                icon: 'error',
+                text: 'Hubo un error al crear el usuario'
+            });
+        });
+    }
+}
+
+$(document).ready(function () {
+    var view = new RegistroUsuario();
+    view.InitView();
 });
