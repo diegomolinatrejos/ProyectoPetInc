@@ -13,7 +13,7 @@ namespace DTO.Models
         public decimal total { get; set; }
         public int confirmada { get; set; }
         public Estado estadoReserva { get; set; }
-        public PrecioImpuesto precioBase { get; set; }
-        public PrecioImpuesto impuesto { get; set; }
+        public decimal precioBase { get; set; }
+        public decimal impuesto { get; set; }
     }
 }
