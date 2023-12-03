@@ -44,7 +44,8 @@ namespace Web_UI.Controllers
             using (HttpClient client = new HttpClient())
             {
                 // Reemplaza la URL con la URL correcta de tu API y método de autenticación
-                string apiUrl = "https://petsincapiqc.azurewebsites.net/api/Admin/GetUsuarioPorFrase?searchPhrase=" + user.email;
+                //string apiUrl = "https://petsincapiqc.azurewebsites.net/api/Admin/GetUsuarioPorFrase?searchPhrase=" + user.email;
+                string apiUrl = "http://localhost:5087/api/Admin/GetUsuarioPorFrase?searchPhrase=" + user.email;
 
                 // Realiza la llamada GET al API para obtener el usuario por email
                 var response = await client.GetAsync(apiUrl);
@@ -63,6 +64,7 @@ namespace Web_UI.Controllers
                         HttpContext.Session.SetString("email", userAutenticado.email);
                         HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
                         HttpContext.Session.SetString("nombre", userAutenticado.nombre);
+                        HttpContext.Session.SetInt32("Id", userAutenticado.Id);
 
                         return RedirectToAction("DashboardHome", "Dashboard");
                     }

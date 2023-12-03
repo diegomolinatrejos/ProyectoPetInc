@@ -65,18 +65,18 @@ namespace API.Controllers
             return "Usuario eliminado";
         }
 
-        [HttpPost]
-        public IActionResult AuthenticateUser(Usuario user)
-        {
-            AdminUsuarios adminUsuarios = new AdminUsuarios();
-            var userAutenticado = adminUsuarios.AuthenticateUser(user.email, user.contrasena);
+        //[HttpPost]
+        //public IActionResult AuthenticateUser(Usuario user)
+        //{
+        //    AdminUsuarios adminUsuarios = new AdminUsuarios();
+        //    var userAutenticado = adminUsuarios.AuthenticateUser(user.email, user.contrasena);
 
-            if (userAutenticado != null)
-            {
-                return Ok(userAutenticado);
-            }
+        //    if (userAutenticado != null)
+        //    {
+        //        return Ok(userAutenticado);
+        //    }
 
-            return NotFound();
-        }
+        //    return NotFound();
+        //}
     }
 }

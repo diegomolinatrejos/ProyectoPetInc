@@ -11,14 +11,6 @@ namespace Web_UI.Controllers
             return View();
         }
 
-        public IActionResult Cancel()
-        {
-            return RedirectToAction("Index", "Home");
-
-        public IActionResult RegistroMascotas()
-        {
-            return View();
-        }
 
         public IActionResult Cancelar()
         {
@@ -29,6 +21,6 @@ namespace Web_UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-    }// fin de la clase
+        }// fin de la clase
 
-}
+    } 

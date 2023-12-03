@@ -88,6 +88,11 @@ namespace DataAccess.Crud
             return lstResults;
         }
 
+        public override T RetrieveByEmail<T>(string email)
+        {
+            throw new NotImplementedException();
+        }
+
         //public Usuario UsuarioAutenticado(string email, string password)
         //{
         //    var lstResults = RetrieveBySearchPhrase <Usuario>(email);

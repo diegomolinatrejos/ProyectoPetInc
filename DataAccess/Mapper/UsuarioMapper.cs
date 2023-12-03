@@ -104,8 +104,8 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("EMAIL", usuario.email);
             operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
             operation.AddVarcharParam("NOMBRE", usuario.nombre);
-            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
-            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
+            operation.AddVarcharParam("APELLIDO1", usuario.primerApellido);
+            operation.AddVarcharParam("APELLIDO2", usuario.segundoApellido);
             operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
             operation.AddVarcharParam("TELEFONO", usuario.telefono);
             operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);

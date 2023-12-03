@@ -1,7 +1,15 @@
-﻿@{
+﻿@model DTO.Models.Usuario
+@inject IHttpContextAccessor Accesor
+@{
     ViewBag.Title = "";
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/pages/mascotas/ListaMascotasDuenno.js" asp-append-version="true"></script>
+
+
+<div id="idUsuario" data-id="@Accesor.HttpContext.Session.GetInt32("Id")"></div>
 
 <section id="contenedorListaMascotas">
 <h1 class="titulo">Mascotas Actuales</h1>
@@ -16,31 +24,8 @@
                 <th scope="col">Editar</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="table-active">
-                <td>Toto</td>
-                <td>Labrador</td>
-                <td>4 meses</td>
-                <td>1</td>
-                <td> Activo </td>
-                <td> <a asp-controller="Mascotas" asp-action="EdicionMascotas" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
-            </tr>
-            <tr class="table-active">
-                <td>Yoda</td>
-                <td>Bull Terrier</td>
-                <td>10 años</td>
-                <td>4</td>
-                <td> Activo </td>
-                <td> <a asp-controller="Mascotas" asp-action="EdicionMascotas" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
-            </tr>
-            <tr class="table-active">
-                <td>Kobe</td>
-                <td>Labrador</td>
-                <td>3 años</td>
-                <td>3</td>
-                <td> Activo </td>
-                <td> <a asp-controller="Mascotas" asp-action="EdicionMascotas" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a> </td>
-            </tr>
+        <tbody id="tablaMascotasBody">
+
         </tbody>
     </table>
 </section>
@@ -51,3 +36,5 @@
               style="stroke: none; fill: #2C3E50;"></path>
     </svg>
 </div>
+
+
