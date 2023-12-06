@@ -131,7 +131,21 @@ namespace DataAccess.Mapper
             return operation;
         }
 
-        public SqlOperation RetrieveAllStatement()
+		public SqlOperation GetUpdateRol(BaseClass entityDTO)
+		{
+			SqlOperation operation = new SqlOperation();
+			operation.ProcedureName = "PR_UPDATE_ROL";
+
+			Usuario usuario = (Usuario)entityDTO;
+
+			operation.AddIntegerParam("ID", usuario.Id);
+			operation.AddIntegerParam("ROL", usuario.idRol);
+
+
+			return operation;
+		}
+
+		public SqlOperation RetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
 

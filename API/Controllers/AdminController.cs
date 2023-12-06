@@ -93,5 +93,43 @@ namespace API.Controllers
 
             return NotFound();
         }
-    }
+
+		[HttpPut]
+		public IActionResult AssignRolToUsuario(int usuarioId, int rolId)
+		{
+			try
+			{
+				AdminUsuarios adminUsuarios = new AdminUsuarios();
+				var usuario = adminUsuarios.GetUsuarioById(usuarioId);
+
+				if (usuario != null)
+				{
+					AdminRol adminRol = new AdminRol();
+					var rol = adminRol.GetRolById(rolId);
+
+					if (rol != null)
+					{
+						usuario.idRol = rol.Id;
+						usuario.rol = rol; 
+
+						adminUsuarios.SetRol(usuarioId, rolId);
+
+						return Ok("Rol asignado correctamente al usuario.");
+					}
+					else
+					{
+						return NotFound("Rol no encontrado.");
+					}
+				}
+				else
+				{
+					return NotFound("Usuario no encontrado.");
+				}
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+	}
 }

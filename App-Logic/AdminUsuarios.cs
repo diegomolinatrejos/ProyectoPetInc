@@ -53,7 +53,20 @@ namespace App_Logic.Admins
             
         }
 
-        public Usuario GetUsuarioById(int Id)
+		public void SetRol(int usuarioId, int rolId)
+		{
+			UsuarioCrud usuarioCrud = new UsuarioCrud();
+            Usuario usuario = usuarioCrud.RetrieveById<Usuario>(usuarioId);
+
+            if (usuario != null) 
+            {
+                usuario.idRol = rolId;
+                usuarioCrud.UpdateRol(usuario);
+
+			}
+		}
+
+		public Usuario GetUsuarioById(int Id)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
 
@@ -77,6 +90,8 @@ namespace App_Logic.Admins
             UsuarioCrud uCrud = new UsuarioCrud();
             uCrud.Update(usuario);
         }
+
+        
 
 
         public Usuario AuthenticateUser(string email, string password)
