@@ -25,11 +25,18 @@ namespace API.Controllers
         [HttpPost]
         public string CreateUsuario(Usuario admin)
         {
-            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            try
+            {
+                AdminUsuarios adminUsuarios = new AdminUsuarios();
 
-            adminUsuarios.CreateUsuario(admin);
+                adminUsuarios.CreateUsuario(admin);
+            }
+            catch (Exception ex)
+            {
+                var x = ex.ToString();
+            }
 
-            return "OK";
+            return "Success";
 
         }
 
@@ -47,6 +54,14 @@ namespace API.Controllers
 
             return adminUsuario.GetUsuarioByPhrase (searchPhrase);
 
+        }
+
+        [HttpPut]
+        public string SetPassword(int usuarioId, string newPassword)
+        {
+            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            adminUsuarios.SetPassword(usuarioId, newPassword);
+            return "Usuario Actualizado";
         }
 
         [HttpPut]

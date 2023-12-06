@@ -17,7 +17,7 @@ namespace DataAccess.Dao
     {
         private static SqlDao instance = new SqlDao();
         //private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
-        //private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
+        private string _connectionString = "Server=FRED\\SQLEXPRESS;Database=ProyectHotelPetInc;User ID=sa;Password=12345678";
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";
         //private string _connectionString = "Server=tcp:isa-ieee-dbserver.database.windows.net,1433;Initial Catalog=isa-ieee-db;Persist Security Info=False;User ID=Cenfo_DB;Password=Psw123456*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";

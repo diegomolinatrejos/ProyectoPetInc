@@ -75,7 +75,7 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
             operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
-
+            operation.AddVarcharParam("OTP", usuario.otp);
 
             return operation;
         }
@@ -104,14 +104,29 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("EMAIL", usuario.email);
             operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
             operation.AddVarcharParam("NOMBRE", usuario.nombre);
-            operation.AddVarcharParam("APELLIDO1", usuario.primerApellido);
-            operation.AddVarcharParam("APELLIDO2", usuario.segundoApellido);
+            operation.AddVarcharParam("APELLIDO1", usuario.apellido1);
+            operation.AddVarcharParam("APELLIDO2", usuario.apellido2);
             operation.AddVarcharParam("DOCUMENTOIDENTIDAD", usuario.documentoIdentidad);
             operation.AddVarcharParam("TELEFONO", usuario.telefono);
             operation.AddVarcharParam("DIRECCIONMAPA", usuario.direccionMapa);
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
             operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
+            operation.AddVarcharParam("OTP", usuario.otp);
+
+            return operation;
+        }
+
+        public SqlOperation GetUpdatePassword(BaseClass entityDTO)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "PR_UPDATE_CONTRASENA";
+
+            Usuario usuario = (Usuario)entityDTO;
+
+            operation.AddIntegerParam("ID", usuario.Id);
+            operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
+           
 
             return operation;
         }

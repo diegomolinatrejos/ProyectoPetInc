@@ -10,6 +10,8 @@ namespace DTO
 	public class Password : BaseClass
 	{
 		public int idUsuario { get; set; }
+
+		public string currentPassword {  get; set; }
 		public string newPassword { get; set; }
 	}
 }

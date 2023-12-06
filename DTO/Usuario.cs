@@ -19,6 +19,6 @@ namespace DTO.Models
         public string foto { get; set; }
         public Rol rol { get; set; }
         public Estado estadoInfo {  get; set; }
-        public int otp {  get; set; }
+        public string otp {  get; set; }
     }
 }

@@ -17,7 +17,8 @@ namespace DataAccess.Mapper
 			var password = new Password()
 			{
 				Id = (int)objectRow["ID"],
-				newPassword = objectRow["NEW_PASSWORD"].ToString()
+				currentPassword = objectRow["ACTUAL_CONTRASENA"].ToString(),
+				newPassword = objectRow["NUEVA_CONTRASENA"].ToString()
 			};
 			return password;
 		}
@@ -68,7 +69,8 @@ namespace DataAccess.Mapper
 
 
 			operation.AddIntegerParam("ID_USUARIO", password.idUsuario);
-			operation.AddVarcharParam("CONTRASENA", password.newPassword);
+            operation.AddVarcharParam("ACTUAL_CONTRASENA", password.currentPassword);
+            operation.AddVarcharParam("NUEVA_CONTRASENA", password.newPassword);
 
 			return operation;
 		}
@@ -107,8 +109,14 @@ namespace DataAccess.Mapper
 
 		public SqlOperation RetrieveByIdStatement(int Id)
 		{
-			throw new NotImplementedException();
-		}
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_GET_PASSWORD_BY_ID";
+
+            operation.AddIntegerParam("usuario_id", Id);
+
+            return operation;
+        }
 
 		
 

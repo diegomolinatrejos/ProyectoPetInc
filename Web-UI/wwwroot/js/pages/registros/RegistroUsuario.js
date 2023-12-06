@@ -12,18 +12,19 @@
     this.SubmitUserToCreate = function () {
         //usuario
         var usuario = {};
+        usuario.id = 0;
         usuario.email = $('#txtCorreoElectronico').val();
         usuario.contrasena = "132";
         usuario.nombre = $('#txtNombre').val();
-        usuario.apellido1 = $('#txtPrimerApellido').val();
-        usuario.apellido2 = $('#txtSegundoApellido').val();
+        usuario.apellido1 = $('#txtApellido1').val();
+        usuario.apellido2 = $('#txtApellido2').val();
         usuario.documentoIdentidad = $('#txtDocumentoIdentidad').val();
         usuario.telefono = $('#txtTelefono').val();
         usuario.direccionMapa = $('#txtDireccion').val();
         usuario.foto = $('#txtFoto').val();
 
         usuario.rol = {
-            "id": 1,
+            "id": 3,
             "nombreRol": "string"
         };
 
@@ -32,7 +33,7 @@
             "nombreEstado": "string"
         };
 
-        usuario.otp = 0;
+        usuario.otp = "0";
    
         
 
@@ -55,8 +56,8 @@
             data: JSON.stringify(usuario),
             hasContent: true
 
-        }).done(function (data) {
-            console.log(data);
+        }).done(function () {
+            
             Swal.fire({
                 title: "Success",
                 icon: 'info',

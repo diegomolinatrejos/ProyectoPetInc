@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="registroMascota">
+    <h1 class="titulo">Cambio de contraseña</h1>
+
+    <div class="contenedor mascota-info">
+        <div class="contenedor-registro-mascota">
+            <form id="formularioRegistroMascotas" action="" class="registro-mascota">
+                <label class="col-sm-2 col-form-label titulo-perfil">Contraseña actual:</label>
+                <input type="password" class="form-control" id="txtContrasenaActual" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Contraseña nueva:</label>
+                <input type="password" class="form-control" id="txtContrasena nueva" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Confirmació nueva contraseña:</label>
+                <input type="password" class="form-control" id="txtConfirmacionNuevaContrasena" style="margin-bottom: 2%;">
+                
+                <button type="submit" class="btn btn-primary" id="btnCambiarContrasena">Actualizar</button>
+            </form>
+        </div>
+
+        
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 10%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+
+<script src="~/js/pages/perfil/Perfil.js" asp-append-version="true"></script>
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        validarFormularioEdicionPerfil();
+
+        // Lógica para mostrar imágenes después de que el DOM se haya cargado
+        document.getElementById('fotoPerfilEdit').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenfotoPerfilEdit');
+        });
+
+    });
+
+
+        </script>

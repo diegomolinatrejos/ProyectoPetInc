@@ -6,12 +6,13 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using DTO.Models;
 
 namespace App_Logic
 {
     public class AdminEmail
     {
-        public async Task<string> SendEmail(string subject, string plainTextContent, string emailAddress)
+        public async Task<API_Response> SendEmail(string subject, string plainTextContent, string emailAddress)
         {
             string connectionString = "endpoint=https://isa-ieee-communicationservice.unitedstates.communication.azure.com/;accesskey=p/eEvRFgsQVGdGdACB1wInqOKaxSdGOfpoO0g5ybFqp7kKWquqTF4SPsTyfm7EX8nTgfGlGnX7mF3q/SYxrmsQ==";
 
@@ -28,10 +29,10 @@ namespace App_Logic
 
             Console.WriteLine($"Email Sent. Status = {emailSendOperation.Value.Status}");
 
-            return emailSendOperation.Value.Status.ToString();
+            return new API_Response { Result = "Ok" };
         }
 
-        public async Task<string> SendOTPEmail(string emailAddress, int otp)
+        public async Task<API_Response> SendOTPEmail(string emailAddress, string otp)
         {
 
             string subject = "Your OTP";
@@ -41,7 +42,7 @@ namespace App_Logic
         }
 
 
-        public async Task<string> SendReservationConfirmationEmail(string emailAddress)
+        public async Task<API_Response> SendReservationConfirmationEmail(string emailAddress)
         {
 
             string subject = "Reservation Confirmation";
