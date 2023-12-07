@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+
+<section id="realizarReserva">
+    <h1 class="titulo">Edición de Reserva</h1>
+
+
+    <div class="contenedor reserva-info">
+        <div class="contenedor-registro-reserva">
+            <form action="" class="registro-reserva">
+                <label class="col-sm-2 col-form-label titulo-perfil">Seleccione una mascota:</label>
+                <input type="text" class="form-control" id="mascotaReserva" value="Toto" disabled>
+                <label class="col-sm-2 col-form-label titulo-perfil">Fecha de entrada:</label>
+                <input type="date" class="form-control" id="fechaEntrada" readonly>
+                <label class="col-sm-2 col-form-label titulo-perfil">Fecha de salida:</label>
+                <input type="date" class="form-control" id="fechaSalida">
+                <label class="col-sm-2 col-form-label titulo-perfil">Comentarios:</label>
+                <textarea class="form-control" id="comentarios" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                <label class="col-sm-2 col-form-label titulo-perfil">Monto a pagar:</label>
+                <input type="text" class="form-control" id="montoReserva" value="₡20.000" disabled>
+
+                <button type="submit" class="btn btn-primary" id="boton-enviar">Realizar Reserva</button>
+            </form>
+
+        </div>
+
+        <div style="margin-top: 4%;">
+            <div style="margin-bottom: 2%;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#contenedorListaServicios" aria-selected="true" role="tab">Servicios</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#contenedorListaPaquetes" aria-selected="false" role="tab">Paquetes</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade" id="contenedorListaServicios" role="tabpanel" style="font-size: 14px;">
+                    <table class="table table-hover tabla-servicios-registro">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Añadir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active">
+                                <td>Grooming</td>
+                                <td>Servicio de aseo y cuidado personal para que tus mascotas se vean y e sientan geniales.</td>
+                                <td>₡20.000</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>Entrenamiento</td>
+                                <td>Clases de entrenamiento profesional para mejorar el comportamiento y habilidades de tus mascotas.</td>
+                                <td>₡25.000</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>Veterinaria</td>
+                                <td>Atención médica y cuidados veterinarios de alta calidad para mantener a tus mascotas sanas y felices.</td>
+                                <td>₡25.000</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>Paseos</td>
+                                <td>Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</td>
+                                <td>₡8.500</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="contenedorListaPaquetes" role="tabpanel" style="font-size: 14px; ">
+
+                    <table class="table table-hover tabla-servicios-registro">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Añadir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active">
+                                <td>Paquete Gromming + Hospedaje</td>
+                                <td> Disfruta del servicio de hospedaje + el servicio de paseos diarios y actividades al aire libre para tu mascota con un descuento del 15%.</td>
+                                <td>₡34.000</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                            <tr class="table-active">
+                                <td>Paquete Paseos + hospedaje</td>
+                                <td> Disfruta del servicio de hospedaje y el servicio de aseo y cuidado personal para tu mascota con un descuento del 20%.</td>
+                                <td>₡22.800</td>
+                                <td>  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 0%;">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                          style="stroke: none; fill: #2C3E50;"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="contenedorListaMascotas">
+    <h1 class="titulo" style="margin-top: 4%; margin-bottom: 4%;">Servicios Actuales</h1>
+    <table class="table table-hover tabla-servicios-registro">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-active">
+                <td>Grooming</td>
+                <td>Servicio de aseo y cuidado personal para que tus mascotas se vean y se sientan geniales.</td>
+                <td>₡20.000</td>
+                <td>Activo</td>
+                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
+            </tr>
+            <tr class="table-active">
+                <td>Entrenamiento</td>
+                <td>Clases de entrenamiento profesional para mejorar el comportamiento y habilidades de tus mascotas.</td>
+                <td>₡25.000</td>
+                <td>Activo</td>
+                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
+            </tr>
+            <tr class="table-active">
+                <td>Veterinaria</td>
+                <td>Atención médica y cuidados veterinarios de alta calidad para mantener a tus mascotas sanas y felices.</td>
+                <td>₡25.000</td>
+                <td>Activo</td>
+                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
+            </tr>
+            <tr class="table-active">
+                <td>Paseos</td>
+                <td>Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</td>
+                <td>₡8.500</td>
+                <td>Activo</td>
+                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 10%;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+              style="stroke: none; fill: #2C3E50;"></path>
+    </svg>
+</div>

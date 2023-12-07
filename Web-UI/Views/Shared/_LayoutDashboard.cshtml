@@ -46,30 +46,34 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item ">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="VistaPerfil">Visualización de Perfil</a>
-                                <a class="dropdown-item" href="#">Editar perfil</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="EdicionPerfil">Editar perfil</a>
                                 <a class="dropdown-item" href="#">Cambio de contraseña</a>
                             </div>
                         </li>
 
                         @if (Accesor.HttpContext.Session.GetString("rol") == "Administrador")
                         {
+
                             <li class="nav-item admin-options">
-                                <a class="nav-link" href="#">Gestión de usuarios</a>
+                                <a class="nav-link" href="#">Usuarios</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Servicios</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="RegistroServicios">Registrar un nuevo servicio</a>
-@*                                     <a class="dropdown-item" asp-area="" asp-controller="#" asp-action="#">Editar servicios</a> *@
-                                    <a class="dropdown-item" href="#">Tipos de reportes restantes</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Servicios" asp-action="RegistroServicios">Registrar Servicio</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Servicios" asp-action="ServiciosActuales">Servicios Actuales</a>
                                 </div>
                             </li>
-                            <li class="nav-item admin-options">
-                                <a class="nav-link" href="#">Gestión de dispositivos</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Dispositivos</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Dispositivos" asp-action="RegistrarDispositivo">Registrar dispositivo</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Dispositivos" asp-action="DispositivosActuales">Dispositivos Actuales</a>
+                                </div>
                             </li>
 
                             <li class="nav-item admin-options">
@@ -88,13 +92,14 @@
                         {
                             if (Accesor.HttpContext.Session.GetString("rol") == "Cliente")
                             {
-                             <li>
+                                <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Mascotas</a>
                                 <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-area="" asp-controller="Registro" asp-action="RegistroMascotas">Registrar Mascota</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Mascotas" asp-action="RegistroMascotas">Registrar Mascota</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Mascotas" asp-action="MisMascotas">Mis Mascotas</a>
                                 </div>
                             </li>
-                                <li class="nav-item">
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Reservas</a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="RealizarReserva">Realizar Reserva</a>
@@ -107,16 +112,19 @@
                             }
                             else
                             {
-                                <li class="nav-item admin-options">
-                                    <a class="nav-link" href="#">Gestión de Paquetes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Reservas</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="RealizarReservaGestor">Realizar Reserva</a>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="GestionarReservasGestor">Mis Reservas</a>
-                                    </div>
-                                </li>
+                                if (Accesor.HttpContext.Session.GetString("rol") == "Gestor")
+                                {
+                                    <li class="nav-item admin-options">
+                                        <a class="nav-link" href="#">Gestión de Paquetes</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Reservas</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="RealizarReservaGestor">Realizar Reserva</a>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Reservas" asp-action="GestionarReservasGestor">Mis Reservas</a>
+                                        </div>
+                                    </li>
+                                }
                             }
                         }
                     </ul>
@@ -136,9 +144,15 @@
     </div>
 
 
+
+
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/pages/formularios/Validaciones.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
