@@ -5,7 +5,7 @@
         e.preventDefault();
 
         const nombreMascota = document.getElementById('txtInputNombreMascota').value.trim();
-        const especieMascota = document.getElementById('txtInputEspecieMascota').value.trim();
+        const especieMascota = document.getElementById('selectBoxEspecie').value.trim();
         const razaMascota = document.getElementById('txtInputRaza').value.trim();
         const fechaNacimientoMascota = document.getElementById('txtInputFechaNacimiento').value.trim();
         const agresividadMascota = parseFloat(document.getElementById('txtInputAgresividad').value.trim());
@@ -82,7 +82,7 @@ function registrarMascota() {
             id: 1,
             nombreEstado: "string"
         },
-        especie: $("#txtInputEspecieMascota").val()
+        especie: $("#selectBoxEspecie").val()
     };
 
     const apiUrl = API_URL_BASE + "/api/Mascotas/CreateMascota";

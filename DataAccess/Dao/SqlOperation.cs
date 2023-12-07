@@ -20,7 +20,8 @@ namespace DataAccess.Dao
         public List<SqlParameter> parameters;
 
         //Constructor
-        public SqlOperation() { 
+        public SqlOperation()
+        {
             parameters = new List<SqlParameter>();
         }
 
@@ -41,5 +42,10 @@ namespace DataAccess.Dao
             parameters.Add(new SqlParameter("@" + parameterName, parameterValue));
         }
 
+
+        public void AddDecimalParam(string parameterName, Decimal parameterValue)
+        {
+            parameters.Add(new SqlParameter("@" + parameterName, parameterValue));
+        }
     }
 }

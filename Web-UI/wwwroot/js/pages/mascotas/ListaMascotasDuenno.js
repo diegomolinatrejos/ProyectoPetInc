@@ -8,6 +8,8 @@
     // Realizar la solicitud GET
     const apiUrl = API_URL_BASE + "/api/Mascotas/GetMascotaPorIdDelDuenno?idDuenno=" + idUsuario;
 
+
+    
     // Utilizar jQuery para realizar la solicitud AJAX
     $.ajax({
         method: 'GET',
@@ -23,16 +25,27 @@
             data.forEach(function (mascota) {
                 const fila = `
                 <tr class="table-active">
+                    <td class="hidden">${mascota.id}</td>
                     <td>${mascota.nombreMascota}</td>
+                    <td>${mascota.especie}</td>
                     <td>${mascota.raza}</td>
                     <td>${calcularEdad(mascota.fechaNacimiento)}</td>
                     <td>${mascota.agresividad}</td>
                     <td>${mascota.estado.nombreEstado}</td>
                     <td>
-                        <a asp-controller="Mascotas" asp-action="EdicionMascotas" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a>
+                     <a href="#" class="btn btn-primary boton-editar" data-id-mascota="${mascota.id}">Editar</a>
                     </td>
                 </tr>`;
                 tablaMascotasBody.append(fila);
+
+
+                $('.boton-editar').on('click', function (e) {
+                    e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+                    var mascotaId = $(this).closest('tr').find('td.hidden').text();
+
+                    console.log(mascotaId);
+                    cargarDatosMascotaEnFormulario(mascotaId);
+                });
             });
         })
         .fail(function (error) {
@@ -79,6 +92,16 @@ function calcularEdad(fechaNacimiento) {
 }
 
 // Llamar a la función para cargar las mascotas al cargar la página
+
+function cargarDatosMascotaEnFormulario(mascotaId) {
+
+    localStorage.setItem('mascotaIdSeleccionada', mascotaId);
+
+    window.location.href = '/Mascotas/EdicionMascotas';
+}
+
+
 $(document).ready(function () {
     cargarMascotas();
 });
+

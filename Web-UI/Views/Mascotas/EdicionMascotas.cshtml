@@ -2,6 +2,9 @@
     ViewBag.Title = "";
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
+<script src="~/js/pages/mascotas/Mascotas.js" asp-append-version="true"></script>
+<script src="~/js/pages/mascotas/EditarMascotas.js" asp-append-version="true"></script>
+
 
 <section id="edicionMascota">
     <h1 class="titulo">Edición de Mascotas</h1>
@@ -13,7 +16,13 @@
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
                 <input type="text" class="form-control" id="txtInputNombreMascotaEditar" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Especie:</label>
-                <input type="text" class="form-control" id="txtInputEspecieMascotaEditar" style="margin-bottom: 2%;">
+                <select class="form-select" id="selectBoxEspecie">
+                    <option selected>Perro</option>
+                    <option>Gato</option>
+                    <option>Hamster</option>
+                    <option>Iguana</option>
+                    <option>Ave</option>
+                </select>
                 <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
                 <input type="text" class="form-control" id="txtInputRazaMascotaEditar" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
@@ -58,11 +67,19 @@
 </div>
 
 
-<script src="~/js/pages/mascotas/Mascotas.js" asp-append-version="true"></script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+          const mascotaIdSeleccionada = localStorage.getItem('mascotaIdSeleccionada');
 
+    if (mascotaIdSeleccionada) {
+        // Realiza la lógica para cargar los datos en el formulario utilizando mascotaIdSeleccionada
+        cargarDatosMascotaEnFormulario(mascotaIdSeleccionada);
+
+        // Limpia el ID almacenado en localStorage después de usarlo
+        localStorage.removeItem('mascotaIdSeleccionada');
+    }
         validarFormularioEdicionMascotas()
 
         // Lógica para mostrar imágenes después de que el DOM se haya cargado
