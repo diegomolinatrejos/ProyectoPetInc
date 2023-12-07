@@ -24,6 +24,7 @@ namespace DataAccess.Mapper
                 telefono = objectRow["TELEFONO"].ToString(),
                 direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
                 foto = objectRow["FOTO"].ToString(),
+                otp = objectRow["OTP"].ToString()
             };
 
             var rol = new Rol()
