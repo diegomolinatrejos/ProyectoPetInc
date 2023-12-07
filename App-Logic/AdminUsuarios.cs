@@ -60,7 +60,7 @@ namespace App_Logic.Admins
 
             if (usuario != null) 
             {
-                usuario.idRol = rolId;
+                usuario.rol.Id = rolId;
                 usuarioCrud.UpdateRol(usuario);
 
 			}

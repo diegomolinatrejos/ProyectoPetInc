@@ -31,49 +31,44 @@
                 confirmButtonText: 'Aceptar'
             });
         } else {
-            Swal.fire({
-                title: 'Formulario enviado',
-                text: 'Su mascota se ha registrado correctamente',
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    registrarMascota();
-                }
-            });
+            registrarMascota();
         }
     });
 }
 
 
 function registrarMascota() {
+    var idUsuario = parseInt($("#idUsuario").attr("data-id"), 10);
+    var fechaNacimientoString = $("#txtInputFechaNacimiento").val();
+    var fechaNacimientoObj = new Date(fechaNacimientoString);
+
     var mascota = {
         id: 0,
         cliente: {
-            id: 6,
+            id: idUsuario,
             email: "string",
-          contrasena: "string",
-          nombre: "string",
-          primerApellido: "string",
-          segundoApellido: "string",
-          documentoIdentidad: "string",
-          telefono: "string",
-          direccionMapa: "string",
-          foto: "string",
-        rol: {
-            id: 0,
-            nombreRol: "string"
-        },
-        estadoInfo: {
-            id: 0,
-            nombreEstado: "string"
-        },
-        otp: 0
-        
+            contrasena: "string",
+            nombre: "string",
+            apellido1: "string",
+            apellido2: "string",
+            documentoIdentidad: "string",
+            telefono: "string",
+            direccionMapa: "string",
+            foto: "string",
+            rol: {
+                id: 0,
+                nombreRol: "string"
+            },
+            estadoInfo: {
+                id: 0,
+                nombreEstado: "string"
+            },
+            otp: "string"
+
         },
         nombreMascota: $("#txtInputNombreMascota").val(),
         descripcion: $("#txtInputDescripcion").val(),
-        fechaNacimiento: $("#txtInputFechaNacimiento").val(),
+        fechaNacimiento: fechaNacimientoObj,
         raza: $("#txtInputRaza").val(),
         agresividad: parseInt($("#txtInputAgresividad").val()),
         foto1: "foto1.png",
@@ -85,6 +80,7 @@ function registrarMascota() {
         especie: $("#selectBoxEspecie").val()
     };
 
+    console.log(mascota);
     const apiUrl = API_URL_BASE + "/api/Mascotas/CreateMascota";
 
     $.ajax({
@@ -102,16 +98,31 @@ function registrarMascota() {
         Swal.fire({
             title: 'Éxito',
             icon: 'success',
-            text: 'Mascota registrada exitosamente.'
+            text: 'Mascota registrada exitosamente.',
+            didClose: () => {
+                document.getElementById('formularioRegistroMascotas').submit();
+            }
         });
-        // Puedes limpiar el formulario o realizar otras acciones después del registro
+
+        console.log('exito al registrar');
     }).fail(function (error) {
         Swal.fire({
             title: 'Error!',
             icon: 'error',
-            text: 'Hubo un error al registrar la mascota. Por favor, verifica que todos los campos están completos.'
+            text: 'Hubo un error al registrar la mascota.'
         });
+        console.log('error al registrar');
     });
+}
+
+
+function mostrarImagen(input, idImagen) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById(idImagen).src = e.target.result;
+        document.getElementById(idImagen).style.display = "inline-block";
+    };
+    reader.readAsDataURL(input.files[0]);
 }
 
 
