@@ -91,8 +91,8 @@ namespace API.Controllers
         //        return Ok(userAutenticado);
         //    }
 
-            return NotFound();
-        }
+        //    return NotFound();
+        //}
 
 		[HttpPut]
 		public IActionResult AssignRolToUsuario(int usuarioId, int rolId)
