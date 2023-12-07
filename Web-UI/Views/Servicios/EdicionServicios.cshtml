@@ -21,10 +21,7 @@
                     <option selected>Activo</option>
                     <option>Inactivo</option>
                 </select>
-                <div class="fotos-registro-mascotas">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Foto del servicio:</label>
-                    <input type="file" class="form-control foto-servicio-formulario" id="fotoServicioEditar" onchange="mostrarImagen(this, 'imagenServicioEditar')">
-                </div>
+                
                 <div style="margin-top: 2%; text-align: center;">
                     <button type="submit" class="btn btn-primary" id="guardarServicioEditar">Guardar</button>
                     <a asp-controller="Servicios" asp-action="ServiciosActuales" class="btn btn-primary" id="cancelarServicioEditar">Cancelar</a>
@@ -33,7 +30,7 @@
         </div>
 
         <div class="contenedor-imagen-servicios">
-            <h2>Visualización de imagen</h2>
+            <h2></h2>
             <div style=" margin-left: 0%;">
                 <img id="imagenServicioEditar" class="imagen-servicio" src="~/media/img/huella.png" alt="Imagen del servicio" style=" display: inline-block; width: 300px; margin-top: 5%; height: 300px; object-fit: cover;">
             </div>
@@ -48,19 +45,11 @@
     </div>
 </section>
 
-<script src="~/js/pages/servicios/Servicios.js" asp-append-version="true"></script>
+<script src="~/js/pages/servicios/EditarServicios.js" asp-append-version="true"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
         validarFormularioEdicionServicios()
 
-
-        document.getElementById('fotoMascotaEditar').addEventListener('change', function () {
-            mostrarImagen(this, 'imagenMascota');
-        });
-
-        document.getElementById('fotoMascotaEditar2').addEventListener('change', function () {
-            mostrarImagen(this, 'imagenMascota2');
-        });
     });
 </script>

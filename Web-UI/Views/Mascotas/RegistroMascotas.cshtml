@@ -1,8 +1,11 @@
-﻿@{
+﻿@model DTO.Models.Usuario
+@inject IHttpContextAccessor Accesor
+
+@{
     ViewBag.Title = "";
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
-
+<div id="idUsuario" data-id="@Accesor.HttpContext.Session.GetInt32("Id")"></div>
 <section id="registroMascota">
     <h1 class="titulo">Registro de Mascotas</h1>
 
@@ -52,8 +55,6 @@
         </svg>
     </div>
 </section>
-
-<script src="~/js/pages/mascotas/Mascotas.js" asp-append-version="true"></script>
 
 <script src="~/js/pages/mascotas/RegistroMascotas.js" asp-append-version="true"></script>
 

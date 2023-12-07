@@ -65,27 +65,27 @@ namespace DataAccess.Crud
         public override void Update(BaseClass entityDTO)
         {
             Usuario usuario = (Usuario)entityDTO;
-     
+
             SqlOperation operation = usuarioMapper.GetUpdateStatement(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
 
-       public void UpdatePassword (BaseClass entityDTO) 
+        public void UpdatePassword(BaseClass entityDTO)
         {
             Usuario usuario = (Usuario)entityDTO;
             SqlOperation operation = usuarioMapper.GetUpdatePassword(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
 
-		public void UpdateRol(BaseClass entityDTO)
-		{
-			Usuario usuario = (Usuario)entityDTO;
-			SqlOperation operation = usuarioMapper.GetUpdateRol(entityDTO);
-			dao.ExecuteStoredProcedure(operation);
-		}
+        public void UpdateRol(BaseClass entityDTO)
+        {
+            Usuario usuario = (Usuario)entityDTO;
+            SqlOperation operation = usuarioMapper.GetUpdateRol(entityDTO);
+            dao.ExecuteStoredProcedure(operation);
+        }
 
 
-		public List<T> RetrieveBySearchPhrase<T>(string phrase)
+        public List<T> RetrieveBySearchPhrase<T>(string phrase)
         {
             var lstResults = new List<T>();
 
@@ -103,7 +103,7 @@ namespace DataAccess.Crud
             return lstResults;
         }
 
-        public T RetrieveByEmail<T>(string email)
+        public override T RetrieveByEmail<T>(string email)
         {
             throw new NotImplementedException();
         }
