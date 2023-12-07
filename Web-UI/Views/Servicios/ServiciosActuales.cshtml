@@ -3,6 +3,9 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/pages/servicios/ListaServicios.js" asp-append-version="true"></script>
+
 <section id="contenedorListaMascotas">
     <h1 class="titulo" style="margin-top: 4%; margin-bottom: 4%;">Servicios Actuales</h1>
     <table class="table table-hover tabla-servicios-registro">
@@ -15,35 +18,8 @@
                 <th scope="col">Editar</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="table-active">
-                <td>Grooming</td>
-                <td>Servicio de aseo y cuidado personal para que tus mascotas se vean y se sientan geniales.</td>
-                <td>₡20.000</td>
-                <td>Activo</td>
-                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
-            </tr>
-            <tr class="table-active">
-                <td>Entrenamiento</td>
-                <td>Clases de entrenamiento profesional para mejorar el comportamiento y habilidades de tus mascotas.</td>
-                <td>₡25.000</td>
-                <td>Activo</td>
-                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
-            </tr>
-            <tr class="table-active">
-                <td>Veterinaria</td>
-                <td>Atención médica y cuidados veterinarios de alta calidad para mantener a tus mascotas sanas y felices.</td>
-                <td>₡25.000</td>
-                <td>Activo</td>
-                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
-            </tr>
-            <tr class="table-active">
-                <td>Paseos</td>
-                <td>Ofrecemos paseos diarios y actividades al aire libre para mantener a tus mascotas activas y contentas.</td>
-                <td>₡8.500</td>
-                <td>Activo</td>
-                <td><a asp-controller="Servicios" asp-action="EdicionServicios" type="submit" class="btn btn-primary" id="boton-enviar">Editar</a></td>
-            </tr>
+        <tbody id="tablaServiciosBody">
+         
         </tbody>
     </table>
 </section>

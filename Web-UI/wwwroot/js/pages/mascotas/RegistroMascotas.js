@@ -33,7 +33,6 @@ function validarFormularioRegistroMascotas() {
             });
         } else {
             registrarMascota();
-            formularioRegistroMascotas.submit();
         }
     });
 }
@@ -100,15 +99,20 @@ function registrarMascota() {
         Swal.fire({
             title: 'Éxito',
             icon: 'success',
-            text: 'Mascota registrada exitosamente.'
+            text: 'Mascota registrada exitosamente.',
+            didClose: () => {
+                  document.getElementById('formularioRegistroMascotas').submit();
+            }
         });
-        // Puedes limpiar el formulario o realizar otras acciones después del registro
+
+        console.log('exito al registrar');
     }).fail(function (error) {
         Swal.fire({
             title: 'Error!',
             icon: 'error',
             text: 'Hubo un error al registrar la mascota.'
         });
+        console.log('error al registrar');
     });
 }
 
