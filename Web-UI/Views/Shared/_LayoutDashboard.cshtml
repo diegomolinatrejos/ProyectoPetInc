@@ -59,20 +59,22 @@
                         {
 
                             <li class="nav-item admin-options">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Usuarios</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuarios</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="AsignacionRoles">Asignar roles</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Servicios</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Servicios y Paquetes</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-area="" asp-controller="Servicios" asp-action="RegistroServicios">Registrar Servicio</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Servicios" asp-action="ServiciosActuales">Servicios Actuales</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Paquetes" asp-action="CrearPaquete">Crear Paquete</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Paquetes" asp-action="ListaPaquetes">Lista de Paquetes</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Dispositivos</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dispositivos</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-area="" asp-controller="Dispositivos" asp-action="RegistrarDispositivo">Registrar dispositivo</a>
                                     <a class="dropdown-item" asp-area="" asp-controller="Dispositivos" asp-action="DispositivosActuales">Dispositivos Actuales</a>
