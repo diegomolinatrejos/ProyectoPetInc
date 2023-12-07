@@ -24,6 +24,7 @@ namespace DataAccess.Mapper
                 telefono = objectRow["TELEFONO"].ToString(),
                 direccionMapa = objectRow["DIRECCION_MAPA"].ToString(),
                 foto = objectRow["FOTO"].ToString(),
+                otp = objectRow["OTP"].ToString()
             };
 
             var rol = new Rol()
@@ -75,7 +76,7 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
             operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
-
+            operation.AddVarcharParam("OTP", usuario.otp);
 
             return operation;
         }
@@ -112,11 +113,40 @@ namespace DataAccess.Mapper
             operation.AddVarcharParam("FOTO", usuario.foto);
             operation.AddIntegerParam("ROL", usuario.rol.Id);
             operation.AddIntegerParam("ESTADO", usuario.estadoInfo.Id);
+            operation.AddVarcharParam("OTP", usuario.otp);
 
             return operation;
         }
 
-        public SqlOperation RetrieveAllStatement()
+        public SqlOperation GetUpdatePassword(BaseClass entityDTO)
+        {
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "PR_UPDATE_CONTRASENA";
+
+            Usuario usuario = (Usuario)entityDTO;
+
+            operation.AddIntegerParam("ID", usuario.Id);
+            operation.AddVarcharParam("CONTRASENA", usuario.contrasena);
+           
+
+            return operation;
+        }
+
+		public SqlOperation GetUpdateRol(BaseClass entityDTO)
+		{
+			SqlOperation operation = new SqlOperation();
+			operation.ProcedureName = "PR_UPDATE_ROL";
+
+			Usuario usuario = (Usuario)entityDTO;
+
+			operation.AddIntegerParam("ID", usuario.Id);
+			operation.AddIntegerParam("ROL", usuario.idRol);
+
+
+			return operation;
+		}
+
+		public SqlOperation RetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
 

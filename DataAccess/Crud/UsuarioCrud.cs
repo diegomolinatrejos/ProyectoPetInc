@@ -70,7 +70,22 @@ namespace DataAccess.Crud
             dao.ExecuteStoredProcedure(operation);
         }
 
-        public List<T> RetrieveBySearchPhrase<T>(string phrase)
+       public void UpdatePassword (BaseClass entityDTO) 
+        {
+            Usuario usuario = (Usuario)entityDTO;
+            SqlOperation operation = usuarioMapper.GetUpdatePassword(entityDTO);
+            dao.ExecuteStoredProcedure(operation);
+        }
+
+		public void UpdateRol(BaseClass entityDTO)
+		{
+			Usuario usuario = (Usuario)entityDTO;
+			SqlOperation operation = usuarioMapper.GetUpdateRol(entityDTO);
+			dao.ExecuteStoredProcedure(operation);
+		}
+
+
+		public List<T> RetrieveBySearchPhrase<T>(string phrase)
         {
             var lstResults = new List<T>();
 

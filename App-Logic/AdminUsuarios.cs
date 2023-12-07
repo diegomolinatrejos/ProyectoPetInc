@@ -1,16 +1,18 @@
 ﻿using DataAccess.Crud;
 using DTO.Models;
-using DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace App_Logic.Admins
 {
     public class AdminUsuarios
     {
+        public AdminOTP _adminOTP;
+        public AdminEmail _adminEmail;
+        public AdminUsuarios()
+        {
+            _adminOTP = new AdminOTP();
+            _adminEmail = new AdminEmail();
+        }
         public List<Usuario> GetAllUsuarios()
         {
             UsuarioCrud usuarioCrud = new UsuarioCrud();
@@ -19,13 +21,52 @@ namespace App_Logic.Admins
         }
 
         public void CreateUsuario(Usuario usuario)
-        {   
+        {
+            usuario.otp = _adminOTP.CreateOTP();
             UsuarioCrud usuarioCrud = new UsuarioCrud();
 			usuarioCrud.Create(usuario);
+            _ = _adminEmail.SendOTPEmail(usuario.email, usuario.otp);
+
+        }
+
+        public void RecuperarContrasena(Usuario usuario)
+        {
+            usuario.otp = _adminOTP.CreateOTP();
+            _ = _adminEmail.SendOTPEmail(usuario.email, usuario.otp);
+
+        }
+
+        public void SetPassword(int usuarioId, string newPassword)
+        {
+            UsuarioCrud usuarioCrud = new UsuarioCrud();
+            Usuario usuario = usuarioCrud.RetrieveById<Usuario>(usuarioId);
+
+            if (usuario != null)
+            {
+                // Aquí podrías aplicar lógica adicional, como verificar la complejidad de la contraseña, etc.
+                usuario.contrasena = newPassword;
+
+                // Actualizar la contraseña en la base de datos
+                usuarioCrud.UpdatePassword(usuario);
+                
+            }
             
         }
 
-        public Usuario GetUsuarioById(int Id)
+		public void SetRol(int usuarioId, int rolId)
+		{
+			UsuarioCrud usuarioCrud = new UsuarioCrud();
+            Usuario usuario = usuarioCrud.RetrieveById<Usuario>(usuarioId);
+
+            if (usuario != null) 
+            {
+                usuario.idRol = rolId;
+                usuarioCrud.UpdateRol(usuario);
+
+			}
+		}
+
+		public Usuario GetUsuarioById(int Id)
         {
             UsuarioCrud uCrud = new UsuarioCrud();
 
@@ -49,6 +90,9 @@ namespace App_Logic.Admins
             UsuarioCrud uCrud = new UsuarioCrud();
             uCrud.Update(usuario);
         }
+
+        
+
 
         public Usuario AuthenticateUser(string email, string password)
         {

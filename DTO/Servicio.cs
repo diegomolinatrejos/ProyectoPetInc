@@ -12,5 +12,6 @@ namespace DTO.Models
         public string nombreServicio { get; set; }
         public string descripcion { get; set; }
         public decimal precio { get; set; }
+        public Estado estado { get; set; }
     }
 }

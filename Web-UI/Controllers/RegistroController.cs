@@ -11,6 +11,11 @@ namespace Web_UI.Controllers
             return View();
         }
 
+        public IActionResult Cancel()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult RegistroMascotas()
         {
             return View();
@@ -21,6 +26,12 @@ namespace Web_UI.Controllers
             return RedirectToAction("Index", "Home");
         }
         public IActionResult RegistroUsuario()
+        {
+
+            return View();
+        }
+
+        public IActionResult Registrar()
         {
             return View();
         }

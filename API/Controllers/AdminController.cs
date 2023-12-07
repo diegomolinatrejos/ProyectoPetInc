@@ -25,11 +25,18 @@ namespace API.Controllers
         [HttpPost]
         public string CreateUsuario(Usuario admin)
         {
-            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            try
+            {
+                AdminUsuarios adminUsuarios = new AdminUsuarios();
 
-            adminUsuarios.CreateUsuario(admin);
+                adminUsuarios.CreateUsuario(admin);
+            }
+            catch (Exception ex)
+            {
+                var x = ex.ToString();
+            }
 
-            return "OK";
+            return "Success";
 
         }
 
@@ -50,6 +57,14 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        public string SetPassword(int usuarioId, string newPassword)
+        {
+            AdminUsuarios adminUsuarios = new AdminUsuarios();
+            adminUsuarios.SetPassword(usuarioId, newPassword);
+            return "Usuario Actualizado";
+        }
+
+        [HttpPut]
         public string UpdateUsuario(Usuario usuario)
         {
             AdminUsuarios adminUsuarios = new AdminUsuarios();
@@ -65,18 +80,56 @@ namespace API.Controllers
             return "Usuario eliminado";
         }
 
-        [HttpPost]
-        public IActionResult AuthenticateUser(Usuario user)
-        {
-            AdminUsuarios adminUsuarios = new AdminUsuarios();
-            var userAutenticado = adminUsuarios.AuthenticateUser(user.email, user.contrasena);
+        //[HttpPost]
+        //public IActionResult AuthenticateUser(Usuario user)
+        //{
+        //    AdminUsuarios adminUsuarios = new AdminUsuarios();
+        //    var userAutenticado = adminUsuarios.AuthenticateUser(user.email, user.contrasena);
 
-            if (userAutenticado != null)
-            {
-                return Ok(userAutenticado);
-            }
+        //    if (userAutenticado != null)
+        //    {
+        //        return Ok(userAutenticado);
+        //    }
 
-            return NotFound();
-        }
-    }
+        //    return NotFound();
+        //}
+
+		[HttpPut]
+		public IActionResult AssignRolToUsuario(int usuarioId, int rolId)
+		{
+			try
+			{
+				AdminUsuarios adminUsuarios = new AdminUsuarios();
+				var usuario = adminUsuarios.GetUsuarioById(usuarioId);
+
+				if (usuario != null)
+				{
+					AdminRol adminRol = new AdminRol();
+					var rol = adminRol.GetRolById(rolId);
+
+					if (rol != null)
+					{
+						usuario.idRol = rol.Id;
+						usuario.rol = rol; 
+
+						adminUsuarios.SetRol(usuarioId, rolId);
+
+						return Ok("Rol asignado correctamente al usuario.");
+					}
+					else
+					{
+						return NotFound("Rol no encontrado.");
+					}
+				}
+				else
+				{
+					return NotFound("Usuario no encontrado.");
+				}
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+			}
+		}
+	}
 }

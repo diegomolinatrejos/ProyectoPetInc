@@ -1,28 +1,29 @@
 ﻿@section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
-    <script src="~/js/pages/reportesadm/griddefinitionreporteadm.js"></script>
-    <script src="~/js/pages/reportesadm/reporteadm.js"></script>
- }
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/pages/reportesAdm/Reporte Financiero.js"></script>
+}
 
 @{
     ViewBag.Title = "";
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
-<div>
-    <div style="text-align: center;">
-        <h2 style="margin-top: 3%">Reporte de ventas totales</h2>
-        <div id="myGrid" style="height: 200px; width: 65%;  margin-left: 20%; text-align: center; margin-bottom: 10%;" class="ag-theme-alpine"></div>
-        <p>Despues de cada tabla estara un grafico por ejmplo uno de barras para mostrar ingresos por reservas según tipo de mascota. Tambien gráfico tipo pastel para mostrar porcentaje de las reservas segun tipo de mascotas. </p>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Ingresos por tipo de mascota</h3>
+        <canvas id="barChart"></canvas>
     </div>
-    <div>
-        <h2>Grafico</h2>
-        <div id="barChart" style="height: 400px; width: 100%;" class="ag-theme-alpine"></div>
-
+    <div class="col-md-6">
+        <h3>Utilización de dispositivos por tipo de mascota</h3>
+        <canvas id="pieChart"></canvas>
     </div>
+</div>
 
-    <div>
-        <h2>Grafico</h2>
-        <div id="pieChart" style="height: 400px; width: 100%;" class="ag-theme-alpine"></div>
+<div class="row">
+    <!-- Asegúrate de cerrar la etiqueta de apertura de div.row -->
+    <div class="col-md-12">
+        <h3 style="margin-top: 3%">Reporte de ventas totales</h3>
+        <div id="myGrid" style="height: 200px; width: 100%; margin-bottom: 10%;" class="ag-theme-alpine"></div>
     </div>
 </div>

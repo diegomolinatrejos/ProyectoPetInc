@@ -1,0 +1,32 @@
+﻿@section Scripts{
+    <script src="~/js/pages/roles/Roles.js"></script>
+	
+}
+
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="asignacionRoles">
+    <h1 class="titulo">Asignación de roles</h1>
+    <div class="contenedor-registro-servicio">
+        <form action="" class="registro-servicio" id="formularioConfiguracionBase">
+            <label for="usuarioName" class="col-sm-2 col-form-label titulo-perfil">Nombre del usuario:</label>
+            <select id="usuarioName" class="form-select" style="margin-bottom: 2%;"></select>
+            <label for="rolName" class="col-sm-2 col-form-label titulo-perfil">Rol:</label>
+            <select id="rolName" class="form-select" style="margin-bottom: 2%;"></select>
+
+            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+            <a asp-controller="Dashboard" asp-action="DashboardHome" class="btn btn-primary" id="btnCancelar">Cancelar</a>
+        </form>
+    </div>
+
+    <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: -6%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                  style="stroke: none; fill: #2C3E50;"></path>
+        </svg>
+    </div>
+</section>
+

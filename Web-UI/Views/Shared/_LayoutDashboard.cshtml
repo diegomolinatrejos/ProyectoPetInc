@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Enlace a la fuente Montserrat -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -51,7 +51,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="VistaPerfil">Visualización de Perfil</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="EdicionPerfil">Editar perfil</a>
-                                <a class="dropdown-item" href="#">Cambio de contraseña</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Perfil" asp-action="CambioContrasena">Cambio de contraseña</a>
                             </div>
                         </li>
 
@@ -59,7 +59,10 @@
                         {
 
                             <li class="nav-item admin-options">
-                                <a class="nav-link" href="#">Usuarios</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Usuarios</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="AsignacionRoles">Asignar roles</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestión de Servicios</a>
@@ -83,7 +86,7 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reportes</a>
                                 <div class="dropdown-menu">
                                 <a class="dropdown-item" asp-area="" asp-controller="Reportes" asp-action="ReportesAdm">Reportes Financieros</a>
-                                    <a class="dropdown-item" href="#">Tipos de reportes restantes</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Reportes" asp-action="GraficaDispositivo">Monitoreo Dispositivo</a>
                                     <a class="dropdown-item" href="#">Tipos de reportes restantes</a>
                                 </div>
                             </li>
