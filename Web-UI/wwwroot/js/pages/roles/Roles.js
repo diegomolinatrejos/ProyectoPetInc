@@ -15,8 +15,7 @@
     this.SubmitRol = function () {
         var asignacion = {};
         //Usuario
-        asignacion.usuarioInfo = {};
-        asignacion.usuarioInfo.id = $('#usuarioName').find(":selected").val();
+        asignacion.usuarioId = $('#usuarioName').val();
 
 
         //AUTHOR_LIST Esta declarada en el file site.js para poder utilizarla globalmente si se necesita
@@ -29,8 +28,7 @@
         asignacion.usuarioInfo.apellido2 = usuario.apellido2;
 
         //Rol
-        asignacion.rolInfo = {};
-        asignacion.rolInfo.id = $('#rolName').find(":selected").val();
+        asignacion.rolId = $('#rolName').val();
 
 
         //ROLES_LIST Esta declarada en el file site.js para poder utilizarla globalmente si se necesita
@@ -52,23 +50,23 @@
                 'Accept': "application/json",
                 'Content-Type': "application/json"
             },
-            method: "POST",
+            method: "PUT",
             url: apiUrl,
             contentType: "application/json;charset=utf-8",
             dataType: "json",
-            data: JSON.stringify(article),
+            data: JSON.stringify(asignacion),
             hasContent: true
         }).done(function (data) {
             Swal.fire({
                 title: "Success",
                 icon: 'info',
-                text: 'The Article was created succesfully'
+                text: 'El rol se asignó correctamente al usuario.'
             });
         }).fail(function (error) {
             Swal.fire({
                 title: "Message",
                 icon: 'error',
-                text: 'There was an error creating the Article'
+                text: 'Hubo un error al asignar el rol al usuario.'
             });
         });
     }
