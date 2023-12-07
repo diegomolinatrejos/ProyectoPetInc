@@ -103,7 +103,7 @@ namespace DataAccess.Crud
             return lstResults;
         }
 
-        public T RetrieveByEmail<T>(string email)
+        public override T RetrieveByEmail<T>(string email)
         {
             throw new NotImplementedException();
         }
