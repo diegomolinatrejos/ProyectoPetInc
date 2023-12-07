@@ -1,16 +1,8 @@
 ﻿function cargarMascotas() {
     var idUsuario = $("#idUsuario").attr("data-id");
-
-    // Mostrar indicador de carga
-    // Puedes usar un spinner o cualquier otro indicador visual
-    // Muestra un mensaje o icono de carga para informar al usuario que se están cargando los datos
     console.log("ID del usuario:", idUsuario);
-    // Realizar la solicitud GET
     const apiUrl = API_URL_BASE + "/api/Mascotas/GetMascotaPorIdDelDuenno?idDuenno=" + idUsuario;
 
-
-    
-    // Utilizar jQuery para realizar la solicitud AJAX
     $.ajax({
         method: 'GET',
         url: apiUrl,
@@ -91,7 +83,7 @@ function calcularEdad(fechaNacimiento) {
     return edadTexto.trim();
 }
 
-// Llamar a la función para cargar las mascotas al cargar la página
+
 
 function cargarDatosMascotaEnFormulario(mascotaId) {
 
