@@ -116,8 +116,8 @@ function UpdateMascota(mascotaId) {
             email: "string",
             contrasena: "string",
             nombre: "string",
-            primerApellido: "string",
-            segundoApellido: "string",
+            apellido1: "string",
+            apellido2: "string",
             documentoIdentidad: "string",
             telefono: "string",
             direccionMapa: "string",
@@ -167,4 +167,6 @@ function UpdateMascota(mascotaId) {
         }
     });
 }
+
+
 

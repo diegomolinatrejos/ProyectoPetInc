@@ -109,7 +109,7 @@ namespace API.Controllers
 
 					if (rol != null)
 					{
-						usuario.idRol = rol.Id;
+						usuario.rol.Id = rol.Id;
 						usuario.rol = rol; 
 
 						adminUsuarios.SetRol(usuarioId, rolId);

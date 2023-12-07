@@ -1,8 +1,11 @@
-﻿@{
+﻿@model DTO.Models.Usuario
+@inject IHttpContextAccessor Accesor
+
+@{
     ViewBag.Title = "";
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
-
+<div id="idUsuario" data-id="@Accesor.HttpContext.Session.GetInt32("Id")"></div>
 <section id="registroMascota">
     <h1 class="titulo">Registro de Mascotas</h1>
 
@@ -18,7 +21,7 @@
                     <option>Hamster</option>
                     <option>Iguana</option>
                     <option>Ave</option>
-                 </select>
+                </select>
                 <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
                 <input type="text" class="form-control" id="txtInputRaza" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
@@ -52,8 +55,6 @@
         </svg>
     </div>
 </section>
-
-<script src="~/js/pages/mascotas/Mascotas.js" asp-append-version="true"></script>
 
 <script src="~/js/pages/mascotas/RegistroMascotas.js" asp-append-version="true"></script>
 

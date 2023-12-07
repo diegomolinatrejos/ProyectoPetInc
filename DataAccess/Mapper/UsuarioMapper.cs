@@ -140,7 +140,7 @@ namespace DataAccess.Mapper
 			Usuario usuario = (Usuario)entityDTO;
 
 			operation.AddIntegerParam("ID", usuario.Id);
-			operation.AddIntegerParam("ROL", usuario.idRol);
+			operation.AddIntegerParam("ROL", usuario.rol.Id);
 
 
 			return operation;

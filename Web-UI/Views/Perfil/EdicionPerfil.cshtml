@@ -3,36 +3,33 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
-<section id="registroMascota">
-    <h1 class="titulo">Registro de Mascotas</h1>
+<script src="~/js/pages/perfil/editarperfil.js"></script>
 
-    <div class="contenedor mascota-info">
-        <div class="contenedor-registro-mascota">
-            <form id="formularioRegistroMascotas" action="" class="registro-mascota">
-                <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
-                <input type="text" class="form-control" id="txtInputNombreMascota" style="margin-bottom: 2%;">
-                <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
-                <input type="text" class="form-control" id="txtInputRaza" style="margin-bottom: 2%;">
-                <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
-                <input type="date" class="form-control" id="txtInputFechaNacimiento">
-                <label class="col-sm-2 col-form-label titulo-perfil">Nivel de agresividad:</label>
-                <input type="number" class="form-control" id="txtInputAgresividad">
-                <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
-                <textarea class="form-control" id="txtInputDescripcion" rows="3" style="height: 145px;" spellcheck="false"></textarea>
-                <div class="fotos-registro-mascotas">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Fotos de la mascota:</label>
-                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota">
-                    <input type="file" class="form-control fotos-mascotas-formulario" id="fotoMascota2">
+<section id="edicionPerfil">
+    <h1 class="titulo">Edición de Perfil</h1>
+
+    <div class="contenedor perfil-info">
+        <div class="contenedor-editar-perfil">
+            <form id="formularioEdicionPerfil" action="" class="editar-perfil">
+                <label class="col-sm-2 col-form-label titulo-perfil">Correo electrónico:</label>
+                <input type="text" class="form-control" id="txtInputCorreoElectronicoEditar" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Teléfono:</label>
+                <input type="text" class="form-control" id="txtInputTelefonoEditar" style="margin-bottom: 2%;">
+                <label class="col-sm-2 col-form-label titulo-perfil">Dirección:</label>
+                <input type="text" class="form-control" id="txtInputDireccionEditar" style="margin-bottom: 2%;">
+                <div class"fotos-registro-perfil">
+                    <label class="col-sm-2 col-form-label titulo-perfil">Foto:</label>
+                    <input type="file" class="form-control fotos-perfil-formulario" id="fotoPerfilEditar" onchange="mostrarImagen(this, 'imagenPerfil')">
                 </div>
-                <button type="submit" class="btn btn-primary" id="btnEnviarRegistro">Registrar</button>
+                <button type="submit" class="btn btn-primary" id="btnGuardarPerfilEditar">Guardar</button>
+                <a asp-controller="Perfil" asp-action="VistaPerfil" class="btn btn-primary" id="btnCancelar">Cancelar</a>
             </form>
         </div>
 
         <div id="contenedorImagenes">
-            <h2>Visualización de imágenes</h2>
-            <div class="contenedorVisualizacionImagenMascota">
-                <img id="imagenMascota" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 2">
-                <img id="imagenMascota2" class="imagen-mascota" src="~/media/img/huella.png" alt="Imagen de la mascota 1">
+            <h2>Visualización de imágen</h2>
+            <div class="contenedorVisualizacionImagenPerfil">
+                <img id="imagenPerfil" class="imagen-perfil" src="~/media/img/huella.png" alt="Imagen del usuario">
             </div>
         </div>
     </div>
@@ -45,19 +42,24 @@
     </div>
 </section>
 
-<script src="~/js/pages/perfil/Perfil.js" asp-append-version="true"></script>
-
-        <script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
+        const usuarioIdSeleccionada = localStorage.getItem('usuarioIdSeleccionada');
 
-        validarFormularioEdicionPerfil();
+        if (usuarioIdSeleccionada) {
+            // Realiza la lógica para cargar los datos en el formulario utilizando usuarioIdSeleccionada
+            cargarDatosUsuarioEnFormulario(usuarioIdSeleccionada);
+
+            // Limpia el ID almacenado en localStorage después de usarlo
+            localStorage.removeItem('usuarioIdSeleccionada');
+        }
+        validarFormularioEdicionPerfil()
 
         // Lógica para mostrar imágenes después de que el DOM se haya cargado
-        document.getElementById('fotoPerfilEdit').addEventListener('change', function () {
-            mostrarImagen(this, 'imagenfotoPerfilEdit');
+        document.getElementById('fotoPerfilEditar').addEventListener('change', function () {
+            mostrarImagen(this, 'imagenPerfil');
         });
 
+        
     });
-
-
-        </script>
+</script>
