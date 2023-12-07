@@ -21,8 +21,9 @@ namespace DataAccess.Dao
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";
         //private string _connectionString = "Server=DESKTOP-B5PR9G2;Database=ProyectHotelPetInc;Trusted_Connection=True";
         //private string _connectionString = "Server=tcp:isa-ieee-dbserver.database.windows.net,1433;Initial Catalog=isa-ieee-db;Persist Security Info=False;User ID=Cenfo_DB;Password=Psw123456*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
-        //private string _connectionString = "Server=tcp:servidor-daniel-proyecto.database.windows.net,1433;Initial Catalog=Proyecto_Pet_Inc;Persist Security Info=False;User ID=AdminPetInc;Password=Psw123456*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        //private string _connectionString = "Server=localhost;Database=ProyectHotelPetInc;Trusted_Connection=True"; String de coneccion local Diego
         //public string _connectionString = "Data Source=DECHEVERRIA;Initial Catalog=ProyectHotelPetInc;User ID=daniel;Password=Daniel123.;"; //String de coneccion local Daniel
+        //private string _connectionString = "Server=tcp:servidor-daniel-proyecto.database.windows.net,1433;Initial Catalog=Proyecto_Pet_Inc;Persist Security Info=False;User ID=AdminPetInc;Password=Psw123456*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         //Patrón de diseño Singleton
         public static SqlDao GetInstance() 
