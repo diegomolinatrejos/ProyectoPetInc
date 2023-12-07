@@ -18,6 +18,7 @@ namespace DTO.Models
         public string foto1 { get; set; }
         public string foto2 { get; set; }
         public Estado estado { get; set; }
+        public string especie { get; set; }
 
         //public static implicit operator Mascota(Mascota v)
         //{
