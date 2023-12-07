@@ -31,5 +31,14 @@ namespace API.Controllers
             return "OK";
 
         }
+
+        [HttpGet]
+        public List<DatosDispositivo> GetDatosDispositivoById(int idDispositivo)
+        {
+            AdminDatosDispositivo adminDatosDispositivo = new AdminDatosDispositivo();
+            return adminDatosDispositivo.GetDatosDispositivoById(idDispositivo);
+           
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccess.Dao;
 using DTO.Models;
 using DataAccess.Mapper;
+using System.Collections;
 
 namespace DataAccess.Crud
 {
@@ -62,6 +63,25 @@ namespace DataAccess.Crud
         public override void Update(BaseClass entityDTO)
         {
             throw new NotImplementedException();
+        }
+
+        public List<DatosDispositivo> RetrieveAllById(int idDispositivo)
+        {
+            List<DatosDispositivo> lstResults = new List<DatosDispositivo>();
+            SqlOperation operation = datosDispMapper.RetrieveByIdStatement(idDispositivo);
+
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            if (dataResults.Count > 0)
+            {
+                var dtoObjects = datosDispMapper.BuildObjects(dataResults);
+
+                foreach (var ob in dtoObjects)
+                {
+                    lstResults.Add((DatosDispositivo)ob);
+                }
+            }
+            return lstResults;
         }
     }
 }

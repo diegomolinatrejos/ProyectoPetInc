@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Pets Inc</title>
+    <title >@ViewData["Title"] - Pets Inc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" /> 
 
@@ -18,7 +18,7 @@
     <header>
         <nav id="barra" class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" > <img src="~/media/img/logoPI.png" style="height: 35px; width: 37px;"> Pets Inc</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
