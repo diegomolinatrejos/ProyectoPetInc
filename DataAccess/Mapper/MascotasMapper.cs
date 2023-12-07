@@ -2,28 +2,41 @@
 using DTO.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Mapper
 {
-    public class MascotasMapper : ICrudStatements, IObjectMapper
+    public class MascotaMapper : ICrudStatements, IObjectMapper
     {
-        public BaseClass BuildObject(Dictionary<string, object> row)
+        public BaseClass BuildObject(Dictionary<string, object> objectRow)
         {
             var mascota = new Mascota()
             {
-                //cliente = row["Cliente"].ToString(),
-                nombreMascota = row["nombreMascota"].ToString(),
-                descripcion = row["descripcion"].ToString(),
-                fechaNacimiento = DateTime.Parse(row["fechaNacimiento"].ToString()),
-                raza = row["raza"].ToString(),
-                agresividad = int.Parse(row["agresividad"].ToString()),
-                foto1 = row["foto1"].ToString(),
-                foto2 = row["foto2"].ToString(),
-               // estado = int.Parse(row["estado"].ToString()),
+                Id = int.Parse(objectRow["MASCOTA_ID"].ToString()),
+                nombreMascota = objectRow["NOMBRE_MASCOTA"].ToString(),
+                descripcion = objectRow["DESCRIPCION"].ToString(),
+                fechaNacimiento = DateTime.Parse(objectRow["FECHA_NACIMIENTO"].ToString()),
+                raza = objectRow["RAZA"].ToString(),
+                agresividad = int.Parse(objectRow["AGRESIVIDAD"].ToString()),
+                foto1 = objectRow["FOTO_1"].ToString(),
+                foto2 = objectRow["FOTO_2"].ToString(),
+                especie = objectRow["ESPECIE"].ToString(),
+
             };
+
+            var estado = new Estado()
+            {
+                Id = int.Parse(objectRow["MASCOTA_ESTADO"].ToString()),
+                nombreEstado = objectRow["MASCOTA_NOMBRE_ESTADO"].ToString()
+            };
+
+            mascota.estado = estado;
+
+
+            var usuarioMapper = new UsuarioMapper();
+            var cliente = (Usuario)usuarioMapper.BuildObject(objectRow);  //Aqui se reutiliza el buildObject para crear el cliente dueño de la mascota
+
+
+            mascota.cliente = cliente;
 
             return mascota;
         }
@@ -43,41 +56,89 @@ namespace DataAccess.Mapper
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
         {
             SqlOperation operation = new SqlOperation();
-
             operation.ProcedureName = "PR_CREATE_MASCOTA";
 
-            Mascota mas = (Mascota)entityDTO;
+            Mascota mascota = (Mascota)entityDTO;
 
-            //operation.AddVarcharParam("Cliente", mas.FirstName);
-            operation.AddVarcharParam("descripcion", mas.descripcion);
-            operation.AddDateTimeParam("fechaNacimiento", mas.fechaNacimiento);
-            operation.AddVarcharParam("raza", mas.raza);
-            operation.AddIntegerParam("agresividad", mas.agresividad);
-            operation.AddVarcharParam("foto1", mas.foto1);
-            operation.AddVarcharParam("foto2", mas.foto2);
-            //operation.AddIntegerParam("estado", mas.estado);
+            operation.AddIntegerParam("ID_USUARIO", mascota.cliente.Id);
+            operation.AddVarcharParam("NOMBRE_MASCOTA", mascota.nombreMascota);
+            operation.AddVarcharParam("DESCRIPCION", mascota.descripcion);
+            operation.AddDateTimeParam("FECHA_NACIMIENTO", mascota.fechaNacimiento);
+            operation.AddVarcharParam("RAZA", mascota.raza);
+            operation.AddIntegerParam("AGRESIVIDAD", mascota.agresividad);
+            operation.AddVarcharParam("FOTO_1", mascota.foto1);
+            operation.AddVarcharParam("FOTO_2", mascota.foto2);
+            operation.AddIntegerParam("ESTADO", mascota.estado.Id);
+            operation.AddVarcharParam("ESPECIE", mascota.especie);
 
             return operation;
         }
 
         public SqlOperation GetDeleteStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_DELETE_MASCOTA_BY_ID";
+
+            Mascota mascota = (Mascota)entityDTO;
+
+            operation.AddIntegerParam("mascota_id", mascota.Id);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+            operation.ProcedureName = "PR_UPDATE_MASCOTA";
+
+            Mascota mascota = (Mascota)entityDTO;
+
+            operation.AddIntegerParam("mascota_id", mascota.Id);
+            operation.AddIntegerParam("ID_USUARIO", mascota.cliente.Id);
+            operation.AddVarcharParam("NOMBRE_MASCOTA", mascota.nombreMascota);
+            operation.AddVarcharParam("DESCRIPCION", mascota.descripcion);
+            operation.AddDateTimeParam("FECHA_NACIMIENTO", mascota.fechaNacimiento);
+            operation.AddVarcharParam("RAZA", mascota.raza);
+            operation.AddIntegerParam("AGRESIVIDAD", mascota.agresividad);
+            operation.AddVarcharParam("FOTO_1", mascota.foto1);
+            operation.AddVarcharParam("FOTO_2", mascota.foto2);
+            operation.AddIntegerParam("ESTADO", mascota.estado.Id);
+            operation.AddVarcharParam("ESPECIE", mascota.especie);
+
+            return operation;
         }
 
         public SqlOperation RetrieveAllStatement()
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_GET_ALL_MASCOTAS";
+
+            return operation;
         }
 
         public SqlOperation RetrieveByIdStatement(int Id)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_GET_MASCOTA_BY_ID";
+
+            operation.AddIntegerParam("mascota_id", Id);
+
+            return operation;
+        }
+
+        public SqlOperation GetRetrieveByPhraseStatement(int idDuenno)
+        {
+            var operation = new SqlOperation()
+            {
+                ProcedureName = "PR_GET_MASCOTAS_BY_OWNER_ID"
+            };
+
+            operation.AddIntegerParam("duenno_id", idDuenno);
+
+            return operation;
         }
     }
 }

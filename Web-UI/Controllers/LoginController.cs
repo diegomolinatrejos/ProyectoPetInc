@@ -70,6 +70,7 @@ namespace Web_UI.Controllers
                         HttpContext.Session.SetString("email", userAutenticado.email);
                         HttpContext.Session.SetString("rol", userAutenticado.rol.nombreRol);
                         HttpContext.Session.SetString("nombre", userAutenticado.nombre);
+                        HttpContext.Session.SetInt32("Id", userAutenticado.Id);
 
                         return RedirectToAction("DashboardHome", "Dashboard");
                     }

@@ -12,7 +12,13 @@
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre de la mascota:</label>
                 <input type="text" class="form-control" id="txtInputNombreMascota" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Especie:</label>
-                <input type="text" class="form-control" id="txtInputEspecieMascota" style="margin-bottom: 2%;">
+                <select class="form-select" id="selectBoxEspecie">
+                    <option selected>Perro</option>
+                    <option>Gato</option>
+                    <option>Hamster</option>
+                    <option>Iguana</option>
+                    <option>Ave</option>
+                 </select>
                 <label class="col-sm-2 col-form-label titulo-perfil">Raza:</label>
                 <input type="text" class="form-control" id="txtInputRaza" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Fecha de nacimiento:</label>
@@ -47,7 +53,10 @@
     </div>
 </section>
 
+<script src="~/js/pages/mascotas/Mascotas.js" asp-append-version="true"></script>
+
 <script src="~/js/pages/mascotas/RegistroMascotas.js" asp-append-version="true"></script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
