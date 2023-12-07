@@ -8,10 +8,9 @@ namespace DTO.Models
 {
     public class Paquete : BaseClass
     {
-        public string NombrePaquete { get; set; }
-        public List<Servicio> servicios { get; set; }
-        public decimal Subtotal { get; set; }
-        public PrecioImpuesto Descuento { get; set; }
-        public decimal PrecioTotal { get; set; }
+        public string nombrePaquete { get; set; }
+        public decimal subtotal { get; set; }
+        public decimal precioTotal { get; set; }
+        public Estado estado { get; set; }
     }
 }
