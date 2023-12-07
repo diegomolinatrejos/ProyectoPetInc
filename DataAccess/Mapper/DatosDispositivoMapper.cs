@@ -81,9 +81,14 @@ namespace DataAccess.Mapper
             return operation;
         }
 
-        public SqlOperation RetrieveByIdStatement(int Id)
+        public SqlOperation RetrieveByIdStatement(int idDispositivo)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_GET_DATOS_DISPOSITIVO_ID";
+            operation.AddIntegerParam("ID_DISPOSITIVO", idDispositivo);
+
+            return operation;
         }
     }
 }
