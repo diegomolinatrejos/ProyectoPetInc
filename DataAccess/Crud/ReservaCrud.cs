@@ -71,5 +71,15 @@ namespace DataAccess.Crud
             SqlOperation operation = reservaMapper.GetUpdateStatement(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
+
+        public  T RetrieveLastReserva<T>()
+        {
+            SqlOperation operation = reservaMapper.RetrieveLastReserva();
+            List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
+
+            var objArt = reservaMapper.BuildObject(dataResults[0]);
+
+            return (T)Convert.ChangeType(objArt, typeof(T));
+        }
     }
 }

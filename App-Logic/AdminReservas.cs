@@ -37,6 +37,11 @@ namespace App_Logic.Admins
             ReservaCrud rCrud = new ReservaCrud();
             rCrud.Delete(new Reserva { Id = Id });
         }
+        public Reserva GetLastReserva()
+        {
+            ReservaCrud rCrud = new ReservaCrud();
+            return rCrud.RetrieveLastReserva <Reserva>();
 
+        }
     }
 }

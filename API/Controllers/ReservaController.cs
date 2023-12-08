@@ -12,7 +12,7 @@ namespace API.Controllers
     public class ReservaController : ControllerBase
     {
         [HttpGet]
-        public List<Reserva> GetReserva()
+        public List<Reserva> GetAllReservas()
         {
             AdminReservas adminReservas = new AdminReservas();
             return adminReservas.GetAllReservas();
@@ -44,12 +44,12 @@ namespace API.Controllers
             return "Reserva Actualizada";
         }
 
-        //[HttpDelete]
-        //public string DeleteMascota(int id)
-        //{
-        //    AdminMascotas adminMascotas = new AdminMascotas();
-        //    adminMascotas.DeleteMascotaById(id);
-        //    return "Mascota eliminada";
-        //}
+        [HttpGet]
+        public Reserva GetUltimaReserva()
+        {
+            AdminReservas adminReserva = new AdminReservas();
+            return adminReserva.GetLastReserva();
+
+        }
     }
 }
