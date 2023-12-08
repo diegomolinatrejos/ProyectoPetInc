@@ -13,11 +13,14 @@ namespace DataAccess.Mapper
     {
         public BaseClass BuildObject(Dictionary<string, object> objectRow)
         {
-            var paqueteServicio = new PaquetesServicios();
-
+            var paqueteServicio = new PaquetesServicios()
+            {
+                Id = int.Parse(objectRow["ID"].ToString())
+            };
+            
             var paquete = new Paquete
             {
-                Id = int.Parse(objectRow["ID"].ToString()),
+                Id = int.Parse(objectRow["ID_PAQUETE"].ToString()),
                 nombrePaquete = objectRow["NOMBRE_PAQUETE"].ToString(),
                 subtotal = decimal.Parse(objectRow["SUBTOTAL"].ToString()),
                 precioTotal = decimal.Parse(objectRow["PRECIO_TOTAL"].ToString())
@@ -25,7 +28,7 @@ namespace DataAccess.Mapper
             };
             var estadoPaquete = new Estado()
             {
-                Id = int.Parse(objectRow["ESTADO"].ToString()),
+                Id = int.Parse(objectRow["PAQUETE_ESTADO"].ToString()),
                 nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
             paquete.estado = estadoPaquete;
@@ -85,7 +88,7 @@ namespace DataAccess.Mapper
 
             PaquetesServicios paquetesServicios = (PaquetesServicios)entityDTO;
 
-            operation.AddIntegerParam("ITERMEDIA_SERVICIOS_PAQUETES.Id", paquetesServicios.Id);
+            operation.AddIntegerParam("ID", paquetesServicios.Id); 
 
             return operation;
         }

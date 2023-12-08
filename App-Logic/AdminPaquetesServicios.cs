@@ -31,7 +31,7 @@ namespace App_Logic.Admins
 
         public void DeleteServicioDePaquete(int id)
         {
-            PaqueteCrud uCrud = new PaqueteCrud();
+            PaquetesServiciosCrud uCrud = new PaquetesServiciosCrud();
             uCrud.Delete(new PaquetesServicios { Id = id });
         }
     }

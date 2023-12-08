@@ -27,7 +27,7 @@ namespace API.Controllers
         {
             AdminPaquetesServicios adminPs = new AdminPaquetesServicios();
             adminPs.CreatePaquetesServicio(paq);
-            return "Paquete Servicio Creado";
+            return "Servicio asociado al paquete";
         }
 
         [HttpGet]
@@ -37,12 +37,12 @@ namespace API.Controllers
             return adminPs.GetServiciosByIdPaquete(id);
         }
 
-        [HttpPut]
+        [HttpDelete]
         public string EliminarServicioDePaquete(int id)
         {
             AdminPaquetesServicios adminPs = new AdminPaquetesServicios();
             adminPs.DeleteServicioDePaquete(id);
-            return "Servicio";
+            return "Servicio eliminado de Paquete";
         }
     }
 }

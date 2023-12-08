@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Dao;
 using DataAccess.Mapper;
+using DTO;
 using DTO.Models;
 
 namespace DataAccess.Crud
@@ -26,8 +27,8 @@ namespace DataAccess.Crud
 
         public override void Delete(BaseClass entityDTO)
         {
-            Usuario usuario = (Usuario)entityDTO;
-            SqlOperation operation = paqueteMapper.GetDeleteStatement(usuario);
+            Paquete paquete = (Paquete)entityDTO;
+            SqlOperation operation = paqueteMapper.GetDeleteStatement(paquete);
             dao.ExecuteStoredProcedure(operation);
         }
 
