@@ -3,8 +3,6 @@ using DTO.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
-using App_Logic.Admins;
-using DTO.Models;
 using DTO;
 
 namespace API.Controllers
