@@ -28,8 +28,5 @@ namespace App_Logic.Admins
             DatosDispositivoCrud ddCrud = new DatosDispositivoCrud();
             return ddCrud.RetrieveAllById(idDispositivo);
         }
-
-
-
     }
 }
