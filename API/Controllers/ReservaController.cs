@@ -15,7 +15,6 @@ namespace API.Controllers
         public List<Reserva> GetReserva()
         {
             AdminReservas adminReservas = new AdminReservas();
-
             return adminReservas.GetAllReservas();
         }
 
@@ -24,10 +23,8 @@ namespace API.Controllers
         public string CreateReserva(Reserva reserva)
         {
             AdminReservas adminReserva = new AdminReservas();
-
             adminReserva.CreateReserva(reserva);
-
-            return "OK";
+            return "Reserva Creada";
 
         }
 
@@ -46,5 +43,13 @@ namespace API.Controllers
             adminReserva.UpdateReserva(reserva);
             return "Reserva Actualizada";
         }
+
+        //[HttpDelete]
+        //public string DeleteMascota(int id)
+        //{
+        //    AdminMascotas adminMascotas = new AdminMascotas();
+        //    adminMascotas.DeleteMascotaById(id);
+        //    return "Mascota eliminada";
+        //}
     }
 }

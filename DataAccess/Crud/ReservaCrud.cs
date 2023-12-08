@@ -26,7 +26,9 @@ namespace DataAccess.Crud
 
         public override void Delete(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            Reserva reserva = (Reserva)entityDTO;
+            SqlOperation operation = reservaMapper.GetDeleteStatement(reserva);
+            dao.ExecuteStoredProcedure(operation);
         }
 
         public override List<T> RetrieveAll<T>()

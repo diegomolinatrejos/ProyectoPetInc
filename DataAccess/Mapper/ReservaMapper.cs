@@ -19,7 +19,8 @@ namespace DataAccess.Mapper
                 fechaSalida = DateTime.Parse(objectRow["FECHA_SALIDA"].ToString()),
                 comentario = objectRow["COMENTARIO"].ToString(),
                 total = decimal.Parse(objectRow["TOTAL"].ToString()),
-                confirmada = int.Parse(objectRow["CONFIRMADA"].ToString())
+                precioBase = decimal.Parse(objectRow["PRECIO_BASE"].ToString()),
+                impuesto = decimal.Parse(objectRow["IMPUESTO"].ToString())
             };
             var usuario = new Usuario()
             {
@@ -43,7 +44,7 @@ namespace DataAccess.Mapper
 
             var estadoUsuario = new Estado()
             {
-                Id = int.Parse(objectRow["ESTADO_USUARIO"].ToString()),
+                Id = int.Parse(objectRow["ID_ESTADO_USUARIO"].ToString()),
                 nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
             usuario.rol = rol;
@@ -60,11 +61,11 @@ namespace DataAccess.Mapper
                 agresividad = int.Parse(objectRow["AGRESIVIDAD"].ToString()),
                 foto1 = objectRow["FOTO_1"].ToString(),
                 foto2 = objectRow["FOTO_2"].ToString(),
-                especie = objectRow["Especie"].ToString()
+                especie = objectRow["ESPECIE"].ToString()
             };
             var estadoMascota = new Estado()
             {
-                Id = int.Parse(objectRow["ESTADO_MASCOTA"].ToString()),
+                Id = int.Parse(objectRow["ID_ESTADO_MASCOTA"].ToString()),
                 nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
             };
             mascota.estado = estadoMascota;
@@ -77,23 +78,14 @@ namespace DataAccess.Mapper
             };
             var estadoReserva = new Estado()
             {
-                Id = int.Parse(objectRow["ESTADO_RESERVA"].ToString()),
+                Id = int.Parse(objectRow["ID_ESTADO_RESERVA"].ToString()),
                 nombreEstado = objectRow["NOMBRE_ESTADO"].ToString()
-            };
-            var precioImpuesto = new PrecioImpuesto()
-            {
-                Id = int.Parse(objectRow["PRECIO_IMPUESTO"].ToString()),
-                precioBase = decimal.Parse(objectRow["PRECIO_BASE"].ToString()),
-                descuentoPaquete = decimal.Parse(objectRow["DESCUENTO_PAQUETE"].ToString()),
-                impuesto = decimal.Parse(objectRow["IMPUESTO"].ToString())
             };
 
             reserva.cliente = usuario;
             reserva.mascota = mascota;
             reserva.dispositivo = dispositivo;
             reserva.estadoReserva = estadoReserva;
-            reserva.precioBase = precioImpuesto.precioBase;
-            reserva.impuesto = precioImpuesto.impuesto;
 
             return reserva;
 
@@ -115,19 +107,18 @@ namespace DataAccess.Mapper
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR";
+            operation.ProcedureName = "PR_CREATE_RESERVA";
 
             Reserva reserva = (Reserva)entityDTO;
 
             //agregar los parametros al operation
             operation.AddDateTimeParam("FECHA_ENTRADA", reserva.fechaEntrada);
             operation.AddDateTimeParam("FECHA_SALIDA", reserva.fechaSalida);
-            operation.AddIntegerParam("CLIENTE", reserva.cliente.Id);
-            operation.AddIntegerParam("MASCOTA", reserva.mascota.Id);
-            operation.AddIntegerParam("DISPOSITIVO", reserva.dispositivo.Id);
+            operation.AddIntegerParam("ID_USUARIO", reserva.cliente.Id);
+            operation.AddIntegerParam("ID_MASCOTA", reserva.mascota.Id);
+            operation.AddIntegerParam("ID_DISPOSITIVO", reserva.dispositivo.Id);
             operation.AddVarcharParam("COMENTARIO", reserva.comentario);
             operation.AddDecimalParam("TOTAL", reserva.total);
-            operation.AddIntegerParam("CONFIRMADA", reserva.confirmada);
             operation.AddIntegerParam("ESTADO_RESERVA", reserva.estadoReserva.Id);
             operation.AddDecimalParam("PRECIO_BASE", reserva.precioBase);
             operation.AddDecimalParam("IMPUESTO", reserva.impuesto);
@@ -138,13 +129,21 @@ namespace DataAccess.Mapper
 
         public SqlOperation GetDeleteStatement(BaseClass entityDTO)
         {
-            throw new NotImplementedException();
+            SqlOperation operation = new SqlOperation();
+
+            operation.ProcedureName = "PR_DEACTIVATE_RESERVA_BY_ID";
+
+            Reserva reserva = (Reserva)entityDTO;
+
+            operation.AddIntegerParam("ID", reserva.Id);
+
+            return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseClass entityDTO)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR";
+            operation.ProcedureName = "PR_UPDATE_RESERVA";
 
             Reserva reserva = (Reserva)entityDTO;
 
@@ -169,7 +168,7 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "";
+            operation.ProcedureName = "PR_GET_ALL_RESERVAS";
 
             return operation;
         }
@@ -178,9 +177,9 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "";
+            operation.ProcedureName = "PR_GET_RESERVA_POR_ID";
 
-            operation.AddIntegerParam("reserva_id", Id);
+            operation.AddIntegerParam("ID", Id);
 
             return operation;
         }
