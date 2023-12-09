@@ -1,4 +1,5 @@
-﻿function validarFormularioRegistroMascotas() {
+﻿
+function validarFormularioRegistroMascotas() {
     const formularioRegistroMascotas = document.getElementById('formularioRegistroMascotas');
 
     formularioRegistroMascotas.addEventListener('submit', function (e) {
@@ -47,24 +48,24 @@ function registrarMascota() {
         cliente: {
             id: idUsuario,
             email: "string",
-            contrasena: "string",
-            nombre: "string",
-            apellido1: "string",
-            apellido2: "string",
-            documentoIdentidad: "string",
-            telefono: "string",
-            direccionMapa: "string",
-            foto: "string",
-            rol: {
-                id: 0,
-                nombreRol: "string"
-            },
-            estadoInfo: {
-                id: 0,
-                nombreEstado: "string"
-            },
+          contrasena: "string",
+          nombre: "string",
+          apellido1: "string",
+          apellido2: "string",
+          documentoIdentidad: "string",
+          telefono: "string",
+          direccionMapa: "string",
+          foto: "string",
+        rol: {
+            id: 0,
+            nombreRol: "string"
+        },
+        estadoInfo: {
+            id: 0,
+            nombreEstado: "string"
+        },
             otp: "string"
-
+        
         },
         nombreMascota: $("#txtInputNombreMascota").val(),
         descripcion: $("#txtInputDescripcion").val(),
@@ -100,7 +101,7 @@ function registrarMascota() {
             icon: 'success',
             text: 'Mascota registrada exitosamente.',
             didClose: () => {
-                document.getElementById('formularioRegistroMascotas').submit();
+                  document.getElementById('formularioRegistroMascotas').submit();
             }
         });
 
@@ -124,5 +125,3 @@ function mostrarImagen(input, idImagen) {
     };
     reader.readAsDataURL(input.files[0]);
 }
-
-

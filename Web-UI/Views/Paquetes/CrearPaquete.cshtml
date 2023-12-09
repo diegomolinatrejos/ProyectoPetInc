@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+<section id="crearPaquete">
+    <h1 class="titulo">Crear Paquete</h1>
+
+
+    <div class="contenedor reserva-info">
+        <div class="contenedor-registro-reserva">
+            <form id="formularioRegistroPaquetes" action="" class="registro-reserva">
+                <label class="col-sm-2 col-form-label titulo-perfil">Nombre del Paquete:</label>
+                <input type="text" class="form-control" id="nombrePaquete">
+
+                <label class="col-sm-2 col-form-label titulo-perfil">Subtotal:</label>
+                <input type="text" class="form-control subtotal" id="subtotal" placeholder="₡0" disabled>
+
+                <label class="col-sm-2 col-form-label titulo-perfil">Total:</label>
+                <input type="text" class="form-control total" id="total" placeholder="₡0" disabled>
+
+                <button type="submit" class="btn btn-primary" id="botonEnviar">Crear Paquete</button>
+            </form>
+
+        </div>
+
+        <div style="margin-top: 4%;">
+            <div style="margin-bottom: 2%;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#contenedorListaServicios" aria-selected="true" role="tab">Servicios</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade" id="contenedorListaServicios" role="tabpanel" style="font-size: 14px;">
+                    <table class="table table-hover tabla-servicios-registro">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Añadir</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTablaServicios">
+                          
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btn btn-primary" id="botonServicios">Añadir Servicios</button>
+
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div class="svg-wave" style="height: 150px; overflow: hidden; margin-top: 0%;">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                          style="stroke: none; fill: #2C3E50;"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/js/pages/paquetes/CrearPaquete.js" asp-append-version="true"></script>
+
+<script>
+    // Espera a que el contenido de la página se cargue completamente
+    document.addEventListener('DOMContentLoaded', function () {
+        // Selecciona la pestaña de servicios y haz clic en ella
+        var serviciosTab = document.querySelector('[href="#contenedorListaServicios"]');
+        serviciosTab.click();
+    });
+</script>

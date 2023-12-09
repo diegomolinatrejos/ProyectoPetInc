@@ -11,7 +11,6 @@ namespace DTO.Models
         public Dispositivo dispositivo { get; set; }
         public string comentario { get; set; }
         public decimal total { get; set; }
-        public int confirmada { get; set; }
         public Estado estadoReserva { get; set; }
         public decimal precioBase { get; set; }
         public decimal impuesto { get; set; }

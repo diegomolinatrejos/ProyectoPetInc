@@ -1,20 +1,26 @@
-﻿using DataAccess.Dao;
-using DTO.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Azure;
+using DataAccess.Dao;
+using DTO;
+using DTO.Models;
 
 namespace DataAccess.Mapper
 {
-    public class ReservaMapper : ICrudStatements, IObjectMapper
+    public class ReservaServiciosMapper : IObjectMapper, ICrudStatements
     {
         public BaseClass BuildObject(Dictionary<string, object> objectRow)
         {
+            var reservaServicios = new ReservaServicios()
+            {
+                Id = int.Parse(objectRow["ID"].ToString())
+            };
             var reserva = new Reserva()
             {
-                Id = int.Parse(objectRow["ID"].ToString()),
+                Id = int.Parse(objectRow["ID_RESERVA"].ToString()),
                 fechaEntrada = DateTime.Parse(objectRow["FECHA_ENTRADA"].ToString()),
                 fechaSalida = DateTime.Parse(objectRow["FECHA_SALIDA"].ToString()),
                 comentario = objectRow["COMENTARIO"].ToString(),
@@ -87,19 +93,36 @@ namespace DataAccess.Mapper
             reserva.dispositivo = dispositivo;
             reserva.estadoReserva = estadoReserva;
 
-            return reserva;
+            var servicio = new Servicio()
+            {
+                Id = int.Parse(objectRow["SERVICIO_ID"].ToString()),
+                nombreServicio = objectRow["NOMBRE_SERVICIO"].ToString(),
+                descripcion = objectRow["DESCRIPCION_SERVICIO"].ToString(),
+                precio = decimal.Parse(objectRow["PRECIO"].ToString()),
+            };
 
+            var estadoServicio = new Estado()
+            {
+                Id = int.Parse(objectRow["SERVICIO_ESTADO"].ToString()),
+                nombreEstado = objectRow["SERVICIO_NOMBRE_ESTADO"].ToString()
+            };
+            servicio.estado = estadoServicio;
+
+            reservaServicios.reserva = reserva;
+            reservaServicios.servicio = servicio;
+
+            return reservaServicios;
         }
+
 
         public List<BaseClass> BuildObjects(List<Dictionary<string, object>> listRows)
         {
-
             var lstResult = new List<BaseClass>();
 
             foreach (var objRow in listRows)
             {
-                var reserva = BuildObject(objRow);
-                lstResult.Add(reserva);
+                var reservaServicio = BuildObject(objRow);
+                lstResult.Add(reservaServicio);
             }
             return lstResult;
         }
@@ -107,22 +130,12 @@ namespace DataAccess.Mapper
         public SqlOperation GetCreateStatement(BaseClass entityDTO)
         {
             SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR_CREATE_RESERVA";
+            operation.ProcedureName = "PR_CREATE_RESERVA_SERVICIO";
 
-            Reserva reserva = (Reserva)entityDTO;
+            ReservaServicios reservaServicio = (ReservaServicios)entityDTO;
 
-            //agregar los parametros al operation
-            operation.AddDateTimeParam("FECHA_ENTRADA", reserva.fechaEntrada);
-            operation.AddDateTimeParam("FECHA_SALIDA", reserva.fechaSalida);
-            operation.AddIntegerParam("ID_USUARIO", reserva.cliente.Id);
-            operation.AddIntegerParam("ID_MASCOTA", reserva.mascota.Id);
-            operation.AddIntegerParam("ID_DISPOSITIVO", reserva.dispositivo.Id);
-            operation.AddVarcharParam("COMENTARIO", reserva.comentario);
-            operation.AddDecimalParam("TOTAL", reserva.total);
-            operation.AddIntegerParam("ESTADO_RESERVA", reserva.estadoReserva.Id);
-            operation.AddDecimalParam("PRECIO_BASE", reserva.precioBase);
-            operation.AddDecimalParam("IMPUESTO", reserva.impuesto);
-
+            operation.AddIntegerParam("ID_RESERVA", reservaServicio.reserva.Id);
+            operation.AddIntegerParam("ID_SERVICIO", reservaServicio.servicio.Id);
 
             return operation;
         }
@@ -131,44 +144,25 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "PR_DEACTIVATE_RESERVA_BY_ID";
+            operation.ProcedureName = "PR_DELETE_RESERVA_SERVICIO_BY_ID";
 
-            Reserva reserva = (Reserva)entityDTO;
+            ReservaServicios reservaServicio = (ReservaServicios)entityDTO;
 
-            operation.AddIntegerParam("ID", reserva.Id);
+            operation.AddIntegerParam("ID", reservaServicio.Id);
 
             return operation;
         }
 
         public SqlOperation GetUpdateStatement(BaseClass entityDTO)
         {
-            SqlOperation operation = new SqlOperation();
-            operation.ProcedureName = "PR_UPDATE_RESERVA";
-
-            Reserva reserva = (Reserva)entityDTO;
-
-            //agregar los parametros al operation
-            operation.AddIntegerParam("ID", reserva.Id);
-            operation.AddDateTimeParam("FECHA_ENTRADA", reserva.fechaEntrada);
-            operation.AddDateTimeParam("FECHA_SALIDA", reserva.fechaSalida);
-            operation.AddIntegerParam("ID_USUARIO", reserva.cliente.Id);
-            operation.AddIntegerParam("ID_MASCOTA", reserva.mascota.Id);
-            operation.AddIntegerParam("ID_DISPOSITIVO", reserva.dispositivo.Id);
-            operation.AddVarcharParam("COMENTARIO", reserva.comentario);
-            operation.AddDecimalParam("TOTAL", reserva.total);
-            operation.AddIntegerParam("ESTADO_RESERVA", reserva.estadoReserva.Id);
-            operation.AddDecimalParam("PRECIO_BASE", reserva.precioBase);
-            operation.AddDecimalParam("IMPUESTO", reserva.impuesto);
-
-
-            return operation;
+            throw new NotImplementedException();
         }
 
         public SqlOperation RetrieveAllStatement()
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "PR_GET_ALL_RESERVAS";
+            operation.ProcedureName = "PR_GET_ALL_RESERVA_SERVICIOS";
 
             return operation;
         }
@@ -177,18 +171,8 @@ namespace DataAccess.Mapper
         {
             SqlOperation operation = new SqlOperation();
 
-            operation.ProcedureName = "PR_GET_RESERVA_POR_ID";
-
-            operation.AddIntegerParam("ID", Id);
-
-            return operation;
-        }
-
-        public SqlOperation RetrieveLastReserva()
-        {
-            SqlOperation operation = new SqlOperation();
-
-            operation.ProcedureName = "PR_GET_ULTIMA_RESERVA";
+            operation.ProcedureName = "PR_GET_SERVICIO_POR_RESERVA_ID";
+            operation.AddIntegerParam("ID_RESERVA", Id);
 
             return operation;
         }

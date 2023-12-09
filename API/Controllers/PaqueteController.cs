@@ -45,10 +45,10 @@ namespace API.Controllers
         }
 
         [HttpPut]
-        public string DesactivarPaquete (string paquete)
+        public string DesactivarPaquete (int paquete)
         {
             AdminPaquetes adminPaquetes = new AdminPaquetes();
-            adminPaquetes.DeletePaqueteByName(paquete);
+            adminPaquetes.DeletePaqueteById(paquete);
             return "Estado de paquete cambiado";       
         }
 

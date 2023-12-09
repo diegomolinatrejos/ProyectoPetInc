@@ -5,43 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Dao;
 using DataAccess.Mapper;
-using DTO;
 using DTO.Models;
 
 namespace DataAccess.Crud
 {
-    public class PaqueteCrud : CrudFactory
+    public class PrecioImpuestoCrud : CrudFactory
     {
-        private PaqueteMapper paqueteMapper;
+        private PrecioImpuestoMapper piMapper;
 
-        public PaqueteCrud(): base()
+        public PrecioImpuestoCrud() : base()
         {
-            paqueteMapper = new PaqueteMapper();
-            dao = SqlDao.GetInstance();
+            piMapper = new PrecioImpuestoMapper();
+            dao=SqlDao.GetInstance();
         }
+
         public override void Create(BaseClass entityDTO)
         {
-            SqlOperation operation = paqueteMapper.GetCreateStatement(entityDTO);
-            dao.ExecuteStoredProcedure(operation);
+            throw new NotImplementedException();
         }
 
         public override void Delete(BaseClass entityDTO)
         {
-            Paquete paquete = (Paquete)entityDTO;
-            SqlOperation operation = paqueteMapper.GetDeleteStatement(paquete);
-            dao.ExecuteStoredProcedure(operation);
+            throw new NotImplementedException();
         }
 
         public override List<T> RetrieveAll<T>()
         {
             List<T> lstResults = new List<T>();
-            SqlOperation operation = paqueteMapper.RetrieveAllStatement();
+            SqlOperation operation = piMapper.RetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
-                var dtoObjects = paqueteMapper.BuildObjects(dataResults);
+                var dtoObjects = piMapper.BuildObjects(dataResults);
 
                 foreach (var ob in dtoObjects)
                 {
@@ -58,18 +55,12 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            var dataResults = dao.ExecuteStoredProcedureWithQuery(paqueteMapper.RetrieveByIdStatement(id));
-
-            var objArt = paqueteMapper.BuildObject(dataResults[0]);
-
-            return (T)Convert.ChangeType(objArt, typeof(T));
+            throw new NotImplementedException();
         }
 
         public override void Update(BaseClass entityDTO)
         {
-            Paquete paquete = (Paquete)entityDTO;
-
-            SqlOperation operation = paqueteMapper.GetUpdateStatement(entityDTO);
+            SqlOperation operation = piMapper.GetUpdateStatement(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
     }

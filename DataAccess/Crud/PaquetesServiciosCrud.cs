@@ -5,42 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Dao;
 using DataAccess.Mapper;
+using DTO;
 using DTO.Models;
 
 namespace DataAccess.Crud
 {
-    public class ReservaCrud : CrudFactory
+    public class PaquetesServiciosCrud : CrudFactory
     {
-        private ReservaMapper reservaMapper;
+        private PaquetesServiciosMapper psMapper;
 
-        public ReservaCrud(): base()
+        public PaquetesServiciosCrud() : base()
         {
-            reservaMapper = new ReservaMapper();
+            psMapper = new PaquetesServiciosMapper();
             dao = SqlDao.GetInstance();
         }
+
         public override void Create(BaseClass entityDTO)
         {
-            SqlOperation operation = reservaMapper.GetCreateStatement(entityDTO);
+            SqlOperation operation = psMapper.GetCreateStatement(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
 
         public override void Delete(BaseClass entityDTO)
         {
-            Reserva reserva = (Reserva)entityDTO;
-            SqlOperation operation = reservaMapper.GetDeleteStatement(reserva);
+            PaquetesServicios servicioPaquete = (PaquetesServicios)entityDTO;
+            SqlOperation operation = psMapper.GetDeleteStatement(servicioPaquete);
             dao.ExecuteStoredProcedure(operation);
         }
 
         public override List<T> RetrieveAll<T>()
         {
             List<T> lstResults = new List<T>();
-            SqlOperation operation = reservaMapper.RetrieveAllStatement();
+            SqlOperation operation = psMapper.RetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
-                var dtoObjects = reservaMapper.BuildObjects(dataResults);
+                var dtoObjects = psMapper.BuildObjects(dataResults);
 
                 foreach (var ob in dtoObjects)
                 {
@@ -57,29 +59,32 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            var dataResults = dao.ExecuteStoredProcedureWithQuery(reservaMapper.RetrieveByIdStatement(id));
-
-            var objArt = reservaMapper.BuildObject(dataResults[0]);
-
-            return (T)Convert.ChangeType(objArt, typeof(T));
+            throw new NotImplementedException();
         }
 
         public override void Update(BaseClass entityDTO)
         {
-            Reserva reserva = (Reserva)entityDTO;
-
-            SqlOperation operation = reservaMapper.GetUpdateStatement(entityDTO);
-            dao.ExecuteStoredProcedure(operation);
+            throw new NotImplementedException();
         }
 
-        public  T RetrieveLastReserva<T>()
+        public List<PaquetesServicios> RetrieveAllServiciosByIdPaquete(int idPaquete)
         {
-            SqlOperation operation = reservaMapper.RetrieveLastReserva();
+            List<PaquetesServicios> lstResults = new List<PaquetesServicios>();
+            SqlOperation operation = psMapper.RetrieveByIdStatement(idPaquete);
+
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
-            var objArt = reservaMapper.BuildObject(dataResults[0]);
+            if (dataResults.Count > 0)
+            {
+                var dtoObjects = psMapper.BuildObjects(dataResults);
 
-            return (T)Convert.ChangeType(objArt, typeof(T));
+                foreach (var ob in dtoObjects)
+                {
+                    lstResults.Add((PaquetesServicios)ob);
+                }
+            }
+            return lstResults;
         }
+
     }
 }

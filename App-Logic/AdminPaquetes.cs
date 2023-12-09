@@ -34,10 +34,10 @@ namespace App_Logic.Admins
             paqueteCrud.Update(paquete);
         }
 
-        public void DeletePaqueteByName(string nombre)
+        public void DeletePaqueteById( int nombre)
         {
             PaqueteCrud uCrud = new PaqueteCrud();
-            uCrud.Delete(new Paquete { nombrePaquete = nombre });
+            uCrud.Delete(new Paquete { Id = nombre });
         }
     }
 }

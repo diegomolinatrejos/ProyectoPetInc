@@ -130,7 +130,7 @@ function UpdateMascota(mascotaId) {
                 id: 0,
                 nombreEstado: "string"
             },
-            otp: 0
+            otp: "string"
 
         },
         nombreMascota: $("#txtInputNombreMascotaEditar").val(),

@@ -5,42 +5,45 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Dao;
 using DataAccess.Mapper;
+using DTO;
 using DTO.Models;
 
 namespace DataAccess.Crud
 {
-    public class ReservaCrud : CrudFactory
-    {
-        private ReservaMapper reservaMapper;
+    public class ReservaPaquetesCrud : CrudFactory
 
-        public ReservaCrud(): base()
+    {
+        private ReservaPaquetesMapper rpMapper;
+
+        public ReservaPaquetesCrud() : base()
         {
-            reservaMapper = new ReservaMapper();
-            dao = SqlDao.GetInstance();
+            rpMapper = new ReservaPaquetesMapper();
+            dao=SqlDao.GetInstance();
         }
+
         public override void Create(BaseClass entityDTO)
         {
-            SqlOperation operation = reservaMapper.GetCreateStatement(entityDTO);
+            SqlOperation operation = rpMapper.GetCreateStatement(entityDTO);
             dao.ExecuteStoredProcedure(operation);
         }
 
         public override void Delete(BaseClass entityDTO)
         {
-            Reserva reserva = (Reserva)entityDTO;
-            SqlOperation operation = reservaMapper.GetDeleteStatement(reserva);
+            ReservaPaquetes reservaPaquete = (ReservaPaquetes)entityDTO;
+            SqlOperation operation = rpMapper.GetDeleteStatement(reservaPaquete);
             dao.ExecuteStoredProcedure(operation);
         }
 
         public override List<T> RetrieveAll<T>()
         {
             List<T> lstResults = new List<T>();
-            SqlOperation operation = reservaMapper.RetrieveAllStatement();
+            SqlOperation operation = rpMapper.RetrieveAllStatement();
 
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
             if (dataResults.Count > 0)
             {
-                var dtoObjects = reservaMapper.BuildObjects(dataResults);
+                var dtoObjects = rpMapper.BuildObjects(dataResults);
 
                 foreach (var ob in dtoObjects)
                 {
@@ -57,29 +60,31 @@ namespace DataAccess.Crud
 
         public override T RetrieveById<T>(int id)
         {
-            var dataResults = dao.ExecuteStoredProcedureWithQuery(reservaMapper.RetrieveByIdStatement(id));
-
-            var objArt = reservaMapper.BuildObject(dataResults[0]);
-
-            return (T)Convert.ChangeType(objArt, typeof(T));
+            throw new NotImplementedException();
         }
 
         public override void Update(BaseClass entityDTO)
         {
-            Reserva reserva = (Reserva)entityDTO;
-
-            SqlOperation operation = reservaMapper.GetUpdateStatement(entityDTO);
-            dao.ExecuteStoredProcedure(operation);
+            throw new NotImplementedException();
         }
 
-        public  T RetrieveLastReserva<T>()
+        public List<ReservaPaquetes> RetrieveAllPaquetesByIdReserva(int idReserva)
         {
-            SqlOperation operation = reservaMapper.RetrieveLastReserva();
+            List<ReservaPaquetes> lstResults = new List<ReservaPaquetes>();
+            SqlOperation operation = rpMapper.RetrieveByIdStatement(idReserva);
+
             List<Dictionary<string, object>> dataResults = dao.ExecuteStoredProcedureWithQuery(operation);
 
-            var objArt = reservaMapper.BuildObject(dataResults[0]);
+            if (dataResults.Count > 0)
+            {
+                var dtoObjects = rpMapper.BuildObjects(dataResults);
 
-            return (T)Convert.ChangeType(objArt, typeof(T));
+                foreach (var ob in dtoObjects)
+                {
+                    lstResults.Add((ReservaPaquetes)ob);
+                }
+            }
+            return lstResults;
         }
     }
 }

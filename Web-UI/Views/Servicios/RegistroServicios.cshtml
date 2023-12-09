@@ -12,15 +12,11 @@
         <div class="contenedor-registro-mascota">
             <form id="formularioRegistroServicios" action="" class="registro-mascota">
                 <label class="col-sm-2 col-form-label titulo-perfil">Nombre del servicio:</label>
-                <input type="text" class="form-control" id="nombreServicio" style="margin-bottom: 2%;">
+                <input type="text" class="form-control" id="txtInputNombreServicio" style="margin-bottom: 2%;">
                 <label class="col-sm-2 col-form-label titulo-perfil">Descripción:</label>
-                <textarea class="form-control" id="descripcionServicio" rows="3" style="height: 145px;" spellcheck="false"></textarea>
+                <textarea class="form-control" id="txtInputDescripcionServicio" rows="3" style="height: 145px;" spellcheck="false"></textarea>
                 <label class="col-sm-2 col-form-label titulo-perfil">Precio:</label>
-                <input type="text" class="form-control" id="precioServicio">
-                <div class="fotos-registro-mascotas">
-                    <label class="col-sm-2 col-form-label titulo-perfil">Foto del servicio:</label>
-                    <input type="file" class="form-control foto-servicio-formulario" id="fotoServicio" onchange="mostrarImagen(this, 'imagenServicio')">
-                </div>
+                <input type="text" class="form-control" id="txtInputPrecioServicio">
                 <div style="margin-top: 5%; text-align: center;">
                     <button type="submit" class="btn btn-primary" id="guardarServicioEditar">Registrar</button>
                 </div>
@@ -28,7 +24,7 @@
         </div>
 
         <div class="contenedor-imagen-servicios">
-            <h2>Visualización de imagen</h2>
+            <h2></h2>
             <div style=" margin-left: 0%;">
                 <img id="imagenServicio" class="imagen-servicio" src="~/media/img/huella.png" alt="Imagen del servicio" style=" display: inline-block; width: 300px; margin-top: 5%; height: 300px; object-fit: cover;">
             </div>
@@ -42,19 +38,10 @@
     </div>
 </section>
 
-<script src="~/js/pages/servicios/Servicios.js" asp-append-version="true"></script>
+<script src="~/js/pages/servicios/RegistroServicios.js" asp-append-version="true"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        validarFormularioRegistroServicios();
 
-        validarFormularioRegistroServicios()
-
-
-        document.getElementById('fotoMascotaEditar').addEventListener('change', function () {
-            mostrarImagen(this, 'imagenMascota');
-        });
-
-        document.getElementById('fotoMascotaEditar2').addEventListener('change', function () {
-            mostrarImagen(this, 'imagenMascota2');
-        });
     });
 </script>

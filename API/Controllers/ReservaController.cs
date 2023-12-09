@@ -99,10 +99,9 @@ namespace API.Controllers
 
 
         [HttpGet]
-        public List<Reserva> GetReserva()
+        public List<Reserva> GetAllReservas()
         {
             AdminReservas adminReservas = new AdminReservas();
-
             return adminReservas.GetAllReservas();
         }
 
@@ -111,10 +110,8 @@ namespace API.Controllers
         public string CreateReserva(Reserva reserva)
         {
             AdminReservas adminReserva = new AdminReservas();
-
             adminReserva.CreateReserva(reserva);
-
-            return "OK";
+            return "Reserva Creada";
 
         }
 
@@ -132,6 +129,14 @@ namespace API.Controllers
             AdminReservas adminReserva = new AdminReservas();
             adminReserva.UpdateReserva(reserva);
             return "Reserva Actualizada";
+        }
+
+        [HttpGet]
+        public Reserva GetUltimaReserva()
+        {
+            AdminReservas adminReserva = new AdminReservas();
+            return adminReserva.GetLastReserva();
+
         }
     }
 }
