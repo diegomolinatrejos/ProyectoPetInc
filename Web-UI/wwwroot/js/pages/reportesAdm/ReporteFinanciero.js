@@ -2,7 +2,7 @@
 var dataReservas;
 
 $.ajax({
-    url: 'http://localhost:5087/api/Reserva/GetAllReservas',
+    url: API_URL_BASE + '/api/Reserva/GetAllReservas',
     type: 'GET',
     success: function (data) {
         dataReservas = data;

@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿/* styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col-md-6 {
+    width: 50%; /* Ajusta según tus necesidades */
+    margin: 10px; /* Ajusta según tus necesidades */
+}
+
+h2, #myGridEgresos {
+    text-align: center;
+    margin: 10px; /* Ajusta según tus necesidades */
 }

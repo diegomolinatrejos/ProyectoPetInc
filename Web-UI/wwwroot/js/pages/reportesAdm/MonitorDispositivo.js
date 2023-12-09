@@ -25,7 +25,7 @@ function pausarActualizacion() {
 
 function obtenerYMostrarDatos() {
     $.ajax({
-        url: "http://localhost:5087/api/DatosDispositivo/GetDatosDispositivoById?idDispositivo=" + idDispositivo,
+        url: API_URL_BASE + "/api/DatosDispositivo/GetDatosDispositivoById?idDispositivo=" + idDispositivo,
         method: "GET",
         contentType: "application/json;charset=utf-8",
         dataType: "json",

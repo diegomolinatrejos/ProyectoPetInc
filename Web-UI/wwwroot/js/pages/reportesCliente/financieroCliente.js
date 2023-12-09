@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     // Llamada a la API para obtener todas las reservas del usuario actual
     $.ajax({
-        url: 'http://localhost:5087/api/Reserva/GetAllReservas',
+        url: API_URL_BASE + '/api/Reserva/GetAllReservas',
         type: 'GET',
         data: { idUsuario: idUsuario },
         success: function (reservas) {

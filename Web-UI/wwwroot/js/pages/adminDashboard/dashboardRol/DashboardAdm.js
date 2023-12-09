@@ -3,7 +3,7 @@
 var dataReservas;
 
 $.ajax({
-    url: 'http://localhost:5087/api/Reserva/GetAllReservas',
+    url: API_URL_BASE + '/api/Reserva/GetAllReservas',
     type: 'GET',
     success: function (data) {
         dataReservas = data;
@@ -18,7 +18,7 @@ $.ajax({
 var dataUsuarios;
 
 $.ajax({
-    url: 'http://localhost:5087/api/Admin/GetUsuarios',
+    url: API_URL_BASE + '/api/Admin/GetUsuarios',
     type: 'GET',
     success: function (data) {
         dataUsuarios = data;

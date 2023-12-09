@@ -3,7 +3,7 @@ var idUsuario;
 
 // Código para conectarse a la API y obtener datos de reservas
 $.ajax({
-    url: 'http://localhost:5087/api/Reserva/GetAllReservas',
+    url: API_URL_BASE + '/api/Reserva/GetAllReservas',
     type: 'GET',
     success: function (data) {
         // Guardar las reservas completas
