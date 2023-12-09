@@ -4,8 +4,70 @@
     Layout = "../Shared/_LayoutDashboard.cshtml";
 }
 
-<div class="HomeLayoutAdmin dashboard" style=" width: 100%; text-align: center; padding: 18%; color: #333333;">
-    <h1>Bienvenido a la aplicación de Pets Inc</h1>
-    <h2>Que deseas realizar?</h2>
-    <img id="no" src="~/media/img/perroGift.gif" style="max-width: 40%; height: auto; margin-left: 6%; border-radius: 15px;">
+<div>
+    @{
+        var rol = Accesor.HttpContext.Session.GetString("rol");
+    }
+
+    @if (!string.IsNullOrEmpty(rol))
+    {
+        switch (rol)
+        {
+            case "Administrador":
+                <div>
+                    <h2>Bienvenido Administrador a la aplicación de Pets Inc</h2>
+                </div>
+                break;
+
+            case "Cliente":
+                <div id="contenedorcliente">
+                    <h2>Bienvenido Cliente a la aplicación de Pets Inc</h2>
+                    <div id="contegrafico">
+                        <p>Si tu mascota está en el hotel, aquá puedes monitorear el estado.</p>
+
+                        <div id="graficotemp">
+                            <h2>Dispositivo 1</h2>
+                            <canvas id="miGrafico"></canvas>
+                        </div>
+           
+                        <div id="botones">
+                            <input id="iniciarContinuarBtn" type="button" value="Iniciar/Continuar" />
+                            <input id="pausarBtn" type="button" value="Pausar" />
+                        </div>
+
+                    </div>
+
+                    <div id="contenedortabla" class="row">
+                        <div class="col-md-12">
+                            <h3 style="margin-top: 3%">Tabla de Reservas</h3>
+                            <div id="myGrid" style="height: 200px; width: 100%; margin-bottom: 2%;" class="ag-theme-alpine"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                break;
+
+            case "Gestor de Reservas":
+                <div>
+                    <h2>Bienvenido Gestor a la aplicación de Pets Inc</h2>
+                </div>
+                break;
+
+            default:
+                <h2>Rol no reconocido</h2>
+                break;
+        }
+    }
+    else
+    {
+        <h2>Rol no disponible</h2>
+    }
+
 </div>
+
+<script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer type="text/javascript" src="~/js/pages/adminDashboard/dashboardRol/DashboardRol.js"></script>
+<link rel="stylesheet" href="~/css/dashboardRol.css">
