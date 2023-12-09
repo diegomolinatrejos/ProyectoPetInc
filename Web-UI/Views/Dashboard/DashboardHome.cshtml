@@ -16,18 +16,25 @@
         switch (rol)
         {
             case "Administrador":
-                <div>
+                <div id="contenedoradmin">
                     <h2>Bienvenido Administrador a la aplicación de Pets Inc</h2>
-                    <p>Aquí tiene resumen del estado actual de las reservas.</p>
-
+                    <p>Aquí puedes ver un resumen de las actividades de la aplicación.</p>
+                    <br>
+                    <p>Lista de Reservas</p>
+                    <br>
                     <div id="myAdminGrid" style="height: 300px; width: 100%;" class="ag-theme-alpine"></div>
+                    <br>
+                    <p>Lista de Usuarios</p>
+                    <br>
+                    <div id="listUsuariosGrid" style="height: 300px; width: 100%;" class="ag-theme-alpine"></div>
                 </div>
+                
                 break;
 
             case "Cliente":
                 <div id="contenedorcliente">
                     <h2>Bienvenido Cliente a la aplicación de Pets Inc</h2>
-                    <p>Aquí tiene un resumen de las reservas a su nombre, si desea ver estado de su mascota, sirvase ver el numero de dispositivo e ir a la sección reportes y consultas con el numero de dispositivo</p>
+                    <p>Aquí tiene un resumen de las reservas a su nombre, si desea ver el estado de su mascota, sírvase ver el número de dispositivo e ir a la sección de reportes y consultas con el número de dispositivo</p>
 
                     <div id="contenedortabla" class="row">
                         <div class="col-md-12">
@@ -62,4 +69,5 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script defer type="text/javascript" src="~/js/pages/adminDashboard/dashboardRol/DashboardAdm.js"></script>
 <script defer type="text/javascript" src="~/js/pages/adminDashboard/dashboardRol/DashboardRol.js"></script>
+<link rel="stylesheet" href="~/css/dashboardRol.css">
 <link rel="stylesheet" href="~/css/dashboardRol.css">

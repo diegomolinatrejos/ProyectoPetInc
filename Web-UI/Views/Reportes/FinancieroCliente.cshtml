@@ -1,0 +1,45 @@
+﻿@inject IHttpContextAccessor Accesor
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_LayoutDashboard.cshtml";
+}
+
+
+<div>
+    @{
+        var rol = Accesor.HttpContext.Session.GetString("rol");
+    }
+
+    <div id="idUsuario" data-id="@Accesor.HttpContext.Session.GetInt32("Id")"></div>
+
+    <div class="row">
+        <br />
+        <div class="col-md-12">
+            <div id="egresosTotalesContainer" style="margin-top: 10px;"></div>
+        </div>
+        <br />
+    </div>
+
+    <div class="row">
+        <h2 style="margin-top: 3%">Reporte de ventas totales</h2>
+        <div class="col-md-6">
+            <h3>Distribución de las reservas por mascota</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="margin-top: 3%">Reporte compras totales</h3>
+            <div id="myGridEgresos" style="height: 200px; width: 100%; margin-bottom: 10%;" class="ag-theme-alpine"></div>
+        </div>
+    </div>
+</div>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/pages/reportesCliente/financieroCliente.js"></script>
+}
+
