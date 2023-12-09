@@ -23,10 +23,10 @@ namespace App_Logic.Admins
             psCrud.Create(serviciopaquete);
         }
 
-        public List<PaquetesServicios> GetServiciosByIdPaquete(int idDispositivo)
+        public List<PaquetesServicios> GetServiciosByIdPaquete(int id)
         {
             PaquetesServiciosCrud psCrud = new PaquetesServiciosCrud();
-            return psCrud.RetrieveAllServiciosByIdPaquete (idDispositivo);
+            return psCrud.RetrieveAllServiciosByIdPaquete (id);
         }
 
         public void DeleteServicioDePaquete(int id)
