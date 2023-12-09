@@ -13,5 +13,13 @@ namespace Web_UI.Controllers
         {
             return View();
         }
-    }
-}
+
+        public IActionResult ReporteCliente()
+        {
+            return View();
+        }
+
+
+
+    }// fin de la clase
+}// fin de namespace

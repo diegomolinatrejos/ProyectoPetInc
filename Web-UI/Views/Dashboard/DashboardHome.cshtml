@@ -9,6 +9,8 @@
         var rol = Accesor.HttpContext.Session.GetString("rol");
     }
 
+    <div id="idUsuario" data-id="@Accesor.HttpContext.Session.GetInt32("Id")"></div>
+    
     @if (!string.IsNullOrEmpty(rol))
     {
         switch (rol)
@@ -16,34 +18,23 @@
             case "Administrador":
                 <div>
                     <h2>Bienvenido Administrador a la aplicación de Pets Inc</h2>
+                    <p>Aquí tiene resumen del estado actual de las reservas.</p>
+
+                    <div id="myAdminGrid" style="height: 300px; width: 100%;" class="ag-theme-alpine"></div>
                 </div>
                 break;
 
             case "Cliente":
                 <div id="contenedorcliente">
                     <h2>Bienvenido Cliente a la aplicación de Pets Inc</h2>
-                    <div id="contegrafico">
-                        <p>Si tu mascota está en el hotel, aquá puedes monitorear el estado.</p>
-
-                        <div id="graficotemp">
-                            <h2>Dispositivo 1</h2>
-                            <canvas id="miGrafico"></canvas>
-                        </div>
-           
-                        <div id="botones">
-                            <input id="iniciarContinuarBtn" type="button" value="Iniciar/Continuar" />
-                            <input id="pausarBtn" type="button" value="Pausar" />
-                        </div>
-
-                    </div>
+                    <p>Aquí tiene un resumen de las reservas a su nombre, si desea ver estado de su mascota, sirvase ver el numero de dispositivo e ir a la sección reportes y consultas con el numero de dispositivo</p>
 
                     <div id="contenedortabla" class="row">
                         <div class="col-md-12">
                             <h3 style="margin-top: 3%">Tabla de Reservas</h3>
-                            <div id="myGrid" style="height: 200px; width: 100%; margin-bottom: 2%;" class="ag-theme-alpine"></div>
+                            <div id="myGridCliente" style="height: 300px; width: 100%;" class="ag-theme-alpine"></div>
                         </div>
                     </div>
-
 
                 </div>
                 break;
@@ -69,5 +60,6 @@
 <script defer type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer type="text/javascript" src="~/js/pages/adminDashboard/dashboardRol/DashboardAdm.js"></script>
 <script defer type="text/javascript" src="~/js/pages/adminDashboard/dashboardRol/DashboardRol.js"></script>
 <link rel="stylesheet" href="~/css/dashboardRol.css">

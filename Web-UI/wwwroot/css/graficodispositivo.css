@@ -1,14 +1,10 @@
-﻿html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-#contenedor {
+﻿/* graficodispositivo.css */
 
-    height: 100%;
-    margin: 0 auto;
-    max-height: 80%;
-    padding: 0 15% 80%;
-    text-align: center;
-    display: inline-block;
+/* Aplicar estilos al contenedor de la gráfica */
+#miGrafico {
+    width: 60%; /* Ancho del 80% de la pantalla */
+    height: 50vh; /* Altura del 60% de la pantalla (viewport height) */
+    margin: 0 auto; /* Centrar horizontalmente */
 }
+
+/* Otros estilos si es necesario */

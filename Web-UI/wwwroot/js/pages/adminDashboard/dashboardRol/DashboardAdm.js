@@ -1,33 +1,21 @@
-﻿var dataReservas2;
-var idUsuario;
+﻿// Código para conectarse a la API y obtener datos de reservas
+var dataReservas;
 
-// Código para conectarse a la API y obtener datos de reservas
 $.ajax({
     url: 'http://localhost:5087/api/Reserva/GetAllReservas',
     type: 'GET',
     success: function (data) {
-        // Guardar las reservas completas
-        dataReservas2 = data;
-
-        // Obtener el idUsuario (asegúrate de obtener el valor correcto según tu lógica)
-        idUsuario = $("#idUsuario").attr("data-id");
-
-        // Filtrar las reservas por el número de usuario en sesión
-        var reservasUsuario = dataReservas2.filter(function (reserva) {
-            return reserva.cliente.id == idUsuario;
-        });
-
-        // Inicializar la cuadrícula para el usuario con las reservas filtradas
-        initializeUserGrid(reservasUsuario);
+        dataReservas = data;
+        initializeAdminGrid();
     },
     error: function (error) {
         console.error('Error al obtener datos de reservas:', error);
     }
 });
 
-// Función para inicializar la cuadrícula para el usuario
-function initializeUserGrid(reservasUsuario) {
-    var rowData = reservasUsuario.map(function (reserva) {
+// Código para inicializar la cuadrícula de AG Grid para el Administrador
+function initializeAdminGrid() {
+    var rowData = dataReservas.map(function (reserva) {
         return {
             Id_Reserva: reserva.id,
             Entrada: new Date(reserva.fechaEntrada).toISOString().split('T')[0],
@@ -60,7 +48,7 @@ function initializeUserGrid(reservasUsuario) {
         rowData: rowData
     };
 
-    var gridDiv = document.querySelector('#myGridCliente');
+    // Agregar la cuadrícula al elemento con id "myAdminGrid"
+    var gridDiv = document.querySelector('#myAdminGrid');
     new agGrid.Grid(gridDiv, gridOptions);
 }
-

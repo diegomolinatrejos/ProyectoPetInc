@@ -23,7 +23,7 @@ namespace DataAccess.Mapper
 
             var dispositivo = new Dispositivo()
             {
-                Id = int.Parse(objectRow["ID_DISPOSITIVO"].ToString()),
+                Id = int.Parse(objectRow["DISPOSITIVO"].ToString()),
                 numeroSerie= objectRow["NUMERO_SERIE"].ToString(),
                 disponibilidad = int.Parse(objectRow["DISPONIBILIDAD"].ToString()),
 
