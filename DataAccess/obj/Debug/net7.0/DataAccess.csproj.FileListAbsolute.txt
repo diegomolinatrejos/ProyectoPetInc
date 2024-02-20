@@ -1,0 +1,15 @@
+C:\VSIde\ProyectoPetInc\DataAccess\bin\Debug\net7.0\DataAccess.deps.json
+C:\VSIde\ProyectoPetInc\DataAccess\bin\Debug\net7.0\DataAccess.dll
+C:\VSIde\ProyectoPetInc\DataAccess\bin\Debug\net7.0\DataAccess.pdb
+C:\VSIde\ProyectoPetInc\DataAccess\bin\Debug\net7.0\DTO.dll
+C:\VSIde\ProyectoPetInc\DataAccess\bin\Debug\net7.0\DTO.pdb
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CopyComplete
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.dll
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\DataAccess.pdb
+C:\VSIde\ProyectoPetInc\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll

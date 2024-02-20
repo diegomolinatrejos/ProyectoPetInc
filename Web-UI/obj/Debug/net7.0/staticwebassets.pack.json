@@ -1,0 +1,481 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Web-UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Web-UI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\dashboardAdm.css",
+      "PackagePath": "staticwebassets\\css\\dashboardAdm.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\dashboardRol.css",
+      "PackagePath": "staticwebassets\\css\\dashboardRol.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\financieroCliente.css",
+      "PackagePath": "staticwebassets\\css\\financieroCliente.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\graficodispositivo.css",
+      "PackagePath": "staticwebassets\\css\\graficodispositivo.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\adminDashboard\\dashboardRol\\DashboardAdm.js",
+      "PackagePath": "staticwebassets\\js\\pages\\adminDashboard\\dashboardRol\\DashboardAdm.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\adminDashboard\\dashboardRol\\DashboardRol.js",
+      "PackagePath": "staticwebassets\\js\\pages\\adminDashboard\\dashboardRol\\DashboardRol.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\adminDashboard\\servicios\\EditarServicio.js",
+      "PackagePath": "staticwebassets\\js\\pages\\adminDashboard\\servicios\\EditarServicio.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\configuracion\\Configuracion.js",
+      "PackagePath": "staticwebassets\\js\\pages\\configuracion\\Configuracion.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\dispositivos\\Dispositivos.js",
+      "PackagePath": "staticwebassets\\js\\pages\\dispositivos\\Dispositivos.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\formularios\\Validaciones.js",
+      "PackagePath": "staticwebassets\\js\\pages\\formularios\\Validaciones.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\mascotas\\EditarMascotas.js",
+      "PackagePath": "staticwebassets\\js\\pages\\mascotas\\EditarMascotas.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\mascotas\\ListaMascotasDuenno.js",
+      "PackagePath": "staticwebassets\\js\\pages\\mascotas\\ListaMascotasDuenno.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\mascotas\\Mascotas.js",
+      "PackagePath": "staticwebassets\\js\\pages\\mascotas\\Mascotas.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\mascotas\\RegistroMascotas.js",
+      "PackagePath": "staticwebassets\\js\\pages\\mascotas\\RegistroMascotas.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\paquetes\\CrearPaquete.js",
+      "PackagePath": "staticwebassets\\js\\pages\\paquetes\\CrearPaquete.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\perfil\\EditarPerfil.js",
+      "PackagePath": "staticwebassets\\js\\pages\\perfil\\EditarPerfil.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\perfil\\Perfil.js",
+      "PackagePath": "staticwebassets\\js\\pages\\perfil\\Perfil.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\registros\\RegistroUsuario.js",
+      "PackagePath": "staticwebassets\\js\\pages\\registros\\RegistroUsuario.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\reportesAdm\\MonitorDispositivo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\reportesAdm\\MonitorDispositivo.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\reportesAdm\\ReporteFinanciero.js",
+      "PackagePath": "staticwebassets\\js\\pages\\reportesAdm\\ReporteFinanciero.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\reportesCliente\\financieroCliente.js",
+      "PackagePath": "staticwebassets\\js\\pages\\reportesCliente\\financieroCliente.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\reportesCliente\\reporteCliente.js",
+      "PackagePath": "staticwebassets\\js\\pages\\reportesCliente\\reporteCliente.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\reservas\\Reservas.js",
+      "PackagePath": "staticwebassets\\js\\pages\\reservas\\Reservas.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\roles\\Roles.js",
+      "PackagePath": "staticwebassets\\js\\pages\\roles\\Roles.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\servicios\\EditarServicios.js",
+      "PackagePath": "staticwebassets\\js\\pages\\servicios\\EditarServicios.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\servicios\\ListaServicios.js",
+      "PackagePath": "staticwebassets\\js\\pages\\servicios\\ListaServicios.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\servicios\\RegistroServicios.js",
+      "PackagePath": "staticwebassets\\js\\pages\\servicios\\RegistroServicios.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\pages\\servicios\\Servicios.js",
+      "PackagePath": "staticwebassets\\js\\pages\\servicios\\Servicios.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\HPT2.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\HPT2.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\HTP3.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\HTP3.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\PetGift.gif",
+      "PackagePath": "staticwebassets\\media\\img\\PetGift.gif"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\PetIcon.png",
+      "PackagePath": "staticwebassets\\media\\img\\PetIcon.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\cesarMillan.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\cesarMillan.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\fc.svg",
+      "PackagePath": "staticwebassets\\media\\img\\fc.svg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\fondo1.png",
+      "PackagePath": "staticwebassets\\media\\img\\fondo1.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\huella.png",
+      "PackagePath": "staticwebassets\\media\\img\\huella.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\insta.svg",
+      "PackagePath": "staticwebassets\\media\\img\\insta.svg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\logoPI.png",
+      "PackagePath": "staticwebassets\\media\\img\\logoPI.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\mas.png",
+      "PackagePath": "staticwebassets\\media\\img\\mas.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\mas2.png",
+      "PackagePath": "staticwebassets\\media\\img\\mas2.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\mas3.png",
+      "PackagePath": "staticwebassets\\media\\img\\mas3.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\perfilDefault.png",
+      "PackagePath": "staticwebassets\\media\\img\\perfilDefault.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\perroGift.gif",
+      "PackagePath": "staticwebassets\\media\\img\\perroGift.gif"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\verificado.gif",
+      "PackagePath": "staticwebassets\\media\\img\\verificado.gif"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\verificadoP.gif",
+      "PackagePath": "staticwebassets\\media\\img\\verificadoP.gif"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\werable.png",
+      "PackagePath": "staticwebassets\\media\\img\\werable.png"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\img\\ws.svg",
+      "PackagePath": "staticwebassets\\media\\img\\ws.svg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\servicios\\cuidadoEspecial1.jpg",
+      "PackagePath": "staticwebassets\\media\\servicios\\cuidadoEspecial1.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\servicios\\entrenamiento1.jpg",
+      "PackagePath": "staticwebassets\\media\\servicios\\entrenamiento1.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\servicios\\grooming1.jpg",
+      "PackagePath": "staticwebassets\\media\\servicios\\grooming1.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\servicios\\paseo1.jpg",
+      "PackagePath": "staticwebassets\\media\\servicios\\paseo1.jpg"
+    },
+    {
+      "Id": "C:\\VSIde\\ProyectoPetInc\\Web-UI\\wwwroot\\media\\servicios\\vet1.jpg",
+      "PackagePath": "staticwebassets\\media\\servicios\\vet1.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Web-UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Web-UI.props",
+      "PackagePath": "build\\Web-UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Web-UI.props",
+      "PackagePath": "buildMultiTargeting\\Web-UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Web-UI.props",
+      "PackagePath": "buildTransitive\\Web-UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

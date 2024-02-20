@@ -1,0 +1,17 @@
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\App-Logic.deps.json
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\App-Logic.dll
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\App-Logic.pdb
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\DataAccess.dll
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\DTO.dll
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\DataAccess.pdb
+C:\VSIde\ProyectoPetInc\App-Logic\bin\Debug\net7.0\DTO.pdb
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.csproj.AssemblyReference.cache
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.AssemblyInfoInputs.cache
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.AssemblyInfo.cs
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.csproj.CoreCompileInputs.cache
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.csproj.CopyComplete
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.dll
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\refint\App-Logic.dll
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\App-Logic.pdb
+C:\VSIde\ProyectoPetInc\App-Logic\obj\Debug\net7.0\ref\App-Logic.dll

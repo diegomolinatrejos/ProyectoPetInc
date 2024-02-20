@@ -1,0 +1,12 @@
+C:\VSIde\ProyectoPetInc\DTO\bin\Debug\net7.0\DTO.deps.json
+C:\VSIde\ProyectoPetInc\DTO\bin\Debug\net7.0\DTO.dll
+C:\VSIde\ProyectoPetInc\DTO\bin\Debug\net7.0\DTO.pdb
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.csproj.AssemblyReference.cache
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.AssemblyInfoInputs.cache
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.AssemblyInfo.cs
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.csproj.CoreCompileInputs.cache
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.dll
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\refint\DTO.dll
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\DTO.pdb
+C:\VSIde\ProyectoPetInc\DTO\obj\Debug\net7.0\ref\DTO.dll

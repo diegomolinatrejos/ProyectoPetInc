@@ -1,0 +1,181 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web_UI
+build_property.RootNamespace = Web_UI
+build_property.ProjectDir = C:\VSIde\ProyectoPetInc\Web-UI\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\VSIde\ProyectoPetInc\Web-UI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Configuracion/ConfiguracionInicial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhY2lvblxDb25maWd1cmFjaW9uSW5pY2lhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Dashboard/DashboardHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERhc2hib2FyZEhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Dispositivos/DispositivosActuales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9zaXRpdm9zXERpc3Bvc2l0aXZvc0FjdHVhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Dispositivos/EdicionDispositivos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9zaXRpdm9zXEVkaWNpb25EaXNwb3NpdGl2b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Dispositivos/RegistrarDispositivo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzcG9zaXRpdm9zXFJlZ2lzdHJhckRpc3Bvc2l0aXZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Login/RecuperarContrasena.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVjdXBlcmFyQ29udHJhc2VuYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Mascotas/EdicionMascotas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YXNcRWRpY2lvbk1hc2NvdGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Mascotas/MisMascotas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YXNcTWlzTWFzY290YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Mascotas/RegistroMascotas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YXNcUmVnaXN0cm9NYXNjb3Rhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Paquetes/CrearPaquete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXNcQ3JlYXJQYXF1ZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Paquetes/EditarPaquete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXNcRWRpdGFyUGFxdWV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Paquetes/ListaPaquetes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXNcTGlzdGFQYXF1ZXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Perfil/CambioContrasena.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXENhbWJpb0NvbnRyYXNlbmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Perfil/EdicionPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEVkaWNpb25QZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Perfil/VistaPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXFZpc3RhUGVyZmlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Registro/RegistroUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9cUmVnaXN0cm9Vc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reportes/FinancieroCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcRmluYW5jaWVyb0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reportes/GraficaDispositivo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcR3JhZmljYURpc3Bvc2l0aXZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reportes/ReporteCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcUmVwb3J0ZUNsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reportes/ReportesAdm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZXNcUmVwb3J0ZXNBZG0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/EdicionReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRWRpY2lvblJlc2VydmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/EdicionReservaGestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRWRpY2lvblJlc2VydmFHZXN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/GestionarReservasCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcR2VzdGlvbmFyUmVzZXJ2YXNDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/GestionarReservasGestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcR2VzdGlvbmFyUmVzZXJ2YXNHZXN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/RealizarReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcUmVhbGl6YXJSZXNlcnZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Reservas/RealizarReservaGestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcUmVhbGl6YXJSZXNlcnZhR2VzdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Roles/AsignacionRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQXNpZ25hY2lvblJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Servicios/EdicionServicios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXEVkaWNpb25TZXJ2aWNpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Servicios/RegistroServicios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXFJlZ2lzdHJvU2VydmljaW9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Servicios/ServiciosActuales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljaW9zXFNlcnZpY2lvc0FjdHVhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ltyk36bz1m
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/_LayoutDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9wryl8l9vh
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/_LayoutLanding.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMYW5kaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ikh6wudxcd
+
+[C:/VSIde/ProyectoPetInc/Web-UI/Views/Shared/_LayoutLandingVacio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMYW5kaW5nVmFjaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-g66pi5zle2
